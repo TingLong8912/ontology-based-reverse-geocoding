@@ -1,0 +1,15 @@
+# 使用官方 Python 映像檔作為基礎
+FROM python:3
+
+# 先安裝套件
+COPY /requirements.txt /src/requirements.txt
+WORKDIR /src
+RUN pip install -r requirements.txt
+
+COPY ./src /src/
+
+WORKDIR /src
+
+ENV PYTHONUNBUFFERED=1
+
+CMD python main.py

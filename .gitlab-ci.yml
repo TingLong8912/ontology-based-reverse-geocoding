@@ -1,0 +1,27 @@
+stages:
+  - build
+  - deploy
+
+build_img: 
+  stage: build
+  script:
+    # build image
+    - |
+      docker pull python:3
+      docker build -t dkr.tw/sgis/timetransformer:api image          #image is tbe path of a Dockerfile
+      docker push dkr.tw/sgis/timetransformer:api
+    # remove none image
+    - docker rmi $(docker images | grep none | awk '{print $3}') || echo 1
+  #rules:
+  #  - if: ($runner != null && ($deploy == "all" || $deploy == "build"))
+  tags:
+    - sgis-zone101       #this server
+
+deploy_1:
+  stage: deploy
+  script:
+    - bash deploy/deploy.sh
+  #rules:
+  #  - if: ($deploy == "all" || $deploy == "deploy")
+  tags:
+    - sgis-zone101
