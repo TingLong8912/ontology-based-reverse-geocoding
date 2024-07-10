@@ -1,0 +1,730 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74/"
+     xml:base="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-74="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasFigureFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasFigureFeature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FigureFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasGroundFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasGroundFeature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GroundFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasLocaliser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasLocaliser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasPlaceName -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasPlaceName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PlaceName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasPrep -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasPrep">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GroundFeature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialPreposition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#symbolize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#symbolize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialConcpet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#isPrefix -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#isPrefix">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#AbstractQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#AbstractQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BinarySpatialRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BinarySpatialRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Boundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Boundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#County -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#County">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Curve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Curve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DependentPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DependentPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationalValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#East -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#East">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Endurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Endurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FigureFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FigureFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#RelevantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FunctionalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FunctionalFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FunctionalFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PlaceFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Geometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialLocation_q"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeometryCollection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeometryCollection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialConcpet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialConcpet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#NonPhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#NonPhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GroundFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GroundFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DependentPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InBetween -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InBetween">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationalValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationalValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationalValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BinarySpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#MileStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#MileStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Near -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Near">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#NonPhysicalEndurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#NonPhysicalEndurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#North -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#North">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#OnSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#OnSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Particular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Particular"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalEndurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalEndurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PlaceFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PlaceFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#AbstractQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PlaceName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PlaceName"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Point -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Point">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#QuantitativeSpatilaRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#QuantitativeSpatilaRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#RelevantPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#RelevantPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Route -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Route">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#RouteAncillaryFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#RouteAncillaryFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Side -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Side">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#South -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#South">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialLocation_q -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialLocation_q">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#PhysicalQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialPreposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialPreposition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialConcpet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Particular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Surface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Upper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Upper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#West -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#West">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInBetween -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInBetween">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNorth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNorth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfOnSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfOnSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSouth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSouth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfUpper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfUpper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfWest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfWest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#上 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#上">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfUpper"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#之中 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#之中">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInBetween"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#之間 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#之間">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInBetween"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#側 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#側">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSide"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNorth"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSouth"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#在 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#在">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfLocation"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#接近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#接近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNear"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#旁 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#旁">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSide"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#縣界 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#縣界">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfBoundary"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#處 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#處">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfOnSite"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfWest"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNear"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#鄰近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#鄰近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNear"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

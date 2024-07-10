@@ -1,0 +1,963 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/win/ontologies/2024/6/gsd/"
+     xml:base="http://www.semanticweb.org/win/ontologies/2024/6/gsd/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#achievedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#achievedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#BinarySpatialRelation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#hasFigureFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#hasFigureFeature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GroundFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#hasGroundFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#hasGroundFeature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#FigureFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#hasQuality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Endurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Quality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#host -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#host">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalEndurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#referTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#referTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialConcpet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#symbolize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#symbolize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialConcpet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Azimuth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Azimuth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DirectionRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Distance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Distance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceProbability -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceProbability">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#Particular -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#Particular"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#SpatioTemporalParticular -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#SpatioTemporalParticular">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#Particular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#AbstractQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#AbstractQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Accomplishment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Accomplishment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#AmountOfMatter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#AmountOfMatter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#BBox -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#BBox">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Transformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#BinarySpatialRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#BinarySpatialRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Boundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Boundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Buffer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Buffer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Transformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Contain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Contain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#County -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#County">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Curve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Curve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DependentPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DependentPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DirectionRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DirectionRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Disjoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Disjoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceMiddle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceMiddle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceNear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceNear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationalValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#East -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#East">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Endurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Endurant">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Equality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Equality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Perdurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#FigureFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#FigureFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#RelevantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Function -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Function">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#FunctionalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#FunctionalFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#FunctionalFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PlaceFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Geometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialLocation_q"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeometryCollection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeometryCollection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialConcpet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialConcpet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#GroundFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GroundFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DependentPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#InBetween -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#InBetween">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Intersect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Intersect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Location_1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationalValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Location_1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Location_1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Locational_1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationalValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationalValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#BinarySpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Locational_1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Locational_1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#BinarySpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#MileStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#MileStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Near -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Near">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#DistanceValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalEndurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalEndurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#NonPhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#North -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#North">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#OnSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#OnSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Overlap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Overlap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Perdurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Perdurant">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalEndurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalEndurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalFacets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalFacets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PlaceFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Place">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#PlaceFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PlaceFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#AbstractQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Point -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Point">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#QuantitativeSpatilaRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#QuantitativeSpatilaRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#RelevantPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#RelevantPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Route -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Route">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#RouteAncillaryFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#RouteAncillaryFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Side -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Side">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#South -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#South">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialLocation_q -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialLocation_q">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialPreposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialPreposition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#GeospatialConcpet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Accomplishment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Surface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Touch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Touch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Transformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Transformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Upper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Upper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#West -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#West">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WithLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WithLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#PhysicalFacets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#Within -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Within">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfEast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfEast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfInBetween -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfInBetween">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNorth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNorth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfOnSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfOnSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSouth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSouth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfUpper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfUpper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfWest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfWest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#上 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#上">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfUpper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#之中 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#之中">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfInBetween"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#之間 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#之間">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfInBetween"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#側 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#側">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSide"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#北 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#北">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNorth"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#南 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#南">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSouth"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#在 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#在">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#接近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#接近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNear"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#旁 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#旁">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfSide"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#東 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#東">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfEast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#縣界 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#縣界">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfBoundary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#處 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#處">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfOnSite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#西 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#西">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfWest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNear"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/gsd#鄰近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/gsd#鄰近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/gsd#WordsOfNear"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

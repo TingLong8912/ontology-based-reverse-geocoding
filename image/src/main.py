@@ -1,17 +1,127 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from flask import send_from_directory
+from flask import Flask, jsonify
+from owlready2 import Thing, get_ontology, sync_reasoner, Imp
+import os
+import pandas as pd
 
 app = Flask(__name__)
-CORS(app)
+
+current_working_directory = os.getcwd()
+print(f"Current Working Directory: {current_working_directory}")
 
 @app.route('/api', methods=['GET'])
 def api():
-    return "Hello, world"
+    try:
+        onto.destroy()
+        print("'onto' destroyed")
+    except:
+        print("'onto' is not defined")
+        
+    onto = get_ontology("./assets/simple_gsd.rdf").load()
+
+    # 定義新的頂層類別 Thing
+    with onto:
+        class BaseThing(Thing):
+            pass
+
+    # 定義其他第一層類別，並將其與 Thing 連結
+    with onto:
+        class Particular(BaseThing):
+            pass
+        class PlaceName(BaseThing):
+            pass
+        class Localiser(BaseThing):
+            pass
+        class SpatialPreposition(BaseThing):
+            pass
+    
+    inputpoint = onto.GroundFeature("inputpoint")
+
+    geospatialDescription1 = onto.GeospatialDescription("geospatialDescription1")
+    referObject1 = onto.FigureFeature("堤頂交流道")
+    relation1 = onto.Near("relation1")
+    relation1.hasGroundFeature = [inputpoint]
+    relation1.hasFigureFeature = [referObject1]
+    relation1.symbolize = [geospatialDescription1]
+
+    geospatialDescription2 = onto.GeospatialDescription("geospatialDescription2")
+    referObject2 = onto.FigureFeature("國道一號")
+    relation2 = onto.Upper("relation2")
+    relation2.hasGroundFeature = [inputpoint]
+    relation2.hasFigureFeature = [referObject2]
+    relation2.symbolize = [geospatialDescription2]
+
+    # 設置規則
+    with onto:
+        rule1 = Imp()
+        rule1.set_as_rule("""
+            Near(?relation1), WordsOfNear(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
+            -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
+        """)
+
+        rule2 = Imp()
+        rule2.set_as_rule("""
+            Upper(?relation1), WordsOfUpper(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
+            -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
+        """)
+
+    # 啟用推理機
+    sync_reasoner(infer_property_values = True)
+
+    # 獲取所有物件屬性
+    object_properties = list(geospatialDescription1.get_properties())
+
+    data = []
+    for prop in object_properties:
+        for instance in prop.get_relations():
+            subject, object_ = instance
+            
+            # 嘗試獲取 isPrefix 屬性值
+            is_prefix = getattr(object_, 'isPrefix', None)  # 如果 object_ 沒有 isPrefix 屬性，將返回 None
+
+            data.append({
+                "Property": prop.name,
+                "Subject": subject.name,
+                "Object": object_.name,
+                "IsPrefix": is_prefix
+            })
+
+    df = pd.DataFrame(data)
+
+    result_data = []
+    grouped = df.groupby('Subject')
+
+    for subject, group in grouped:
+        place_name = group[group['Property'] == 'hasPlaceName']['Object'].values
+        localisers = group[group['Property'] == 'hasLocaliser']['Object'].values
+
+        if place_name.size > 0:
+            place_name = place_name[0]  # 假設每個 Subject 只有一個 hasPlaceName
+        else:
+            place_name = None
+
+        for localiser in localisers:
+            # 獲取當前 localiser 的 IsPrefix 值
+            is_prefix = group[(group['Property'] == 'hasLocaliser') & (group['Object'] == localiser)]['IsPrefix'].values
+            if is_prefix.size > 0:
+                is_prefix = is_prefix[0]
+            else:
+                is_prefix = None
+
+            result_data.append({
+                "Subject": subject,
+                "PlaceName": place_name,
+                "Localiser": localiser,
+                "IsPrefix": is_prefix
+            })
+
+
+    return jsonify(result_data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
-    pass
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=80)
