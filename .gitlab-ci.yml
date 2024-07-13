@@ -8,8 +8,8 @@ build_img:
     # build image
     - |
       docker pull python:3
-      docker build -t dkr.tw/sgis/timetransformer:api image          #image is tbe path of a Dockerfile
-      docker push dkr.tw/sgis/timetransformer:api
+      docker build -t dkr.tw/sgis/geospatialdescription:api image          #image is tbe path of a Dockerfile
+      docker push dkr.tw/sgis/geospatialdescription:api
     # remove none image
     - docker rmi $(docker images | grep none | awk '{print $3}') || echo 1
   #rules:

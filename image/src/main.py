@@ -8,6 +8,10 @@ app = Flask(__name__)
 current_working_directory = os.getcwd()
 print(f"Current Working Directory: {current_working_directory}")
 
+@app.route('/test', methods=['GET'])
+def test_api():
+    return "Hello, World!"
+
 @app.route('/api', methods=['GET'])
 def api():
     try:
