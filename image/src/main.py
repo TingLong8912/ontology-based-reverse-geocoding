@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from owlready2 import Thing, get_ontology, sync_reasoner, Imp
 import os
 import pandas as pd
@@ -8,12 +8,16 @@ app = Flask(__name__)
 current_working_directory = os.getcwd()
 print(f"Current Working Directory: {current_working_directory}")
 
-@app.route('/test', methods=['GET'])
-def test_api():
-    return "Hello, World!"
+# @app.route('/test', methods=['GET'])
+# def test_api():
+#     return "Hello, World!"
 
-@app.route('/api', methods=['GET'])
+@app.route('/api', methods=['POST'])
 def api():
+
+    input_data = request.json
+
+    return input_data
     try:
         onto.destroy()
         print("'onto' destroyed")
