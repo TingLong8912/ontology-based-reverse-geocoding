@@ -5,23 +5,20 @@ stages:
 build_img: 
   stage: build
   script:
-    # build image
-    - |
-      docker pull python:3
-      docker build -t dkr.tw/sgis/geospatialdescription:api image          #image is tbe path of a Dockerfile
-      docker push dkr.tw/sgis/geospatialdescription:api
-    # remove none image
-    - docker rmi $(docker images | grep none | awk '{print $3}') || echo 1
-  #rules:
-  #  - if: ($runner != null && ($deploy == "all" || $deploy == "build"))
+    # Pull base image
+    - docker pull openjdk:8-jdk-slim
+    # Build Docker image
+    - docker build -t dkr.tw/sgis/geospatialdescription:api ./image
+    # Push Docker image to registry
+    - docker push dkr.tw/sgis/geospatialdescription:api
+    # Remove dangling images
+    - docker rmi $(docker images -f "dangling=true" -q) || echo "No dangling images to remove"
   tags:
-    - sgis-zone101       #this server
+    - sgis-zone101
 
 deploy_1:
   stage: deploy
   script:
     - bash deploy/deploy.sh
-  #rules:
-  #  - if: ($deploy == "all" || $deploy == "deploy")
   tags:
     - sgis-zone101
