@@ -82,35 +82,36 @@ def api():
                     spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
                     spatial_relation_instance.hasGroundFeature.append(input_feature_instance)
         # Set data property
-        elif spatial_relation in ontology_dataPropList:
-            if spatial_relation == 'DistanceForRoad':
-                spatial_relation_class = onto['DistanceRelation']
-            elif spatial_relation == 'DirectionForRoad':
-                spatial_relation_class = onto['DirectionRelation']
+        # elif spatial_relation in ontology_dataPropList:
+        #     if spatial_relation == 'DistanceForRoad':
+        #         spatial_relation_class = onto['DistanceRelation']
+        #     elif spatial_relation == 'DirectionForRoad':
+        #         spatial_relation_class = onto['DirectionRelation']
 
-            for refObjectClass in refObjectClassList:
-                placeFacet_class = onto[refObjectClass]
-                figure_feature_class = onto["FigureFeature"]
+        #     for refObjectClass in refObjectClassList:
+        #         placeFacet_class = onto[refObjectClass]
+        #         figure_feature_class = onto["FigureFeature"]
 
-                individuals = referObjects[refObjectClass]
-                for individual in individuals:
-                    placeFacet_instance = placeFacet_class(individual)
-                    figure_feature_instance = figure_feature_class(individual)
+        #         individuals = referObjects[refObjectClass]
+        #         for individual in individuals:
+        #             placeFacet_instance = placeFacet_class(individual)
+        #             figure_feature_instance = figure_feature_class(individual)
 
-                    figure_feature_instance.hasQuality.append(placeFacet_instance)
+        #             figure_feature_instance.hasQuality.append(placeFacet_instance)
 
-                    # Create a new individual for the spatial relation class
-                    individual_name = spatial_relation + str(individual)
-                    spatial_relation_instance = spatial_relation_class(individual_name)
+        #             # Create a new individual for the spatial relation class
+        #             individual_name = spatial_relation + str(individual)
+        #             spatial_relation_instance = spatial_relation_class(individual_name)
 
-                    spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
-                    spatial_relation_instance.hasGroundFeature.append(input_feature_instance)
+        #             spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
+        #             spatial_relation_instance.hasGroundFeature.append(input_feature_instance)
 
-                    if spatial_relation == 'DistanceForRoad':
-                        spatial_relation_instance.DistanceForRoad.append(str(individual))
-                    elif spatial_relation == 'DirectionForRoad':
-                        spatial_relation_instance.DirectionForRoad.append(str(individual))
-    return {"statue": "success"}
+        #             if spatial_relation == 'DistanceForRoad':
+        #                 spatial_relation_instance.DistanceForRoad.append(str(individual))
+        #             elif spatial_relation == 'DirectionForRoad':
+        #                 spatial_relation_instance.DirectionForRoad.append(str(individual))
+    
+    return {"status": "success"}
     # Get all individuals
     # all_individuals = list(BaseThing.instances())
     # individuals_data = [{"name": ind.name, "iri": ind.iri} for ind in all_individuals]
