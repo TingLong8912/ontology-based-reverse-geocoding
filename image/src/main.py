@@ -2,8 +2,10 @@ from flask import Flask, jsonify, request
 from owlready2 import Thing, get_ontology, sync_reasoner, Imp
 import os
 import pandas as pd
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 current_working_directory = os.getcwd()
 print(f"Current Working Directory: {current_working_directory}")
