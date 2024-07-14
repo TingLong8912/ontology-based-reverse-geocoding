@@ -209,8 +209,17 @@ def api():
 
     # 設置規則
     with onto:
-        rule8 = Imp()
-        rule8.set_as_rule("""
+        rule_upper = Imp()
+        rule_upper.set_as_rule("""
+            Upper(?relation1), WordsOfUpper(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+
+        rule_near = Imp()
+        rule_near.set_as_rule("""
             Near(?relation1), WordsOfNear(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
@@ -218,9 +227,45 @@ def api():
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
 
-        rule9 = Imp()
-        rule9.set_as_rule("""
-            Upper(?relation1), WordsOfUpper(?word),
+        rule_onSite = Imp()
+        rule_onSite.set_as_rule("""
+            OnSite(?relation1), WordsOfOnSite(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+
+        rule_north = Imp()
+        rule_north.set_as_rule("""
+            North(?relation1), WordsOfNorth(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+        
+        rule_south = Imp()
+        rule_south.set_as_rule("""
+            South(?relation1), WordsOfSouth(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+
+        rule_west = Imp()
+        rule_west.set_as_rule("""
+            West(?relation1), WordsOfWest(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+
+        rule_east = Imp()
+        rule_east.set_as_rule("""
+            East(?relation1), WordsOfEast(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
