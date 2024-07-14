@@ -317,7 +317,7 @@ def api():
                 is_prefix = None
 
             result_data.append({
-                "Subject": subject,
+                # "Subject": subject,
                 "PlaceName": place_name,
                 "Localiser": localiser,
                 "IsPrefix": is_prefix
