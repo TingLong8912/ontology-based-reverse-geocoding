@@ -64,7 +64,7 @@ def api():
     SpatialOperation = input_data
     spatialOperationClassList = list(SpatialOperation.keys())
     input_feature_class = onto['GroundFeature']
-    input_feature_instance = input_feature_class('inputPt')
+    input_feature_instance = input_feature_class('inuptpoint')
 
     # Set class
     for spatial_relation in spatialOperationClassList:
@@ -128,14 +128,14 @@ def api():
         rule1 = Imp()
         rule1.set_as_rule("""
             Within(?relation), 
-            FigureFeature(?referObject), Route(?referObject), hasFigureFeature(?relation, ?referObject)
+            FigureFeature(?referObject), Route(?referObject), hasFigureFeature(?relation, ?referObject),
             -> Upper(?relation)
         """)
 
         rule2 = Imp()
         rule2.set_as_rule("""
             Within(?relation), 
-            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject),
             -> OnSite(?relation)
         """)
 
@@ -169,28 +169,28 @@ def api():
 
         rule7_1 = Imp()
         rule7_1.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "北"),
+            DirectionRelation(?relation), DirectionForRoad(?relation, "N"),
             FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
             -> North(?relation)
         """)
 
         rule7_2 = Imp()
         rule7_2.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "南"),
+            DirectionRelation(?relation), DirectionForRoad(?relation, "S"),
             FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
             -> South(?relation)
         """)
 
         rule7_3 = Imp()
         rule7_3.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "西"),
+            DirectionRelation(?relation), DirectionForRoad(?relation, "W"),
             FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
             -> West(?relation)
         """)
         
         rule7_4 = Imp()
         rule7_4.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "東"),
+            DirectionRelation(?relation), DirectionForRoad(?relation, "E"),
             FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
             -> East(?relation)
         """)
@@ -198,14 +198,14 @@ def api():
     # Reasoning 1
     sync_reasoner(infer_property_values = True)
 
-    # 獲取類別樹狀結構及其實例的 JSON
-    class_hierarchy_json = get_class_hierarchy_json(onto)
+    # 檢查推理結果並創建新的GeospatialDescription實例
+    relation_classes = [onto.Upper, onto.OnSite, onto.Near, onto.InBetween, onto.Boundary, onto.North, onto.South, onto.West, onto.East]
 
-    # 返回類別樹狀結構及其實例的 JSON
-    return jsonify(class_hierarchy_json)
-
-    geospatialDescription_class = onto['GeospatialDescription']
-    geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
+    for cls in relation_classes:
+        for instance in cls.instances():
+            if not onto.search_one(is_a=onto.GeospatialDescription, related_to=instance):
+                new_description = onto.GeospatialDescription(f"{instance.name}_description")
+                instance.symbolize.append(new_description)
 
     # 設置規則
     with onto:
@@ -214,8 +214,8 @@ def api():
             Near(?relation1), WordsOfNear(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
-            GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
-            -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
 
         rule9 = Imp()
@@ -223,18 +223,16 @@ def api():
             Upper(?relation1), WordsOfUpper(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
-            GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
-            -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
 
     # 啟用推理機
     sync_reasoner(infer_property_values = True)
 
-    # 獲取所有物件屬性
-    object_properties = list(geospatialDescription_instance.get_properties())
-
-    return {"status": "success", "data": object_properties}
+    object_properties = [onto.hasLocaliser, onto.hasPlaceName]
     data = []
+
     for prop in object_properties:
         for instance in prop.get_relations():
             subject, object_ = instance
