@@ -7,13 +7,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-current_working_directory = os.getcwd()
-print(f"Current Working Directory: {current_working_directory}")
-
-# @app.route('/test', methods=['GET'])
-# def test_api():
-#     return "Hello, World!"
-
 def get_class_hierarchy_json(ontology):
     def build_class_hierarchy(class_tree):
         class_info = {
@@ -31,7 +24,7 @@ def api():
     input_data = request.json
     
     try:
-        onto.destroy(update_relation = True, update_is_a = True)
+        onto.destroy()
         print("'onto' destroyed")
     except:
         print("'onto' is not defined")
