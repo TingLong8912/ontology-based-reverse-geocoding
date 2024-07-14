@@ -29,7 +29,7 @@ def api():
     input_data = request.json
     
     try:
-        onto.destroy()
+        onto.destroy(update_relation = True, update_is_a = True)
         print("'onto' destroyed")
     except:
         print("'onto' is not defined")
