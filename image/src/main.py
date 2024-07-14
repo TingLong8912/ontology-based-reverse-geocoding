@@ -12,6 +12,18 @@ print(f"Current Working Directory: {current_working_directory}")
 # def test_api():
 #     return "Hello, World!"
 
+def get_class_hierarchy_json(ontology):
+    def build_class_hierarchy(class_tree):
+        class_info = {
+            "class_name": class_tree.name,
+            "instances": [individual.name for individual in class_tree.instances()],
+            "subclasses": [build_class_hierarchy(subclass) for subclass in class_tree.subclasses()]
+        }
+        return class_info
+    
+    hierarchy = build_class_hierarchy(ontology.BaseThing)
+    return hierarchy
+
 @app.route('/api', methods=['POST'])
 def api():
     input_data = request.json
@@ -185,6 +197,12 @@ def api():
 
     # Reasoning 1
     sync_reasoner(infer_property_values = True)
+
+    # 獲取類別樹狀結構及其實例的 JSON
+    class_hierarchy_json = get_class_hierarchy_json(onto)
+
+    # 返回類別樹狀結構及其實例的 JSON
+    return jsonify(class_hierarchy_json)
 
     geospatialDescription_class = onto['GeospatialDescription']
     geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
