@@ -189,8 +189,6 @@ def api():
     geospatialDescription_class = onto['GeospatialDescription']
     geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
 
-    return {"status": "success"}
-
     # 設置規則
     with onto:
         rule8 = Imp()
@@ -214,6 +212,7 @@ def api():
     # 啟用推理機
     sync_reasoner(infer_property_values = True)
 
+    return {"status": "success"}
     # 獲取所有物件屬性
     object_properties = list(geospatialDescription_instance.get_properties())
 
