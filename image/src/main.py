@@ -111,100 +111,156 @@ def api():
                     elif spatial_relation == 'DirectionForRoad':
                         spatial_relation_instance.DirectionForRoad.append(str(individual))
     
-    # return {"status": "success"}
-    # Get all individuals
-    all_individuals = list(BaseThing.instances())
-    individuals_data = [{"name": ind.name, "iri": ind.iri} for ind in all_individuals]
-    
-    # Return JSON response
-    return jsonify(individuals_data)
+    # Set rules(gis to semantic)
+    with onto:
+        rule1 = Imp()
+        rule1.set_as_rule("""
+            Within(?relation), 
+            FigureFeature(?referObject), Route(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> Upper(?relation)
+        """)
 
-    # geospatialDescription1 = onto.GeospatialDescription("geospatialDescription1")
-    # referObject1 = onto.FigureFeature("堤頂交流道")
-    # relation1 = onto.Near("relation1")
-    # relation1.hasGroundFeature = [inputpoint]
-    # relation1.hasFigureFeature = [referObject1]
-    # relation1.symbolize = [geospatialDescription1]
+        rule2 = Imp()
+        rule2.set_as_rule("""
+            Within(?relation), 
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> OnSite(?relation)
+        """)
 
-    # geospatialDescription2 = onto.GeospatialDescription("geospatialDescription2")
-    # referObject2 = onto.FigureFeature("國道一號")
-    # relation2 = onto.Upper("relation2")
-    # relation2.hasGroundFeature = [inputpoint]
-    # relation2.hasFigureFeature = [referObject2]
-    # relation2.symbolize = [geospatialDescription2]
+        rule3 = Imp()
+        rule3.set_as_rule("""
+            DistanceNear(?relation), 
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> Near(?relation)
+        """)
+
+        rule4 = Imp()
+        rule4.set_as_rule("""
+            DistanceMiddle(?relation), 
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> InBetween(?relation)
+        """)
+
+        rule5 = Imp()
+        rule5.set_as_rule("""
+            BoundaryForCounty(?relation), 
+            FigureFeature(?referObject), County(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> Boundary(?relation)
+        """)
+        
+        rule6 = Imp()
+        rule6.set_as_rule("""
+            DistanceRelation(?relation), DistanceForRoad(?relation, ?distance),
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> OnSite(?relation)
+        """)
+
+        rule7_1 = Imp()
+        rule7_1.set_as_rule("""
+            DirectionRelation(?relation), DirectionForRoad(?relation, "北"),
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> North(?relation)
+        """)
+
+        rule7_2 = Imp()
+        rule7_2.set_as_rule("""
+            DirectionRelation(?relation), DirectionForRoad(?relation, "南"),
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> South(?relation)
+        """)
+
+        rule7_3 = Imp()
+        rule7_3.set_as_rule("""
+            DirectionRelation(?relation), DirectionForRoad(?relation, "西"),
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> West(?relation)
+        """)
+        
+        rule7_4 = Imp()
+        rule7_4.set_as_rule("""
+            DirectionRelation(?relation), DirectionForRoad(?relation, "東"),
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> East(?relation)
+        """)
+
+    # Reasoning 1
+    sync_reasoner(infer_property_values = True)
+
+    geospatialDescription_class = onto['GeospatialDescription']
+    geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
 
     # 設置規則
-    # with onto:
-    #     rule1 = Imp()
-    #     rule1.set_as_rule("""
-    #         Near(?relation1), WordsOfNear(?word),
-    #         GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-    #         FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
-    #         GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
-    #         -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
-    #     """)
+    with onto:
+        rule1 = Imp()
+        rule1.set_as_rule("""
+            Near(?relation1), WordsOfNear(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
+            -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
+        """)
 
-    #     rule2 = Imp()
-    #     rule2.set_as_rule("""
-    #         Upper(?relation1), WordsOfUpper(?word),
-    #         GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-    #         FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
-    #         GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
-    #         -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
-    #     """)
+        rule2 = Imp()
+        rule2.set_as_rule("""
+            Upper(?relation1), WordsOfUpper(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?geospatialDescription), symbolize(?relation1, ?geospatialDescription)
+            -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
+        """)
 
     # 啟用推理機
-    # sync_reasoner(infer_property_values = True)
+    sync_reasoner(infer_property_values = True)
 
     # 獲取所有物件屬性
-    # object_properties = list(geospatialDescription1.get_properties())
+    object_properties = list(geospatialDescription_instance.get_properties())
 
-    # data = []
-    # for prop in object_properties:
-    #     for instance in prop.get_relations():
-    #         subject, object_ = instance
+    data = []
+    for prop in object_properties:
+        for instance in prop.get_relations():
+            subject, object_ = instance
             
-    #         # 嘗試獲取 isPrefix 屬性值
-    #         is_prefix = getattr(object_, 'isPrefix', None)  # 如果 object_ 沒有 isPrefix 屬性，將返回 None
+            # 嘗試獲取 isPrefix 屬性值
+            is_prefix = getattr(object_, 'isPrefix', None)  # 如果 object_ 沒有 isPrefix 屬性，將返回 None
 
-    #         data.append({
-    #             "Property": prop.name,
-    #             "Subject": subject.name,
-    #             "Object": object_.name,
-    #             "IsPrefix": is_prefix
-    #         })
+            data.append({
+                "Property": prop.name,
+                "Subject": subject.name,
+                "Object": object_.name,
+                "IsPrefix": is_prefix
+            })
 
-    # df = pd.DataFrame(data)
+    df = pd.DataFrame(data)
 
-    # result_data = []
-    # grouped = df.groupby('Subject')
+    result_data = []
+    grouped = df.groupby('Subject')
 
-    # for subject, group in grouped:
-    #     place_name = group[group['Property'] == 'hasPlaceName']['Object'].values
-    #     localisers = group[group['Property'] == 'hasLocaliser']['Object'].values
+    for subject, group in grouped:
+        place_name = group[group['Property'] == 'hasPlaceName']['Object'].values
+        localisers = group[group['Property'] == 'hasLocaliser']['Object'].values
 
-    #     if place_name.size > 0:
-    #         place_name = place_name[0]  # 假設每個 Subject 只有一個 hasPlaceName
-    #     else:
-    #         place_name = None
+        if place_name.size > 0:
+            place_name = place_name[0]  # 假設每個 Subject 只有一個 hasPlaceName
+        else:
+            place_name = None
 
-    #     for localiser in localisers:
-    #         # 獲取當前 localiser 的 IsPrefix 值
-    #         is_prefix = group[(group['Property'] == 'hasLocaliser') & (group['Object'] == localiser)]['IsPrefix'].values
-    #         if is_prefix.size > 0:
-    #             is_prefix = is_prefix[0]
-    #         else:
-    #             is_prefix = None
+        for localiser in localisers:
+            # 獲取當前 localiser 的 IsPrefix 值
+            is_prefix = group[(group['Property'] == 'hasLocaliser') & (group['Object'] == localiser)]['IsPrefix'].values
+            if is_prefix.size > 0:
+                is_prefix = is_prefix[0]
+            else:
+                is_prefix = None
 
-    #         result_data.append({
-    #             "Subject": subject,
-    #             "PlaceName": place_name,
-    #             "Localiser": localiser,
-    #             "IsPrefix": is_prefix
-    #         })
+            result_data.append({
+                "Subject": subject,
+                "PlaceName": place_name,
+                "Localiser": localiser,
+                "IsPrefix": is_prefix
+            })
 
 
-    # return jsonify(result_data)
+    return jsonify(result_data)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
