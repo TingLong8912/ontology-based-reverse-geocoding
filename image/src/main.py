@@ -135,7 +135,7 @@ def api():
         rule2 = Imp()
         rule2.set_as_rule("""
             Within(?relation), 
-            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject),
+            FigureFeature(?referObject), Route(?referObject), hasFigureFeature(?relation, ?referObject),
             -> OnSite(?relation)
         """)
 
