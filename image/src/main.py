@@ -186,6 +186,7 @@ def api():
     # Reasoning 1
     sync_reasoner(infer_property_values = True)
 
+    return { "status": "success" }
     geospatialDescription_class = onto['GeospatialDescription']
     geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
 
