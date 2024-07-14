@@ -23,12 +23,11 @@ def get_class_hierarchy_json(ontology):
 def api():
     input_data = request.json
     
-    if onto:
-        try:
-            onto.destroy()
-            print("'onto' destroyed")
-        except Exception as e:
-            print(f"Error destroying 'onto': {e}")
+    try:
+        onto.destroy()
+        print("'onto' destroyed")
+    except Exception as e:
+        print(f"Error destroying 'onto': {e}")
 
     onto = get_ontology("./assets/simple_gsd.rdf").load()
 
