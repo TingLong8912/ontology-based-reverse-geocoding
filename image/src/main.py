@@ -21,6 +21,7 @@ def get_class_hierarchy_json(ontology):
 
 @app.route('/api', methods=['POST'])
 def api():
+    # reload onto
     input_data = request.json
     
     try:
