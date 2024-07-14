@@ -40,6 +40,7 @@ def api():
         class SpatialPreposition(BaseThing):
             pass
     
+    return {"statue": "success"}
     # Set individuals
     ontology_classList = [
         'Equal', 'Intersect', 'Overlap', 'Cross',
