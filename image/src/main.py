@@ -186,14 +186,13 @@ def api():
     # Reasoning 1
     sync_reasoner(infer_property_values = True)
 
-    return { "status": "success" }
     geospatialDescription_class = onto['GeospatialDescription']
     geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
 
     # 設置規則
     with onto:
-        rule1 = Imp()
-        rule1.set_as_rule("""
+        rule8 = Imp()
+        rule8.set_as_rule("""
             Near(?relation1), WordsOfNear(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
@@ -201,8 +200,8 @@ def api():
             -> hasLocaliser(?geospatialDescription, ?word), hasPlaceName(?geospatialDescription, ?referObject)
         """)
 
-        rule2 = Imp()
-        rule2.set_as_rule("""
+        rule9 = Imp()
+        rule9.set_as_rule("""
             Upper(?relation1), WordsOfUpper(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
