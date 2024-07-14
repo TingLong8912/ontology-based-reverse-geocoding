@@ -15,7 +15,7 @@ print(f"Current Working Directory: {current_working_directory}")
 @app.route('/api', methods=['POST'])
 def api():
     input_data = request.json
-
+    
     try:
         onto.destroy()
         print("'onto' destroyed")
@@ -41,7 +41,6 @@ def api():
             pass
     
     # Set individuals
-    inputpoint = onto.GroundFeature("inputpoint")
     ontology_classList = [
         'Equal', 'Intersect', 'Overlap', 'Cross',
         'Contain', 'Within', 'Touch',
