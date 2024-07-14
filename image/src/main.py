@@ -169,29 +169,25 @@ def api():
 
         rule7_1 = Imp()
         rule7_1.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "N"),
-            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            DirectionRelation(?relation), DirectionForRoad(?relation, "N")
             -> North(?relation)
         """)
 
         rule7_2 = Imp()
         rule7_2.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "S"),
-            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            DirectionRelation(?relation), DirectionForRoad(?relation, "S")
             -> South(?relation)
         """)
 
         rule7_3 = Imp()
         rule7_3.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "W"),
-            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            DirectionRelation(?relation), DirectionForRoad(?relation, "W")
             -> West(?relation)
         """)
         
         rule7_4 = Imp()
         rule7_4.set_as_rule("""
-            DirectionRelation(?relation), DirectionForRoad(?relation, "E"),
-            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            DirectionRelation(?relation), DirectionForRoad(?relation, "E")
             -> East(?relation)
         """)
 
@@ -240,7 +236,6 @@ def api():
         rule_north.set_as_rule("""
             North(?relation1), WordsOfNorth(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
@@ -249,7 +244,6 @@ def api():
         rule_south.set_as_rule("""
             South(?relation1), WordsOfSouth(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
@@ -258,7 +252,6 @@ def api():
         rule_west.set_as_rule("""
             West(?relation1), WordsOfWest(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
@@ -267,7 +260,6 @@ def api():
         rule_east.set_as_rule("""
             East(?relation1), WordsOfEast(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
