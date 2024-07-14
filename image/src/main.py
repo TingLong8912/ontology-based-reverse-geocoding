@@ -237,7 +237,7 @@ def api():
             North(?relation1), WordsOfNorth(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+            -> hasLocaliser(?description, ?word)
         """)
         
         rule_south = Imp()
@@ -245,7 +245,7 @@ def api():
             South(?relation1), WordsOfSouth(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+            -> hasLocaliser(?description, ?word)
         """)
 
         rule_west = Imp()
@@ -253,7 +253,7 @@ def api():
             West(?relation1), WordsOfWest(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+            -> hasLocaliser(?description, ?word)
         """)
 
         rule_east = Imp()
@@ -261,7 +261,7 @@ def api():
             East(?relation1), WordsOfEast(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+            -> hasLocaliser(?description, ?word)
         """)
 
     # 啟用推理機
