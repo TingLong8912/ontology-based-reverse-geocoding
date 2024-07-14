@@ -81,7 +81,7 @@ def api():
 
                     spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
                     spatial_relation_instance.hasGroundFeature.append(input_feature_instance)
-        Set data property
+        # Set data property
         elif spatial_relation in ontology_dataPropList:
             if spatial_relation == 'DistanceForRoad':
                 spatial_relation_class = onto['DistanceRelation']
