@@ -213,7 +213,7 @@ def api():
     sync_reasoner(infer_property_values = True)
 
     # 獲取所有物件屬性
-    object_properties = list(geospatialDescription_instance.get_properties())
+    object_properties = list(geospatialDescription_class.get_properties())
 
     return {"status": "success", "data": object_properties}
     data = []
