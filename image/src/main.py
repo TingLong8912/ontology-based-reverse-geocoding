@@ -54,6 +54,7 @@ def api():
     input_feature_class = onto['GroundFeature']
     input_feature_instance = input_feature_class('inputPt')
 
+    return {"status": "success"}
     # Set class
     for spatial_relation in spatialOperationClassList:
         referObjects = SpatialOperation[spatial_relation]
@@ -111,7 +112,7 @@ def api():
         #             elif spatial_relation == 'DirectionForRoad':
         #                 spatial_relation_instance.DirectionForRoad.append(str(individual))
     
-    return {"status": "success"}
+    # return {"status": "success"}
     # Get all individuals
     # all_individuals = list(BaseThing.instances())
     # individuals_data = [{"name": ind.name, "iri": ind.iri} for ind in all_individuals]
