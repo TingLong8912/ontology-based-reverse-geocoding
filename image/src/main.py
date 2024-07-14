@@ -112,7 +112,7 @@ def api():
                         spatial_relation_instance.DirectionForRoad.append(str(individual))
     
     # Get all individuals
-    all_individuals = list(Thing.instances())
+    all_individuals = list(BaseThing.instances())
     individuals_data = [{"name": ind.name, "iri": ind.iri} for ind in all_individuals]
     
     # Return JSON response
