@@ -25,7 +25,8 @@
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasFigureFeature -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasFigureFeature">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GeospatialDescription"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#FigureFeature"/>
     </owl:ObjectProperty>
     
@@ -35,6 +36,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasGroundFeature">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#GroundFeature"/>
     </owl:ObjectProperty>
     
@@ -67,6 +69,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#hasQuality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Endurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Quality"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#symbolize -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#symbolize">
@@ -84,6 +95,24 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DirectionForRoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DirectionForRoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DirectionRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceForRoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceForRoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -115,6 +144,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Accomplishment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Accomplishment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Event"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BinarySpatialRelation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BinarySpatialRelation">
@@ -131,10 +168,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BoundaryForCounty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#BoundaryForCounty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Contain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Contain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#County -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#County">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
     </owl:Class>
     
 
@@ -151,6 +212,46 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DependentPlace">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DirectionRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DirectionRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Disjoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Disjoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceMiddle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceMiddle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceNear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceNear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#DistanceRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation"/>
     </owl:Class>
     
 
@@ -175,6 +276,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Endurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Equal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Equal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Perdurant"/>
     </owl:Class>
     
 
@@ -267,6 +384,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Intersect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Intersect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
@@ -289,9 +414,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#MileStation -->
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#MileStations -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#MileStation">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#MileStations">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Function"/>
     </owl:Class>
     
@@ -329,9 +454,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Overlap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Overlap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Particular -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Particular"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Perdurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Perdurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular"/>
+    </owl:Class>
     
 
 
@@ -405,6 +546,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#ReverseGeocodingEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#ReverseGeocodingEvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Accomplishment"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Route -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Route">
@@ -459,6 +608,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#ReverseGeocodingEvent"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatioTemporalParticular">
@@ -475,6 +632,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Touch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Touch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Transformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Transformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#SpatialRelationOperation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Upper -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Upper">
@@ -487,6 +668,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#West">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Within -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Within">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
     </owl:Class>
     
 
