@@ -189,6 +189,8 @@ def api():
     geospatialDescription_class = onto['GeospatialDescription']
     geospatialDescription_instance = geospatialDescription_class('geospatialDescription')
 
+    return {"status": "success"}
+
     # 設置規則
     with onto:
         rule8 = Imp()
