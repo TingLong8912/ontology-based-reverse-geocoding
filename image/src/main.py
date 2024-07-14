@@ -212,10 +212,10 @@ def api():
     # 啟用推理機
     sync_reasoner(infer_property_values = True)
 
-    return {"status": "success"}
     # 獲取所有物件屬性
     object_properties = list(geospatialDescription_instance.get_properties())
 
+    return {"status": "success", "data": object_properties}
     data = []
     for prop in object_properties:
         for instance in prop.get_relations():
