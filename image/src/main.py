@@ -51,10 +51,10 @@ def api():
 
     SpatialOperation = input_data['data']['SpatialOperation']
     spatialOperationClassList = list(SpatialOperation.keys())
+    return {"status": "success", "data": SpatialOperation}
     input_feature_class = onto['GroundFeature']
     input_feature_instance = input_feature_class('inputPt')
 
-    return {"status": "success"}
     # Set class
     for spatial_relation in spatialOperationClassList:
         referObjects = SpatialOperation[spatial_relation]
