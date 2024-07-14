@@ -7,9 +7,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# 初始化onto對象為None
-onto = None
-
 def get_class_hierarchy_json(ontology):
     def build_class_hierarchy(class_tree):
         class_info = {
@@ -24,7 +21,6 @@ def get_class_hierarchy_json(ontology):
 
 @app.route('/api', methods=['POST'])
 def api():
-    global onto
     input_data = request.json
     
     if onto:
