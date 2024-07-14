@@ -40,7 +40,6 @@ def api():
         class SpatialPreposition(BaseThing):
             pass
     
-    return {"statue": "success"}
     # Set individuals
     ontology_classList = [
         'Equal', 'Intersect', 'Overlap', 'Cross',
@@ -111,13 +110,13 @@ def api():
                         spatial_relation_instance.DistanceForRoad.append(str(individual))
                     elif spatial_relation == 'DirectionForRoad':
                         spatial_relation_instance.DirectionForRoad.append(str(individual))
-    
+    return {"statue": "success"}
     # Get all individuals
-    all_individuals = list(BaseThing.instances())
-    individuals_data = [{"name": ind.name, "iri": ind.iri} for ind in all_individuals]
+    # all_individuals = list(BaseThing.instances())
+    # individuals_data = [{"name": ind.name, "iri": ind.iri} for ind in all_individuals]
     
-    # Return JSON response
-    return jsonify(individuals_data)
+    # # Return JSON response
+    # return jsonify(individuals_data)
 
     # geospatialDescription1 = onto.GeospatialDescription("geospatialDescription1")
     # referObject1 = onto.FigureFeature("堤頂交流道")
