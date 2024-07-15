@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from owlready2 import Thing, get_ontology, sync_reasoner, Imp
+from owlready2 import World, Thing, get_ontology, sync_reasoner, Imp
 import os
 import pandas as pd
 from flask_cors import CORS
@@ -23,14 +23,15 @@ def get_class_hierarchy_json(ontology):
 def api():
     # ///reload onto
     input_data = request.json
-    
+
+    world = World()
     try:
         onto.destroy()
         print("'onto' destroyed")
     except Exception as e:
         print(f"Error destroying 'onto': {e}")
-
-    onto = get_ontology("./assets/simple_gsd.rdf").load()
+    
+    onto = world.get_ontology("./assets/simple_gsd.rdf").load()
 
     # 定義新的頂層類別 Thing
     with onto:
