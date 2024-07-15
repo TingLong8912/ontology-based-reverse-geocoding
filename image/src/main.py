@@ -185,7 +185,8 @@ def api():
         """)
 
     # Reasoning 1
-    sync_reasoner(infer_property_values = True)
+    with onto[timestamp]:
+        sync_reasoner(infer_property_values = True)
 
     # 檢查推理結果並創建新的GeospatialDescription實例
     relation_classes = [onto[timestamp].Upper, onto[timestamp].OnSite, onto[timestamp].Near, onto[timestamp].InBetween, onto[timestamp].Boundary, onto[timestamp].North, onto[timestamp].South, onto[timestamp].West, onto[timestamp].East]
