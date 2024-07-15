@@ -226,6 +226,15 @@ def api():
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
 
+        rule_boundary = Imp()
+        rule_boundary.set_as_rule("""
+            Boundary(?relation1), WordsOfBoundary(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+
         rule_north = Imp()
         rule_north.set_as_rule("""
             North(?relation1), WordsOfNorth(?word),
