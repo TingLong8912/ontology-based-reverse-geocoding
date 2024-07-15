@@ -308,7 +308,7 @@ def api():
             })
 
 
-    onto[timestamp].destroy()
+    onto[timestamp].destroy(update_relation=True, update_is_a=True)
     return jsonify(result_data)
 
 if __name__ == '__main__':
