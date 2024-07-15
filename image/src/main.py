@@ -31,7 +31,8 @@ def api():
     except Exception as e:
         print(f"Error destroying 'onto': {e}")
     
-    onto = world.get_ontology("./assets/simple_gsd.rdf").load()
+    with world:
+        onto = get_ontology("./assets/simple_gsd.rdf").load()
 
     # 定義新的頂層類別 Thing
     with onto:
