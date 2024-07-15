@@ -24,13 +24,7 @@ def api():
     # ///reload onto
     input_data = request.json
 
-    world = World()
-    try:
-        onto.destroy()
-        print("'onto' destroyed")
-    except Exception as e:
-        print(f"Error destroying 'onto': {e}")
-    
+    world = World()    
     with world:
         onto = get_ontology("./assets/simple_gsd.rdf").load()
 
@@ -312,6 +306,7 @@ def api():
             })
 
 
+    onto.destroy()
     return jsonify(result_data)
 
 if __name__ == '__main__':
