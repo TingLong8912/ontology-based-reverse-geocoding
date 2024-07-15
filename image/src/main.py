@@ -258,7 +258,8 @@ def api():
         """)
 
     # 啟用推理機
-    sync_reasoner(infer_property_values = True)
+    with onto[timestamp]:
+        sync_reasoner(infer_property_values = True)
 
     object_properties = [onto[timestamp].hasLocaliser, onto[timestamp].hasPlaceName]
     data = []
