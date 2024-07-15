@@ -1,8 +1,9 @@
 from flask import Flask, jsonify, request
-from owlready2 import World, Thing, get_ontology, sync_reasoner, Imp
+from owlready2 import Thing, get_ontology, sync_reasoner, Imp
 import os
 import pandas as pd
 from flask_cors import CORS
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -21,20 +22,20 @@ def get_class_hierarchy_json(ontology):
 
 @app.route('/api', methods=['POST'])
 def api():
-    # ///reload onto
+    # ///reload onto[timestamp]
+    onto = {}
     input_data = request.json
+    timestamp = str(int(time.time()))
 
-    world = World()    
-    with world:
-        onto = get_ontology("./assets/simple_gsd.rdf").load()
+    onto[timestamp] = get_ontology("./assets/simple_gsd.rdf").load()
 
     # 定義新的頂層類別 Thing
-    with onto:
+    with onto[timestamp]:
         class BaseThing(Thing):
             pass
 
     # 定義其他第一層類別，並將其與 Thing 連結
-    with onto:
+    with onto[timestamp]:
         class Particular(BaseThing):
             pass
         class PlaceName(BaseThing):
@@ -55,7 +56,7 @@ def api():
 
     SpatialOperation = input_data
     spatialOperationClassList = list(SpatialOperation.keys())
-    input_feature_class = onto['GroundFeature']
+    input_feature_class = onto[timestamp]['GroundFeature']
     input_feature_instance = input_feature_class('inuptpoint')
 
     # Set class
@@ -65,11 +66,11 @@ def api():
 
         if spatial_relation in ontology_classList:
             # Get the class from the ontology
-            spatial_relation_class = onto[spatial_relation]
+            spatial_relation_class = onto[timestamp][spatial_relation]
 
             for refObjectClass in refObjectClassList:
-                placeFacet_class = onto[refObjectClass]
-                figure_feature_class = onto["FigureFeature"]
+                placeFacet_class = onto[timestamp][refObjectClass]
+                figure_feature_class = onto[timestamp]["FigureFeature"]
 
                 individuals = referObjects[refObjectClass]
 
@@ -88,13 +89,13 @@ def api():
         # Set data property
         elif spatial_relation in ontology_dataPropList:
             if spatial_relation == 'DistanceForRoad':
-                spatial_relation_class = onto['DistanceRelation']
+                spatial_relation_class = onto[timestamp]['DistanceRelation']
             elif spatial_relation == 'DirectionForRoad':
-                spatial_relation_class = onto['DirectionRelation']
+                spatial_relation_class = onto[timestamp]['DirectionRelation']
 
             for refObjectClass in refObjectClassList:
-                placeFacet_class = onto[refObjectClass]
-                figure_feature_class = onto["FigureFeature"]
+                placeFacet_class = onto[timestamp][refObjectClass]
+                figure_feature_class = onto[timestamp]["FigureFeature"]
 
                 individuals = referObjects[refObjectClass]
                 for individual in individuals:
@@ -116,7 +117,7 @@ def api():
                         spatial_relation_instance.DirectionForRoad.append(str(individual))
     
     # Set rules(gis to semantic)
-    with onto:
+    with onto[timestamp]:
         rule1 = Imp()
         rule1.set_as_rule("""
             Within(?relation), 
@@ -187,16 +188,16 @@ def api():
     sync_reasoner(infer_property_values = True)
 
     # 檢查推理結果並創建新的GeospatialDescription實例
-    relation_classes = [onto.Upper, onto.OnSite, onto.Near, onto.InBetween, onto.Boundary, onto.North, onto.South, onto.West, onto.East]
+    relation_classes = [onto[timestamp].Upper, onto[timestamp].OnSite, onto[timestamp].Near, onto[timestamp].InBetween, onto[timestamp].Boundary, onto[timestamp].North, onto[timestamp].South, onto[timestamp].West, onto[timestamp].East]
 
     for cls in relation_classes:
         for instance in cls.instances():
-            if not onto.search_one(is_a=onto.GeospatialDescription, related_to=instance):
-                new_description = onto.GeospatialDescription(f"{instance.name}_description")
+            if not onto[timestamp].search_one(is_a=onto[timestamp].GeospatialDescription, related_to=instance):
+                new_description = onto[timestamp].GeospatialDescription(f"{instance.name}_description")
                 instance.symbolize.append(new_description)
 
     # 設置規則
-    with onto:
+    with onto[timestamp]:
         rule_upper = Imp()
         rule_upper.set_as_rule("""
             Upper(?relation1), WordsOfUpper(?word),
@@ -259,7 +260,7 @@ def api():
     # 啟用推理機
     sync_reasoner(infer_property_values = True)
 
-    object_properties = [onto.hasLocaliser, onto.hasPlaceName]
+    object_properties = [onto[timestamp].hasLocaliser, onto[timestamp].hasPlaceName]
     data = []
 
     for prop in object_properties:
@@ -306,7 +307,7 @@ def api():
             })
 
 
-    onto.destroy()
+    onto[timestamp].destroy()
     return jsonify(result_data)
 
 if __name__ == '__main__':
