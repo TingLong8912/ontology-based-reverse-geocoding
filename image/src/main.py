@@ -25,7 +25,7 @@ def api():
     # ///reload onto[timestamp]
     onto = {}
     input_data = request.json
-    timestamp = str(int(time.time()))
+    timestamp = str(time.time()).replace(".", "_")
 
     onto[timestamp] = get_ontology("./assets/simple_gsd.rdf").load()
 
