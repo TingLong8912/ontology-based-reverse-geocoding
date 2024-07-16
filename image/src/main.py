@@ -230,7 +230,7 @@ def api():
         rule_boundary.set_as_rule("""
             Boundary(?relation1), WordsOfBoundary(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            FigureFeature(?referObject), County(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
