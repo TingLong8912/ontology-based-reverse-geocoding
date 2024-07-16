@@ -16,7 +16,7 @@ POST https://geospatialdescription.sgis.tw/api
 | :--- | :--- | :--- |
 | `json` | `json` | **Required**. A dictionary where the key is the spatial relationship, and the value is the type and name of the reference object having this relationship with the input point |
 
-A JSON input may be like the following format:
+The input JSON needs to be in the following format:
 
 ```javascript
 {
@@ -30,36 +30,43 @@ A JSON input may be like the following format:
 }
 ```
 
-## Responses
-
-Return a JSON response in the following format:
+Here is an simple example of input:
 
 ```javascript
 {
-    "status": text,
-    "data": {
-        "SpatialOperation": dict,
-        "Geometry": dict
+    "Within": {
+        "County": ["Taipei"],
+        "Route": ["National Highway No.1"]
+    },
+    "Intersect": {
+        "County": ["Taipei"],
+        "Route": ["National Highway No.1"],
+        "RouteAncillaryFacilities": ["Daya System Interchange"]
     }
 }
 ```
 
-The `status` field indicates the status of the API, while the `data` field is subdivided into `SpatialOperation` which represents the results of spatial operations, and `Geometry` both recorded as dictionaries.
+## Responses
 
-In the dictionary recorded under `SpatialOperation` the first level records spatial relationships, the second level records the reference spatial objects, and the third level records the objects that have spatial relationships with the input point. If empty, it indicates that there are no relevant spatial objects that have a spatial relationship with the input point.
-
-Here is an example of one of the spatial relationships:
+The JSON response should be in the following format. Each element in the list will record three fields: `IsPrefix`, `Localiser`, and `PlaceName`. `IsPrefix` indicates whether the `Localiser` is placed as a prefix or suffix to the `PlaceName`. `Localiser` refers to the location descriptor, such as "上" (on) or "處" (at); `PlaceName` refers to the proper noun, such as "台北市" (Taipei City).
 
 ```javascript
-"Intersect": {
-    "Route": [],
-    "RouteAncillaryFacilities": [],
-    "County": [
-        "臺北市"
-    ]
-}
+[{'IsPrefix': [], 'Localiser': '', 'PlaceName': ''}, {'IsPrefix': [], 'Localiser': '', 'PlaceName': ''}, ...]
 ```
 
-Under the `Geometry` field, the first level records `totalFeatureCollection`, the second level records five spatial objects are recorded, including the input point, the road the input point maps to, another road the input point maps to, and the mileage marker points before and after the input point.
+Here is an example of one of output:
 
-You can access the `totalFeatureCollection` field under `Geometry` to retrieve the GeoJSON of the five spatial objects. This API wraps them into a FeatureCollection geometry type.
+```javascript
+[
+  {
+    "IsPrefix": true,
+    "Localiser": "上",
+    "PlaceName": "Taipei"
+  },
+  {
+    "IsPrefix": false,
+    "Localiser": "處",
+    "PlaceName": "National Highway No.1"
+  }
+]
+```
