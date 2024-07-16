@@ -1,5 +1,5 @@
 # Location Description Reasoning Based on Spatial Results and Knowledge Ontology
-輸入空間結果結合知識本體進行位置描述推論
+# 基於空間結果與知識本體的位置描述推論
 
 ## Introduction
 
