@@ -105,7 +105,7 @@ def api():
                     figure_feature_instance.hasQuality.append(placeFacet_instance)
 
                     # Create a new individual for the spatial relation class
-                    individual_name = spatial_relation + str(individual)
+                    individual_name = spatial_relation + "_" + str(individual)
                     spatial_relation_instance = spatial_relation_class(individual_name)
 
                     spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
