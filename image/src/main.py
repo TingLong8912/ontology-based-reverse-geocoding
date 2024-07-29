@@ -283,7 +283,7 @@ def api():
 
             data.append({
                 "Property": prop.name,
-                "Subject": subject.name,
+                "Subject": subject.name, # DistanceNear堤頂交流道_description
                 "Object": object_.name,
                 "IsPrefix": is_prefix
             })
@@ -311,7 +311,7 @@ def api():
                 is_prefix = None
 
             result_data.append({
-                # "Subject": subject,
+                "Subject": subject,
                 "PlaceName": place_name,
                 "Localiser": localiser,
                 "IsPrefix": is_prefix
