@@ -817,7 +817,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北上">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNorth"/>
         <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
     </owl:NamedIndividual>
@@ -826,7 +826,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南下">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSouth"/>
         <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
     </owl:NamedIndividual>
@@ -862,7 +862,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東向">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast"/>
         <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
     </owl:NamedIndividual>
@@ -889,7 +889,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西向">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfWest"/>
         <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
     </owl:NamedIndividual>
