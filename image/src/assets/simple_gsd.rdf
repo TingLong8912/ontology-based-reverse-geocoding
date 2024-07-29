@@ -871,7 +871,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#縣界 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#縣界">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#界">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfBoundary"/>
         <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
     </owl:NamedIndividual>
