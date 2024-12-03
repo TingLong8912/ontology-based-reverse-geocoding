@@ -200,6 +200,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#CrossC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#CrossC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#CrossForRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#CrossForRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Curve -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Curve">
@@ -380,6 +396,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InBetween">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InFrontC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InFrontC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#LocationPositionDirectionValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InFrontForRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#InFrontForRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#TopologyRelation"/>
     </owl:Class>
     
 
@@ -688,6 +720,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfCrossForRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfCrossForRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast">
@@ -699,6 +739,14 @@
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInBetween -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInBetween">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInFrontForRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInFrontForRoad">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#Localiser"/>
     </owl:Class>
     
@@ -815,7 +863,16 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北 -->
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#前 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#前">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfInFrontForRoad"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北上 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#北上">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfNorth"/>
@@ -824,7 +881,7 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南 -->
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南下 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#南下">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfSouth"/>
@@ -860,7 +917,7 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東 -->
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東向 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#東向">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfEast"/>
@@ -869,7 +926,7 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#縣界 -->
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#界 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#界">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfBoundary"/>
@@ -887,7 +944,7 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西 -->
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西向 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#西向">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfWest"/>
@@ -905,6 +962,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#過 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#過">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#WordsOfCrossForRoad"/>
+        <untitled-ontology-74:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-74:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#鄰近 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#鄰近">
@@ -915,5 +981,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

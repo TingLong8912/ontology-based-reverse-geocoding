@@ -49,7 +49,8 @@ def api():
     ontology_classList = [
         'Equal', 'Intersect', 'Overlap', 'Cross',
         'Contain', 'Within', 'Touch',
-        'BoundaryForCounty', 'DistanceNear', 'DistanceMiddle']
+        'BoundaryForCounty', 'DistanceNear', 'DistanceMiddle',
+        'CrossForRoad', 'InFrontForRoad']
     ontology_dataPropList = [
         'DistanceForRoad', 'DirectionForRoad'
     ]
@@ -184,6 +185,20 @@ def api():
             -> East(?relation)
         """)
 
+        rule8_1 = Imp()
+        rule8_1.set_as_rule("""
+            CrossForRoad(?relation), 
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> CrossC(?relation)
+        """)
+
+        rule8_2 = Imp()
+        rule8_2.set_as_rule("""
+            InFrontForRoad(?relation), 
+            FigureFeature(?referObject), hasFigureFeature(?relation, ?referObject)
+            -> InFrontC(?relation)
+        """)
+
     # Reasoning 1
     with onto[timestamp]:
         sync_reasoner(infer_property_values = True)
@@ -262,6 +277,22 @@ def api():
         rule_east = Imp()
         rule_east.set_as_rule("""
             East(?relation1), WordsOfEast(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word)
+        """)
+
+        rule_cross = Imp()
+        rule_cross.set_as_rule("""
+            CrossC(?relation1), WordsOfCross(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            GeospatialDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word)
+        """)
+
+        rule_inFront = Imp()
+        rule_inFront.set_as_rule("""
+            InFrontC(?relation1), WordsOfInFront(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word)
