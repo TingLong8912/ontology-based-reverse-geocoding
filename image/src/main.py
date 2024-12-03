@@ -284,7 +284,7 @@ def api():
 
         rule_cross = Imp()
         rule_cross.set_as_rule("""
-            CrossC(?relation1), WordsOfCross(?word),
+            CrossC(?relation1), WordsOfCrossForRoad(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word)
@@ -292,7 +292,7 @@ def api():
 
         rule_inFront = Imp()
         rule_inFront.set_as_rule("""
-            InFrontC(?relation1), WordsOfInFront(?word),
+            InFrontC(?relation1), WordsOfInFrontForRoad(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word)
