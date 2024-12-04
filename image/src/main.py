@@ -292,6 +292,7 @@ def api():
         rule_cross.set_as_rule("""
             CrossC(?relation1), WordsOfCrossForRoad(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
@@ -300,6 +301,7 @@ def api():
         rule_inFront.set_as_rule("""
             InFrontC(?relation1), WordsOfInFrontForRoad(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
