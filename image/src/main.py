@@ -293,7 +293,7 @@ def api():
             CrossC(?relation1), WordsOfCrossForRoad(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
 
         rule_inFront = Imp()
@@ -301,7 +301,7 @@ def api():
             InFrontC(?relation1), WordsOfInFrontForRoad(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             GeospatialDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
         """)
 
     # 啟用推理機
