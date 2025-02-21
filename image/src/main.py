@@ -8,6 +8,13 @@ import time
 app = Flask(__name__)
 CORS(app)
 
+"""
+NEW
+"""
+@app.route('/excu_onto', methods=['POST'])
+def excu_onto():
+    return jsonify({"test": "Hello!"})
+
 def get_class_hierarchy_json(ontology):
     def build_class_hierarchy(class_tree):
         class_info = {
@@ -20,6 +27,9 @@ def get_class_hierarchy_json(ontology):
     hierarchy = build_class_hierarchy(ontology.BaseThing)
     return hierarchy
 
+"""
+OLD: Only For Road
+"""
 @app.route('/api', methods=['POST'])
 def api():
     # ///reload onto[timestamp]
