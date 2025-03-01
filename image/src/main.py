@@ -4,17 +4,159 @@ import os
 import pandas as pd
 from flask_cors import CORS
 import time
+import json
+import psycopg2
+import requests
 
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/hello', methods=['GET'])
+def hello():
+    return "Hello, world!"
+
 """
 NEW
 """
-@app.route('/excu_onto', methods=['POST'])
-def excu_onto():
-    return jsonify({"test": "Hello!"})
+DB_CONFIG = {
+    "dbname": "gistl",
+    "user": "TingLong",
+    "password": "Acfg27354195",
+    "host": "pdb.sgis.tw",
+    "port": "5432"
+}
 
+# Get Database Data by Buffer
+### !!!!需要修改成不只點包含線或面
+def getData(lon, lat, buffer_distance):
+    print("get db data...")
+
+    schema_name = "LocaDescriber"
+    
+    conn = psycopg2.connect(**DB_CONFIG)
+    cur = conn.cursor()
+
+    # Step 1: 取得 schema 下的所有表
+    cur.execute("""
+        SELECT table_name 
+        FROM information_schema.tables 
+        WHERE table_schema = %s AND table_type = 'BASE TABLE'
+        ORDER BY table_name;
+    """, (schema_name,))
+    
+    table_names = [row[0] for row in cur.fetchall()]  # 提取表名
+    table_data = {}
+
+    # Step 2: 遍歷每個表，查詢相交的空間物件
+    for table in table_names:
+        try:
+            query = f"""
+                SELECT id, ST_AsGeoJSON(ST_Transform(geom, 4326)) AS geojson, * 
+                FROM "{schema_name}"."{table}" 
+                WHERE ST_Intersects(
+                    geom,
+                    ST_Buffer(
+                        ST_Transform(ST_SetSRID(ST_MakePoint(%s, %s), 4326), 3826),
+                        %s
+                    )
+                );
+            """
+            cur.execute(query, (lon, lat, buffer_distance))
+            rows = cur.fetchall()
+            col_names = [desc[0] for desc in cur.description] 
+
+            geojson_features = []
+            for row in rows:
+                row_dict = dict(zip(col_names, row))  
+                geojson_feature = {
+                    "type": "Feature",
+                    "geometry": json.loads(row_dict.pop("geojson")),  # 這裡的 geojson 現在是 EPSG:4326
+                    "properties": row_dict  
+                }
+                geojson_features.append(geojson_feature)
+
+            if geojson_features:
+                table_data[table] = {
+                    "type": "FeatureCollection",
+                    "features": geojson_features
+                }
+        
+        except psycopg2.Error as e:
+            print(f"Skipping table {table} due to error: {e}")
+
+    cur.close()
+    conn.close()
+
+    return table_data
+
+def execSR(targetGeom, referGeomDict):
+    print("execute spatial relation...")
+
+    # spatial_relations = [
+    #     "intersects"
+    # ]
+    spatial_relations = [
+        "equals", "disjoint", "touches", "contains", "covers",
+        "intersects", "within", "crosses", "overlaps", "azimuth"
+    ]
+    api_prefix = "https://getroadmile.sgis.tw/spatial-operation/"
+    
+    results = {}
+
+    for table_name, referGeoms in referGeomDict.items():
+        results[table_name] = []
+
+        for relation in spatial_relations:
+            url = api_prefix + relation
+            relation_results = []
+
+            data = {
+                "targetGeom": targetGeom,
+                "referGeom": referGeoms
+            }
+            print(data, "\n")
+
+            try:
+                response = requests.post(url, json=data)
+                response.raise_for_status()
+                result = response.json()
+                relation_results.append(result)
+            
+            except requests.RequestException as e:
+                print(f"Error in {relation} for {table_name}: {e}")
+                relation_results.append({"error": str(e)})
+
+            results[table_name].append(relation_results)
+
+    return jsonify(results)
+
+@app.route('/execu_onto', methods=['GET'])
+def execu_onto():
+    try:
+        lon = float(request.args.get('lon'))
+        lat = float(request.args.get('lat'))
+        buffer_distance = float(request.args.get('buffer', 200))
+    except (TypeError, ValueError):
+        return jsonify({"error": "Invalid coordinates"}), 400
+
+    data = getData(lon, lat, buffer_distance)
+
+    targetGeom = {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+            "coordinates": [ lon, lat ],
+            "type": "Point"
+        }
+    }
+
+    sr_result = execuSR(targetGeom, data)
+
+    return sr_result
+
+"""
+OLD: Only For Road
+"""
 def get_class_hierarchy_json(ontology):
     def build_class_hierarchy(class_tree):
         class_info = {
@@ -27,9 +169,6 @@ def get_class_hierarchy_json(ontology):
     hierarchy = build_class_hierarchy(ontology.BaseThing)
     return hierarchy
 
-"""
-OLD: Only For Road
-"""
 @app.route('/api', methods=['POST'])
 def api():
     # ///reload onto[timestamp]
@@ -371,4 +510,4 @@ def api():
     return jsonify(result_data)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True, host='0.0.0.0', port=5000)

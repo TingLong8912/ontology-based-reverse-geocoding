@@ -3,7 +3,7 @@ NAMESPACE=tw-sgis
 APP=tw-sgis-geospatialdescription
 URL=geospatialdescription.sgis.tw
 IMG=dkr.tw/sgis/geospatialdescription:api
-IMGPORT=80
+IMGPORT=5000
 
 
 cat << EOF | kubectl apply -n ${NAMESPACE} -f - || echo 1
