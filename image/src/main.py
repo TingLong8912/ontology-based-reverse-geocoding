@@ -101,32 +101,26 @@ def execSR(targetGeom, referGeomDict):
     ]
     api_prefix = "https://getroadmile.sgis.tw/spatial-operation/"
     
-    results = {}
+    results = []
 
-    for table_name, referGeoms in referGeomDict.items():
-        results[table_name] = []
-
+    for table_name, referGeoms in referGeomDict.items():   
         for relation in spatial_relations:
             url = api_prefix + relation
-            relation_results = []
-
             data = {
                 "targetGeom": targetGeom,
                 "referGeom": referGeoms
             }
-            print(data, "\n")
 
             try:
                 response = requests.post(url, json=data)
                 response.raise_for_status()
                 result = response.json()
-                relation_results.append(result)
-            
+                result["ontology_class"] = table_name      
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
-                relation_results.append({"error": str(e)})
+                result["message"] = {"error": str(e)}
 
-            results[table_name].append(relation_results)
+            results.append(result)
 
     return jsonify(results)
 
