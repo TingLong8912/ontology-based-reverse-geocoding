@@ -110,7 +110,8 @@ def execSR(targetGeom, referGeomDict):
                 "targetGeom": targetGeom,
                 "referGeom": referGeoms
             }
-
+            result = {}
+            
             try:
                 response = requests.post(url, json=data)
                 response.raise_for_status()
