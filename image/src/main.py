@@ -92,9 +92,6 @@ def getData(lon, lat, buffer_distance):
 def execSR(targetGeom, referGeomDict):
     print("execute spatial relation...")
 
-    # spatial_relations = [
-    #     "intersects"
-    # ]
     spatial_relations = [
         "equals", "disjoint", "touches", "contains", "covers",
         "intersects", "within", "crosses", "overlaps", "azimuth"
@@ -146,7 +143,7 @@ def exec_onto():
 
     sr_result = execSR(targetGeom, data)
 
-    return sr_result
+    return jsonify(sr_result)
 
 """
 OLD: Only For Road
