@@ -111,7 +111,7 @@ def execSR(targetGeom, referGeomDict):
                 "referGeom": referGeoms
             }
             result = {}
-            
+
             try:
                 response = requests.post(url, json=data)
                 response.raise_for_status()
@@ -119,7 +119,7 @@ def execSR(targetGeom, referGeomDict):
                 result["ontology_class"] = table_name      
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
-                result["message"] = {"error": str(e)}
+                # result["message"] = {"error": str(e)}
 
             results.append(result)
 
