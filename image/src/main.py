@@ -150,7 +150,7 @@ def execu_onto():
         }
     }
 
-    sr_result = execuSR(targetGeom, data)
+    sr_result = execSR(targetGeom, data)
 
     return sr_result
 
