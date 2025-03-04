@@ -116,12 +116,11 @@ def execSR(targetGeom, referGeomDict):
                 response = requests.post(url, json=data)
                 response.raise_for_status()
                 result = response.json()
-                result["ontology_class"] = table_name      
+                result["ontology_class"] = table_name   
+                results.append(result)   
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
                 # result["message"] = {"error": str(e)}
-
-            results.append(result)
 
     return jsonify(results)
 
