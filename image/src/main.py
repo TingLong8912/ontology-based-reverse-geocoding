@@ -104,7 +104,7 @@ def execSR(targetGeom, referGeomDict):
     results = {}
 
     for table_name, referGeoms in referGeomDict.items():
-        results[table_name] = []
+        results = []
 
         for relation in spatial_relations:
             url = api_prefix + relation
@@ -126,7 +126,7 @@ def execSR(targetGeom, referGeomDict):
                 print(f"Error in {relation} for {table_name}: {e}")
                 relation_results.append({"error": str(e)})
 
-            results[table_name].append(relation_results)
+            results.append(relation_results)
 
     return jsonify(results)
 
