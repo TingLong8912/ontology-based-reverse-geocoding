@@ -118,8 +118,8 @@ def execSR(targetGeom, referGeomDict):
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
                 # result["message"] = {"error": str(e)}
-
-    return jsonify(results)
+    print(results)
+    return results
 
 @app.route('/exec_onto', methods=['GET'])
 def exec_onto():
@@ -142,6 +142,7 @@ def exec_onto():
     }
 
     sr_result = execSR(targetGeom, data)
+    print(sr_result)
 
     return jsonify(sr_result)
 
