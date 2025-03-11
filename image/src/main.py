@@ -118,10 +118,10 @@ def execSR(targetGeom, referGeomDict):
                     for geom in result['geojson']:
                         if geom['type'] == "FeatureCollection":
                             geom["ontology_class"] = table_name
-                            geom['result'] = geom['geojson']['features'][0]['properties'].get('NAME', 'Unknown')
+                            geom['result'] = geom['features'][0]['properties'].get('NAME', 'Unknown')
                         else:
                             geom["ontology_class"] = table_name
-                            geom['result'] = geom['geojson']['properties'].get('NAME', 'Unknown')
+                            geom['result'] = geom['properties'].get('NAME', 'Unknown')
                             
                         results.append(geom)
             except requests.RequestException as e:
