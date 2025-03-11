@@ -113,7 +113,8 @@ def execSR(targetGeom, referGeomDict):
                 response = requests.post(url, json=data)
                 response.raise_for_status()
                 result = response.json()
-                if (result.geojson != []):
+                
+                if (result['geojson'] != []):
                     result["ontology_class"] = table_name   
                     results.append(result)
             except requests.RequestException as e:
