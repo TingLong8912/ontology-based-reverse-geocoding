@@ -122,8 +122,8 @@ def execSR(targetGeom, referGeomDict):
                     #     else:
                     #         geom["ontology_class"] = table_name
                     #         geom['result'] = geom['properties'].get('NAME', 'Unknown')
-                            
-                    results.append(result['geojson'])
+                    
+                    results.append(result)
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
 
