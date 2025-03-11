@@ -115,15 +115,15 @@ def execSR(targetGeom, referGeomDict):
                 result = response.json()
                 
                 if result['geojson'] != []:
-                    for geom in result['geojson']:
-                        if 'features' in geom:
-                            geom["ontology_class"] = table_name
-                            geom['result'] = geom['features'][0]['properties'].get('NAME', 'Unknown')
-                        else:
-                            geom["ontology_class"] = table_name
-                            geom['result'] = geom['properties'].get('NAME', 'Unknown')
+                    # for geom in result['geojson']:
+                    #     if 'features' in geom:
+                    #         geom["ontology_class"] = table_name
+                    #         geom['result'] = geom['features'][0]['properties'].get('NAME', 'Unknown')
+                    #     else:
+                    #         geom["ontology_class"] = table_name
+                    #         geom['result'] = geom['properties'].get('NAME', 'Unknown')
                             
-                        results.append(geom)
+                    results.append(result['geojson'])
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
 
