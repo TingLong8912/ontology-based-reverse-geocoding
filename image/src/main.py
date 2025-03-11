@@ -116,7 +116,7 @@ def execSR(targetGeom, referGeomDict):
                 
                 if result['geojson'] != []:
                     for geom in result['geojson']:
-                        if geom['type'] == "FeatureCollection":
+                        if 'features' in geom:
                             geom["ontology_class"] = table_name
                             geom['result'] = geom['features'][0]['properties'].get('NAME', 'Unknown')
                         else:
