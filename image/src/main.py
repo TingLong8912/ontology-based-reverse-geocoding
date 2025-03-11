@@ -113,12 +113,12 @@ def execSR(targetGeom, referGeomDict):
                 response = requests.post(url, json=data)
                 response.raise_for_status()
                 result = response.json()
-                result["ontology_class"] = table_name   
-                results.append(result)   
+                if (result.geojson != []):
+                    result["ontology_class"] = table_name   
+                    results.append(result)
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
-                # result["message"] = {"error": str(e)}
-    print(results)
+
     return results
 
 @app.route('/exec_onto', methods=['GET'])
@@ -142,8 +142,7 @@ def exec_onto():
     }
 
     sr_result = execSR(targetGeom, data)
-    print(sr_result)
-
+  
     return jsonify(sr_result)
 
 """
