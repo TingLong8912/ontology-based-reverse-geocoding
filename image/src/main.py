@@ -174,7 +174,7 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         spatial_relation_instance.hasGroundFeature.append(ground_feature_instance)
 
     onto[timestamp].save(file="./assets/debug_ontology.owl", format="rdfxml")    
-    return {'message' : "Ontology saved as debug_ontology.owl"}
+    return {'message': "Ontology saved as debug_ontology.owl"}
 
 @app.route('/exec_onto', methods=['GET'])
 def exec_onto():
@@ -197,11 +197,11 @@ def exec_onto():
     }
 
     sr_result = execSR(target_geom, data)
-    ontology_reasoning_result = mappingOnto(sr_result)
+    # ontology_reasoning_result = mappingOnto(sr_result)
     
     return jsonify({
         "spatial_relations": sr_result,
-        "ontology_reasoning_message": ontology_reasoning_result
+        # "ontology_reasoning_message": ontology_reasoning_result
     })
 
 """
