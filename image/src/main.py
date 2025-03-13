@@ -89,7 +89,7 @@ def getData(lon, lat, buffer_distance):
 
     return table_data
 
-def execSR(targetGeom, referGeomDict):
+def execSR(target_geom, refer_geom_dict):
     print("execute spatial relation...")
 
     spatial_relations = [
@@ -100,12 +100,12 @@ def execSR(targetGeom, referGeomDict):
     
     results = []
 
-    for table_name, referGeoms in referGeomDict.items():   
+    for table_name, refer_geom in refer_geom_dict.items():   
         for relation in spatial_relations:
             url = api_prefix + relation
             data = {
-                "targetGeom": targetGeom,
-                "referGeom": referGeoms
+                "target_geom": target_geom,
+                "refer_geom": refer_geom
             }
             result = {}
 
@@ -118,12 +118,63 @@ def execSR(targetGeom, referGeomDict):
                     result['result'] = result['geojson']['features'][0]['properties'].get('NAME', "undefined")
                 else:
                     result['result'] = result['geojson']['properties'].get('NAME', "undefined")
+
                 result["ontology_class"] = table_name
                 results.append(result)
             except requests.RequestException as e:
                 print(f"Error in {relation} for {table_name}: {e}")
 
     return results
+
+def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
+    onto = {}
+    timestamp = str(time.time()).replace(".", "_")
+    onto[timestamp] = get_ontology(ontology_path).load()
+
+    with onto[timestamp]:
+        class BaseThing(Thing):
+            pass
+
+    with onto[timestamp]:
+        class Particular(BaseThing):
+            pass
+        class PlaceName(BaseThing):
+            pass
+        class Localiser(BaseThing):
+            pass
+        class SpatialPreposition(BaseThing):
+            pass
+
+    ground_feature_class = onto[timestamp]['GroundFeature']
+    ground_feature_instance = ground_feature_class('targetFeature')
+
+    for sr_item in sr_object:
+        # spatial relation value
+        spatial_relation = sr_item['relation']
+        refer_object_classname = sr_item['ontology_class']
+        refer_object_name = sr_item['result']
+        # other_info = sr_item['other_info']
+
+        # ontology classes
+        figure_feature_class = onto[timestamp]["FigureFeature"]
+        figure_feature_typology_class = onto[timestamp]["Typology"]
+        figure_feature_toponym_class = onto[timestamp]["Toponym"]
+        spatial_relation_class = onto[timestamp][spatial_relation]
+
+        # ontology instances
+        figure_feature_instance = figure_feature_class('referFeature')
+        figure_feature_typology_instance = figure_feature_typology_class(refer_object_classname)
+        figure_feature_toponym_instance = figure_feature_toponym_class(refer_object_name)
+        spatial_relation_instance = spatial_relation_class(spatial_relation+refer_object_name)
+
+        # ontology object properties
+        figure_feature_instance.hasQuality.append(figure_feature_typology_instance)
+        figure_feature_instance.hasQuality.append(figure_feature_toponym_instance)
+        spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
+        spatial_relation_instance.hasGroundFeature.append(ground_feature_instance)
+
+    onto[timestamp].save(file="./assets/debug_ontology.owl", format="rdfxml")    
+    return {'message' : "Ontology saved as debug_ontology.owl"}
 
 @app.route('/exec_onto', methods=['GET'])
 def exec_onto():
@@ -136,7 +187,7 @@ def exec_onto():
 
     data = getData(lon, lat, buffer_distance)
 
-    targetGeom = {
+    target_geom = {
         "type": "Feature",
         "properties": {},
         "geometry": {
@@ -145,9 +196,13 @@ def exec_onto():
         }
     }
 
-    sr_result = execSR(targetGeom, data)
-  
-    return jsonify(sr_result)
+    sr_result = execSR(target_geom, data)
+    ontology_reasoning_result = mappingOnto(sr_result)
+    
+    return jsonify({
+        "spatial_relations": sr_result,
+        "ontology_reasoning_message": ontology_reasoning_result
+    })
 
 """
 OLD: Only For Road

@@ -1,0 +1,1836 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype/"
+     xml:base="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#hasAffiliatedFacilitiesofRoad -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#hasAffiliatedFacilitiesofRoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ActivityCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ActivityCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofAirport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofAirport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RiverandAffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AgriculturalLand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AgriculturalLand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Airport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Airport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AmusementPark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AmusementPark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Arboretum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Arboretum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ArtificialStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ArtificialStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AstronomicalandMeteorologicalOrganization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AstronomicalandMeteorologicalOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BankandBankConstruction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BankandBankConstruction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BareRock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BareRock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Beadhouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Beadhouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BombShelter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BombShelter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadBuildFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Building -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Building">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BusStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BusStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CemeteryFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CemeteryFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Church -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Church">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Cistern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Cistern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ClanShrine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ClanShrine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CliffyCoast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CliffyCoast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Coast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Coast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Coast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CoastLine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CoastLine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Coast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ColdSpringArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ColdSpringArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Mine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ConcertHall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ConcertHall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Contour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Contour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ConvenienceStore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ConvenienceStore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountiesBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountiesBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyRoadBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyRoadBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyRoadRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyRoadRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CultivatedLand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CultivatedLand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalandEducationalOrganizationorSites -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalandEducationalOrganizationorSites">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Dam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Dam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DepartmentStore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DepartmentStore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DeterminedInternationalBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DeterminedInternationalBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#InternationalBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Dock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Dock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DoubtfulBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DoubtfulBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DryPool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#DryPool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#EconomyStore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#EconomyStore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElementarySchool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElementarySchool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedCountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedCountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedUrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedNationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedNationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedProvincialExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedProvincialExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedProvinicialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedProvinicialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedRuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedRuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedUrbanExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedUrbanExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedUrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ElevatedUrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Embassy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Embassy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherLandmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#EnvironmentalProtectionFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#EnvironmentalProtectionFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialandMiningFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionHall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionHall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Expressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Expressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExpresswayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExpresswayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadMileage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExpresswayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExpresswayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FacilitiesandOrganizationsforSupportingFunctionsofLife -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FacilitiesandOrganizationsforSupportingFunctionsofLife">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Factory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Factory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FinancialInstitutions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FinancialInstitutions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FacilitiesandOrganizationsforSupportingFunctionsofLife"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FireHydrant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FireHydrant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FishLadder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FishLadder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Flume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Flume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ford -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ford">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Forest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Forest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Fountain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Fountain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FuneralFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FuneralFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalSocailWelfareOrganizationandFuneralFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GasStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GasStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GovernmentAgenciesandOffices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GovernmentAgenciesandOffices">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GradeSeparation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GradeSeparation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Grassland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Grassland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GroundUsed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#GroundUsed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Gymnasium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Gymnasium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Harbor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Harbor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthOffice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthOffice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthyFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthyFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighSchool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighSchool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighSpeedRailStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighSpeedRailStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighSpeedRailway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighSpeedRailway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Railroad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Tunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HistoricalMonument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HistoricalMonument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HistoricalMonumentandMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HistoricalMonumentandMemorialSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HistoricalMonumentandMemorialSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Hospital -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Hospital">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HotSpringArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HotSpringArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Mine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HydroPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HydroPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HydrologicalStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HydrologicalStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherLandmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialandMiningFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFactory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFactory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialandMiningFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialandMiningFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#InstituteofSocialEducation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#InstituteofSocialEducation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Interchange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Interchange">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#InternationalBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#InternationalBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Island -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Island">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Kindergarten -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Kindergarten">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Lagoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Lagoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Lake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Lake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landform">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#LaneBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#LaneBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Library -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Library">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Locks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Locks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Market -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Market">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalSocailWelfareOrganizationandFuneralFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalSocailWelfareOrganizationandFuneralFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalandSocialWelfareOrganizations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalandSocialWelfareOrganizations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalSocailWelfareOrganizationandFuneralFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MemorialArchitecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MemorialArchitecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HistoricalMonumentandMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Mine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Mine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialandMiningFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Mosque -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Mosque">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Museum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Museum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpresswayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpresswayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadMileage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalHighwayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalHighwayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalHighwayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalHighwayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalUndergroundFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalUndergroundFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NuclearPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NuclearPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OpenConcertStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OpenConcertStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Orphanage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Orphanage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherLandmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherLandmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherRoads -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherRoads">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherWaterSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherWaterSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergoundNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergoundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergoundProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergoundProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundCountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundCountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundUrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundProvincialExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundProvincialExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundRuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundRuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundUrbanExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundUrbanExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundUrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OvergroundUrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Park -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Park">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ParkingArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ParkingArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ParticularBoundaries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ParticularBoundaries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Pavilion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Pavilion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Pond -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Pond">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PostOffice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PostOffice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FacilitiesandOrganizationsforSupportingFunctionsofLife"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincesBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincesBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialExpresswayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialExpresswayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialExpresswayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialExpresswayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighwayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighwayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighwayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighwayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadMileage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighwayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighwayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Railroad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Railroad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RailwayStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RailwayStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadBuildFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RapidTransitLine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RapidTransitLine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RapidTransitStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RapidTransitStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Reef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Reef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousMeetingHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousMeetingHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ResearchInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ResearchInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Reservoir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Reservoir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#River -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#River">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RiverandAffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RiverandAffiliatedFacilitiesofRiver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RiverandAffiliatedFacilitiesofRiver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadBuildFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadBuildFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SurveyControlPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoadBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoadBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoadRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoadRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Sandbar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Sandbar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ScenicSpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ScenicSpot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ServiceArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ServiceArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShipbuildingYard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShipbuildingYard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#FacilitiesandOrganizationsforSupportingFunctionsofLife"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoreProperties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoreProperties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Sidewalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Sidewalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Skywalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Skywalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpecialEdcationSchool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpecialEdcationSchool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Spillway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Spillway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Stadium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Stadium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SteleTowerStatue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SteleTowerStatue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SunEnergyPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SunEnergyPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SurveyControlPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SurveyControlPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Swamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Swamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SwimmingBeach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SwimmingBeach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SwimmingPool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SwimmingPool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TaiwanRailway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TaiwanRailway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Railroad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Temple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Temple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Theater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Theater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ThermalPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ThermalPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TollStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TollStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Tower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Tower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TownshipsCititesDistrictsBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TownshipsCititesDistrictsBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TrafficIsland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TrafficIsland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#TransportationSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Tunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Tunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RoadBuildFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundCountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundCountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#CountyHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundUrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundMarketPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundMarketPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundPassage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundPassage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundProvincialExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundProvincialExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundRuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundRuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RuralRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundUrbanExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundUrbanExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundUrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndergroundUrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndeterminedInternationalBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UndeterminedInternationalBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#InternationalBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanExpresswayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanExpresswayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoadBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#UrbanRoadBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Vegetation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#VillagesBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#VillagesBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#VocationalTrainingCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#VocationalTrainingCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Walls -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Walls">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterTower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterTower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Waterworks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Waterworks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Weir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Weir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Wetland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Wetland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WindPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#WindPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Zoo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Zoo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#RecreationFacilities"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
