@@ -165,7 +165,8 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         figure_feature_instance = figure_feature_class('referFeature')
         figure_feature_typology_instance = figure_feature_typology_class(refer_object_classname)
         figure_feature_toponym_instance = figure_feature_toponym_class(refer_object_name)
-        spatial_relation_instance = spatial_relation_class(spatial_relation+refer_object_name)
+        print(spatial_relation, refer_object_name)
+        spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+str(refer_object_name))
 
         # ontology object properties
         figure_feature_instance.hasQuality.append(figure_feature_typology_instance)
@@ -173,8 +174,12 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
         spatial_relation_instance.hasGroundFeature.append(ground_feature_instance)
 
-    onto[timestamp].save(file="./assets/debug_ontology.owl", format="rdfxml")    
-    return {'message': "Ontology saved as debug_ontology.owl"}
+    within_class = onto[timestamp]["Within"]  
+    if within_class:
+        within_instances = [str(instance) for instance in within_class.instances()]
+        return {"Within_instances": within_instances}
+    else:
+        return {"message": "Class 'Within' not found in the ontology."}
 
 @app.route('/exec_onto', methods=['GET'])
 def exec_onto():
@@ -197,11 +202,11 @@ def exec_onto():
     }
 
     sr_result = execSR(target_geom, data)
-    # ontology_reasoning_result = mappingOnto(sr_result)
+    ontology_reasoning_result = mappingOnto(sr_result)
     
     return jsonify({
         "spatial_relations": sr_result,
-        # "ontology_reasoning_message": ontology_reasoning_result
+        "ontology_reasoning_test": ontology_reasoning_result
     })
 
 """

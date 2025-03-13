@@ -13,8 +13,7 @@
      xmlns:schema="https://schema.org/"
      xmlns:untitled-ontology-74="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/win/ontologies/locD">
-        <owl:imports rdf:resource="http://www.opengis.net/ont/sf/1.1"/>
-        <owl:imports rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype"/>
+
     </owl:Ontology>
     
 
@@ -57,6 +56,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasFigureFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasFigureFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#hasFeatures"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationOperation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FigureFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasGroundFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasGroundFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#hasFeatures"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationOperation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GroundFeature"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#hasLocaliser -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasLocaliser">
@@ -84,9 +103,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#hasQuaility -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasQuality -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasQuaility">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasQuality">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Endurant"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Quality"/>
     </owl:ObjectProperty>
@@ -179,9 +198,9 @@
 
     <!-- http://www.opengis.net/ont/sf#Geometry -->
 
-    <rdf:Description rdf:about="http://www.opengis.net/ont/sf#Geometry">
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Geometry">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -265,17 +284,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Contain -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Contains -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Contain">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Cross -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Cross">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Contains">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
     </owl:Class>
     
@@ -292,6 +303,14 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#CrossForRoad -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CrossForRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Crosses -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Crosses">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
     </owl:Class>
     
@@ -385,10 +404,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Equal -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Equals -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Equal">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Equals">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Azimuth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Azimuth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionRelation"/>
     </owl:Class>
     
 
@@ -489,9 +515,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Intersect -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Intersects -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Intersect">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Intersects">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
     </owl:Class>
     
@@ -591,9 +617,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Overlap -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Overlaps -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Overlap">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Overlaps">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
     </owl:Class>
     
@@ -881,9 +907,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Touch -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Touches -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Touch">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Touches">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
     </owl:Class>
     
@@ -908,7 +934,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#Typology -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Typology">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DerivedFacet"/>
     </owl:Class>
     
