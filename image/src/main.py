@@ -104,8 +104,8 @@ def execSR(target_geom, refer_geom_dict):
         for relation in spatial_relations:
             url = api_prefix + relation
             data = {
-                "target_geom": target_geom,
-                "refer_geom": refer_geom
+                "targetGeom": target_geom,
+                "referGeom": refer_geom
             }
             result = {}
 
