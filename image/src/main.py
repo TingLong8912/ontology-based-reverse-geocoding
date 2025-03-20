@@ -165,7 +165,6 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         figure_feature_instance = figure_feature_class('referFeature')
         figure_feature_typology_instance = figure_feature_typology_class(refer_object_classname)
         figure_feature_toponym_instance = figure_feature_toponym_class(refer_object_name)
-        print(spatial_relation, refer_object_name)
         spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+str(refer_object_name))
 
         # ontology object properties
@@ -174,12 +173,181 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         spatial_relation_instance.hasFigureFeature.append(figure_feature_instance)
         spatial_relation_instance.hasGroundFeature.append(ground_feature_instance)
 
-    within_class = onto[timestamp]["Within"]  
-    if within_class:
-        within_instances = [str(instance) for instance in within_class.instances()]
-        return {"Within_instances": within_instances}
-    else:
-        return {"message": "Class 'Within' not found in the ontology."}
+    print(list(onto[timestamp].classes()))
+    # return onto, timestamp
+    """
+    Step 1
+    """
+    with onto[timestamp]:
+        rule1 = Imp()
+        rule1.set_as_rule("""
+            Within(?relation), 
+            FigureFeature(?referObject), hasQuality(?referObject, ?type), Road(?type),
+            hasFigureFeature(?relation, ?referObject),
+            -> Upper(?relation)
+        """)
+    
+    with onto[timestamp]:
+        sync_reasoner(infer_property_values = True)
+
+    relation_classes = [
+        onto[timestamp].Upper, onto[timestamp].OnSite, 
+    ]
+
+    for cls in relation_classes:
+        for instance in cls.instances():
+            if not onto[timestamp].search_one(is_a=onto[timestamp].LocationDescription, related_to=instance):
+                new_description = onto[timestamp].LocationDescription(f"{instance.name}_description")
+                instance.symbolize.append(new_description)
+    
+    """
+    Step 2
+    """
+    with onto[timestamp]:
+        rule_upper = Imp()
+        rule_upper.set_as_rule("""
+            Upper(?relation1), WordsOfUpper(?word),
+            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+            LocationDescription(?description), symbolize(?relation1, ?description)
+            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+        """)
+
+    with onto[timestamp]:
+        sync_reasoner(reasoner = "hermit", infer_property_values = True) 
+
+    object_properties = [onto[timestamp].hasLocaliser, onto[timestamp].hasPlaceName]
+    data = []
+    for prop in object_properties:
+        for instance in prop.get_relations():
+            subject, object_ = instance
+        
+            is_prefix = getattr(object_, 'isPrefix', None) 
+
+            data.append({
+                "Property": prop.name,
+                "Subject": subject.name,
+                "Object": object_.name,
+                "IsPrefix": is_prefix
+            })
+
+    df = pd.DataFrame(data)
+    result_data = []
+    grouped = df.groupby('Subject')
+
+    for subject, group in grouped:
+        place_name = group[group['Property'] == 'hasPlaceName']['Object'].values
+        localisers = group[group['Property'] == 'hasLocaliser']['Object'].values
+
+        if place_name.size > 0:
+            place_name = place_name[0]  
+        else:
+            place_name = None
+
+        for localiser in localisers:
+            is_prefix = group[(group['Property'] == 'hasLocaliser') & (group['Object'] == localiser)]['IsPrefix'].values
+            if is_prefix.size > 0:
+                is_prefix = is_prefix[0]
+            else:
+                is_prefix = None
+
+            result_data.append({
+                "Subject": subject,
+                "PlaceName": place_name,
+                "Localiser": localiser,
+                "IsPrefix": is_prefix
+            })
+
+    onto[timestamp].destroy(update_relation=True, update_is_a=True)
+    return jsonify(result_data)
+
+# def reasoningOnto(onto, timestamp):
+#     """
+#     Step 1
+#     """
+#     with onto[timestamp]:
+#         rule1 = Imp()
+#         rule1.set_as_rule("""
+#             Within(?relation), 
+#             FigureFeature(?referObject), hasQuality(?referObject, ?type), Road(?type),
+#             hasFigureFeature(?relation, ?referObject),
+#             -> Upper(?relation)
+#         """)
+    
+#     with onto[timestamp]:
+#         sync_reasoner(infer_property_values = True)
+
+#     relation_classes = [
+#         onto[timestamp].Upper, onto[timestamp].OnSite, 
+#     ]
+
+#     for cls in relation_classes:
+#         for instance in cls.instances():
+#             if not onto[timestamp].search_one(is_a=onto[timestamp].LocationDescription, related_to=instance):
+#                 new_description = onto[timestamp].LocationDescription(f"{instance.name}_description")
+#                 instance.symbolize.append(new_description)
+    
+#     """
+#     Step 2
+#     """
+#     with onto[timestamp]:
+#         rule_upper = Imp()
+#         rule_upper.set_as_rule("""
+#             Upper(?relation1), WordsOfUpper(?word),
+#             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
+#             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
+#             LocationDescription(?description), symbolize(?relation1, ?description)
+#             -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
+#         """)
+
+#     with onto[timestamp]:
+#         sync_reasoner(infer_property_values = True)
+
+#     object_properties = [onto[timestamp].hasLocaliser, onto[timestamp].hasPlaceName]
+#     data = []
+#     for prop in object_properties:
+#         for instance in prop.get_relations():
+#             subject, object_ = instance
+        
+#             is_prefix = getattr(object_, 'isPrefix', None) 
+
+#             data.append({
+#                 "Property": prop.name,
+#                 "Subject": subject.name,
+#                 "Object": object_.name,
+#                 "IsPrefix": is_prefix
+#             })
+
+#     df = pd.DataFrame(data)
+#     result_data = []
+#     grouped = df.groupby('Subject')
+
+#     for subject, group in grouped:
+#         place_name = group[group['Property'] == 'hasPlaceName']['Object'].values
+#         localisers = group[group['Property'] == 'hasLocaliser']['Object'].values
+
+#         if place_name.size > 0:
+#             place_name = place_name[0]  
+#         else:
+#             place_name = None
+
+#         for localiser in localisers:
+#             is_prefix = group[(group['Property'] == 'hasLocaliser') & (group['Object'] == localiser)]['IsPrefix'].values
+#             if is_prefix.size > 0:
+#                 is_prefix = is_prefix[0]
+#             else:
+#                 is_prefix = None
+
+#             result_data.append({
+#                 "Subject": subject,
+#                 "PlaceName": place_name,
+#                 "Localiser": localiser,
+#                 "IsPrefix": is_prefix
+#             })
+
+
+#     onto[timestamp].destroy(update_relation=True, update_is_a=True)
+#     return jsonify(result_data)
 
 @app.route('/exec_onto', methods=['GET'])
 def exec_onto():
@@ -202,11 +370,13 @@ def exec_onto():
     }
 
     sr_result = execSR(target_geom, data)
-    ontology_reasoning_result = mappingOnto(sr_result)
-    
+    # onto, timestamp = mappingOnto(sr_result)
+    reasoning_result= mappingOnto(sr_result)
+    # reasoning_result = reasoningOnto(onto, timestamp)
+
     return jsonify({
         "spatial_relations": sr_result,
-        "ontology_reasoning_test": ontology_reasoning_result
+        "reasoning": reasoning_result
     })
 
 """
