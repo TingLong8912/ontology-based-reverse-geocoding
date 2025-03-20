@@ -127,6 +127,7 @@ def execSR(target_geom, refer_geom_dict):
     return results
 
 def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
+    print("=========start mapping ontology===========")
     onto = {}
     timestamp = str(time.time()).replace(".", "_")
     onto[timestamp] = get_ontology(ontology_path).load()
@@ -144,6 +145,8 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
             pass
         class SpatialPreposition(BaseThing):
             pass
+        class SpatialObjectType(BaseThing):
+            pass
 
     ground_feature_class = onto[timestamp]['GroundFeature']
     ground_feature_instance = ground_feature_class('targetFeature')
@@ -154,18 +157,30 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         refer_object_classname = sr_item['ontology_class']
         refer_object_name = sr_item['result']
         # other_info = sr_item['other_info']
+        print("refer_object_classname", refer_object_classname)
 
+        print("========1========")
         # ontology classes
         figure_feature_class = onto[timestamp]["FigureFeature"]
-        figure_feature_typology_class = onto[timestamp]["Typology"]
+        print(figure_feature_class)
+        figure_feature_typology_class = onto[timestamp][refer_object_classname]
+        print(figure_feature_typology_class)
         figure_feature_toponym_class = onto[timestamp]["Toponym"]
+        print(figure_feature_toponym_class)
         spatial_relation_class = onto[timestamp][spatial_relation]
+        print(spatial_relation, spatial_relation_class)
 
+        print("=========2=======")
         # ontology instances
         figure_feature_instance = figure_feature_class('referFeature')
-        figure_feature_typology_instance = figure_feature_typology_class(refer_object_classname)
+        print(figure_feature_instance)
+        figure_feature_typology_instance = figure_feature_typology_class("referFeatureType")
+        print(figure_feature_typology_instance)
         figure_feature_toponym_instance = figure_feature_toponym_class(refer_object_name)
+        print(figure_feature_toponym_instance)
         spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+str(refer_object_name))
+        print(spatial_relation_instance)
+        print("==========3======")
 
         # ontology object properties
         figure_feature_instance.hasQuality.append(figure_feature_typology_instance)
@@ -214,7 +229,7 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         """)
 
     with onto[timestamp]:
-        sync_reasoner(reasoner = "hermit", infer_property_values = True) 
+        sync_reasoner(infer_property_values = True) 
 
     object_properties = [onto[timestamp].hasLocaliser, onto[timestamp].hasPlaceName]
     data = []
@@ -371,6 +386,7 @@ def exec_onto():
 
     sr_result = execSR(target_geom, data)
     # onto, timestamp = mappingOnto(sr_result)
+    print("=========end spatial relationship===========")
     reasoning_result= mappingOnto(sr_result)
     # reasoning_result = reasoningOnto(onto, timestamp)
 
