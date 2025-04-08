@@ -42,9 +42,6 @@ def call_spatial_api(lon, lat, refer_geom_dict):
                 result["ontology_class"] = table_name
                 results.append(result)
             except requests.RequestException as e:
-                print(f"Error in {relation} for {table_name}: {e}")
-                result["result"] = "error"
-                result["ontology_class"] = table_name
-                results.append(result)
+                print(f"Error in {relation} for {table_name}: {e}") 
 
     return results
