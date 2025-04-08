@@ -1,27 +1,30 @@
-# 使用 Python 官方 Slim 映像
-FROM python:3.9-slim
+# 使用官方的 OpenJDK 與 Python 映像檔
+FROM openjdk:8-jdk-slim AS builder
+
+# 安裝 Python、pip、gcc 以及 PostgreSQL 相關依賴
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip gcc libpq-dev postgresql postgresql-contrib && \
+    apt-get clean
+
+# 設定 Java 環境變數（讓 owlready2 找得到 java）
+ENV JAVA_HOME=/usr/local/openjdk-8
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
+# 設定 Python 執行環境
+ENV PYTHONUNBUFFERED=1
 
 # 設定工作目錄
 WORKDIR /src
 
-# 安裝 PostgreSQL 依賴 (libpq-dev) 和其他必要工具
-RUN apt-get update && \
-    apt-get install -y gcc libpq-dev && \
-    apt-get clean
-
 # 複製 requirements.txt 並安裝 Python 套件
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r ./requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-# 複製應用程式碼到工作目錄
+# 複製應用程式碼到容器內部
 COPY ./src /src/
 
-# 設定環境變數
-ENV PYTHONUNBUFFERED=1
-
-# 暴露端口
+# 開放 Flask 預設埠
 EXPOSE 5000
 
-# 執行 Flask 應用程式
-CMD ["python", "main.py"]
-
+# 啟動 Flask 應用程式
+CMD ["python3", "main.py"]

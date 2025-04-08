@@ -132,6 +132,12 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
     timestamp = str(time.time()).replace(".", "_")
     onto[timestamp] = get_ontology(ontology_path).load()
 
+    """
+    Ontology修改注意事項：
+    1. 移除import的url
+    2. 加上原先import url裡面的所有類別
+    """
+
     with onto[timestamp]:
         class BaseThing(Thing):
             pass
@@ -157,30 +163,19 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         refer_object_classname = sr_item['ontology_class']
         refer_object_name = sr_item['result']
         # other_info = sr_item['other_info']
-        print("refer_object_classname", refer_object_classname)
 
-        print("========1========")
         # ontology classes
+        print("refer_object_classname: ", refer_object_classname)
         figure_feature_class = onto[timestamp]["FigureFeature"]
-        print(figure_feature_class)
         figure_feature_typology_class = onto[timestamp][refer_object_classname]
-        print(figure_feature_typology_class)
         figure_feature_toponym_class = onto[timestamp]["Toponym"]
-        print(figure_feature_toponym_class)
         spatial_relation_class = onto[timestamp][spatial_relation]
-        print(spatial_relation, spatial_relation_class)
 
-        print("=========2=======")
         # ontology instances
         figure_feature_instance = figure_feature_class('referFeature')
-        print(figure_feature_instance)
         figure_feature_typology_instance = figure_feature_typology_class("referFeatureType")
-        print(figure_feature_typology_instance)
         figure_feature_toponym_instance = figure_feature_toponym_class(refer_object_name)
-        print(figure_feature_toponym_instance)
         spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+str(refer_object_name))
-        print(spatial_relation_instance)
-        print("==========3======")
 
         # ontology object properties
         figure_feature_instance.hasQuality.append(figure_feature_typology_instance)
@@ -189,24 +184,26 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
         spatial_relation_instance.hasGroundFeature.append(ground_feature_instance)
 
     print(list(onto[timestamp].classes()))
-    # return onto, timestamp
+
     """
     Step 1
     """
+    print("===========Reasoning(1)============")
     with onto[timestamp]:
         rule1 = Imp()
         rule1.set_as_rule("""
             Within(?relation), 
             FigureFeature(?referObject), hasQuality(?referObject, ?type), Road(?type),
-            hasFigureFeature(?relation, ?referObject),
+            hasFigureFeature(?relation, ?referObject)
             -> Upper(?relation)
         """)
     
     with onto[timestamp]:
-        sync_reasoner(infer_property_values = True)
+        sync_reasoner(debug=True)
 
+    print("===========Reasoning(1) END============")
     relation_classes = [
-        onto[timestamp].Upper, onto[timestamp].OnSite, 
+        onto[timestamp].Upper
     ]
 
     for cls in relation_classes:
@@ -218,6 +215,7 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
     """
     Step 2
     """
+    print("===========Reasoning(2)============")
     with onto[timestamp]:
         rule_upper = Imp()
         rule_upper.set_as_rule("""

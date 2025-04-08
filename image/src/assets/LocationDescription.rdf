@@ -13,10 +13,10 @@
      xmlns:schema="https://schema.org/"
      xmlns:untitled-ontology-74="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/win/ontologies/locD">
-
     </owl:Ontology>
-
     
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -24,8 +24,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
 
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#descriptivePlace -->
@@ -329,7 +327,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#CountyRoadBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyRoadBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -473,7 +471,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#ExpresswayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExpresswayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -569,7 +567,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#LaneBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -639,7 +637,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -701,7 +699,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#PartsandStructure -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PartsandStructure">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/loc#SpatialObjectType"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalFacet"/>
     </owl:Class>
     
@@ -780,7 +778,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -788,7 +786,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayRamp -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayRamp">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -844,7 +842,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -1018,7 +1016,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#Typology -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Typology">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/loc#SpatialObjectType"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DerivedFacet"/>
     </owl:Class>
     
@@ -1043,7 +1041,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridege -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridege">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/loc#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -2902,84 +2900,12 @@
     </owl:NamedIndividual>
     
 
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#聯絡兩省以上及重要交通設施或政經中心 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#聯絡兩省以上及重要交通設施或政經中心">
-        <locD:purposeDescription></locD:purposeDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#聯絡兩縣以上、省際交通及政經中心 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#聯絡兩縣以上、省際交通及政經中心">
-        <locD:purposeDescription></locD:purposeDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#聯絡縣及縣與重要鄉間 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#聯絡縣及縣與重要鄉間">
-        <locD:purposeDescription></locD:purposeDescription>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#聯絡都市計畫區內所有道路、直轄市及市行政區 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#聯絡都市計畫區內所有道路、直轄市及市行政區">
-        <locD:purposeDescription></locD:purposeDescription>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#高架 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#高架">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Elevated"/>
     </owl:NamedIndividual>
     
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000042 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000042">
-        <locD:prominenceValue></locD:prominenceValue>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000106 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000106">
-        <locD:prominenceValue></locD:prominenceValue>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000137 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000137">
-        <locD:prominenceValue></locD:prominenceValue>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000152 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000152">
-        <locD:prominenceValue></locD:prominenceValue>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000238 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000238">
-        <locD:prominenceValue></locD:prominenceValue>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
