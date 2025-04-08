@@ -219,7 +219,7 @@ def mappingOnto(sr_object, ontology_path='./assets/LocationDescription.rdf'):
     with onto[timestamp]:
         rule_upper = Imp()
         rule_upper.set_as_rule("""
-            Upper(?relation1), WordsOfUpper(?word),
+            Upper(?relation1), UpperLocalizer(?word),
             GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
             FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
             LocationDescription(?description), symbolize(?relation1, ?description)
