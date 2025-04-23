@@ -128,6 +128,8 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
                     })
 
     print("=========Final Result===========")
-    print(result_data)
+    result_df = pd.DataFrame(result_data)
+    grouped_result = result_df.drop_duplicates(subset=["PlaceName", "Localiser", "IsPrefix", "SpatialPreposition"]).to_dict(orient="records")
+    print(grouped_result)
 
-    return result_data
+    return grouped_result
