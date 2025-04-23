@@ -896,8 +896,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Museum">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility"/>
     </owl:Class>
-    
-
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpressway -->
 
@@ -905,6 +903,20 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
     </owl:Class>
     
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayBridege -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayBridege">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
+    </owl:Class>
+
 
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayMileage -->

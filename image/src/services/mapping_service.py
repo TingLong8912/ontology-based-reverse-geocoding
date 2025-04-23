@@ -12,6 +12,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     onto = {}
     timestamp = str(time.time()).replace(".", "_")
     onto[timestamp] = get_ontology(ontology_path).load()
+    class_lookup = {cls.name: cls for cls in onto[timestamp].classes()}
 
     with onto[timestamp]:
         class BaseThing(Thing): pass
@@ -34,9 +35,10 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         refer_object_name = sr_item['result']
         
         feature_class = onto[timestamp]["Feature"]
-        if feature_typology_class is None:
+        if refer_object_classname not in class_lookup:
             print(f"❌ 本體中找不到類別：{refer_object_classname}")
-        feature_typology_class = onto[timestamp][refer_object_classname]
+            continue
+        feature_typology_class = class_lookup[refer_object_classname]
         feature_toponym_class = onto[timestamp]["Toponym"]
 
         spatial_relation_class = onto[timestamp][spatial_relation]
