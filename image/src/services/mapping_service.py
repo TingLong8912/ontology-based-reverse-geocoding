@@ -34,8 +34,8 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         refer_object_name = sr_item['result']
         
         feature_class = onto[timestamp]["Feature"]
-        if refer_object_classname not in onto[timestamp]:
-            raise ValueError(f"❌ 本體中找不到類別：{refer_object_classname}")
+        if feature_typology_class is None:
+            print(f"❌ 本體中找不到類別：{refer_object_classname}")
         feature_typology_class = onto[timestamp][refer_object_classname]
         feature_toponym_class = onto[timestamp]["Toponym"]
 
