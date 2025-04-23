@@ -1,40 +1,35 @@
-from owlready2 import sync_reasoner, Imp
+from owlready2 import sync_reasoner_pellet, Imp
 
-def run_reasoning(onto, timestamp):
+def reasoning(onto, rule_path, infer_property_values=True):
     try:
-        # Step 1: 推論規則
-        rule1 = Imp()
-        rule1.set_as_rule("""
-            Within(?relation), 
-            FigureFeature(?referObject), hasQuality(?referObject, ?type), Road(?type),
-            hasFigureFeature(?relation, ?referObject)
-            -> Upper(?relation)
-        """)
+        with open(rule_path, "r", encoding="utf-8") as f:
+            rule_lines = [line.strip() for line in f if line.strip()]
 
-        with onto[timestamp]:
-            sync_reasoner(debug=True)
-        print("===========Reasoning(1) END============")
+        with onto:
+            for idx, rule_text in enumerate(rule_lines):
+                rule = Imp()
+                rule.set_as_rule(rule_text)
+                print(f"Rule {idx + 1}: {rule_text}")
+
+        with onto:
+            sync_reasoner_pellet(debug=True, infer_property_values=infer_property_values)
+
+        print("===========Reasoning END============")
+        return onto
     except Exception as e:
-        print("推論錯誤（Reasoning 1）:", e)
-        onto[timestamp].destroy(update_relation=True, update_is_a=True)
-        raise Exception("Reasoning step 1 failed: " + str(e))
+        print("推論錯誤:" + rule_path, e)
+        onto.destroy(update_relation=True, update_is_a=True)
+        raise Exception("Reasoning step 0 failed: " + str(e))
 
-    try:
-        # Step 2: 推論規則
-        rule_upper = Imp()
-        rule_upper.set_as_rule("""
-            Upper(?relation1), UpperLocalizer(?word),
-            GroundFeature(?inputpoint), hasGroundFeature(?relation1, ?inputpoint),
-            FigureFeature(?referObject), hasFigureFeature(?relation1, ?referObject),
-            LocationDescription(?description), symbolize(?relation1, ?description)
-            -> hasLocaliser(?description, ?word), hasPlaceName(?description, ?referObject)
-        """)
+def run_reasoning(onto):
+    onto_with_context = reasoning(onto, "./ontology/context.txt")
+    onto_with_semantic = reasoning(onto_with_context, './ontology/gis_to_semantic.txt')
 
-        with onto[timestamp]:
-            sync_reasoner(infer_property_values=True)
-    except Exception as e:
-        print("推論錯誤（Reasoning 2）:", e)
-        onto[timestamp].destroy(update_relation=True, update_is_a=True)
-        raise Exception("Reasoning step 2 failed: " + str(e))
+    print("===========映射語意推論結果============")
+    for idx, indiv in enumerate(onto_with_semantic.SpatialRelationship.instances()):
+        locad_indiv = onto_with_semantic.LocationDescription(f"locad_{idx}")
+        indiv.symbolize.append(locad_indiv)
 
-    return onto
+    onto_with_word = reasoning(onto_with_semantic, './ontology/ehownet.txt', True)
+
+    return onto_with_word

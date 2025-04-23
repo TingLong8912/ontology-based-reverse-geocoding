@@ -1,4 +1,4 @@
-    <!-- http://www.semanticweb.org/win/ontologies/locD#ActivityCenter -->
+        <!-- http://www.semanticweb.org/win/ontologies/locD#ActivityCenter -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ActivityCenter">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
@@ -254,9 +254,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#CountyRoadBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CountyHighwayTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyRoadBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyHighwayTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -389,6 +389,11 @@
     </owl:Class>
     
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway"/>
+    </owl:Class>
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialExpressway -->
 
@@ -398,9 +403,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedProvinicialHighway -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialHighway -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedProvinicialHighway">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialHighway">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
     </owl:Class>
     
@@ -814,9 +819,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#LaneBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LaneTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -910,9 +915,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -982,17 +987,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergoundNationalFreeway -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergoundNationalFreeway">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergoundProvincialHighway -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialHighway -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergoundProvincialHighway">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialHighway">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
     </owl:Class>
     
@@ -1110,9 +1115,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -1134,9 +1139,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -1310,9 +1315,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -1660,9 +1665,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
@@ -1676,9 +1681,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanRoadBridge -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanRoadTunnel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoadBridge">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoadTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
     </owl:Class>
     
