@@ -28,7 +28,7 @@ def map_location():
     if hasattr(locad_result, "get_json"):
         locad_result = locad_result.get_json()
 
-    log_info("Mapping completed successfully")  # 記錄成功信息
+    log_info("Mapping completed successfully") 
 
     return jsonify({
         "spatial_relations": sr_results,
