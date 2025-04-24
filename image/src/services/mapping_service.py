@@ -61,17 +61,22 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     print("=========end all reason===========")
     object_properties = [onto_reasoned.hasLocaliser, onto_reasoned.hasPlaceName, onto_reasoned.hasSpatialPreposition]
     
+    def extract_prefix_flag(value):
+        try:
+            return bool(value[0]) if isinstance(value, list) and len(value) > 0 else None
+        except Exception:
+            return None
+
     data = []
     for prop in object_properties:
         for instance in prop.get_relations():
             try:
                 subject, object_ = instance
-                is_prefix = getattr(object_, 'isPrefix', None)
                 data.append({
                     "Property": prop.name,
                     "Subject": safe_name(subject),
                     "Object": safe_name(object_),
-                    "IsPrefix": is_prefix
+                    "IsPrefix": extract_prefix_flag(getattr(object_, 'isPrefix', []))
                 })
             except Exception as e:
                 print(f"⚠️ Error processing relation {prop.name}: {e}")

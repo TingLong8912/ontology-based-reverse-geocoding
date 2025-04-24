@@ -3399,13 +3399,20 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalUndergroundFreeway -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalFreeway -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalUndergroundFreeway">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalFreeway">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
     </owl:Class>
     
 
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#NuclearPowerPlant -->
 
@@ -3458,6 +3465,13 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalExpressway">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
     </owl:Class>
     
