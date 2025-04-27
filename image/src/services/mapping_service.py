@@ -102,6 +102,4 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     print("=========Final Result===========")
     print(result_data)
 
-    onto_reasoned[timestamp].destroy(reasoner=True)
-    
     return result_data
