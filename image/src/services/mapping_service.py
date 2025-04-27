@@ -55,12 +55,13 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         spatial_relation_instance.hasContext.append(context_instance)
 
     # 呼叫推理服務
-    onto_reasoned = run_reasoning(onto[timestamp])  # 執行推理
+    onto_reasoned = {}
+    onto_reasoned[timestamp] = run_reasoning(onto[timestamp])  # 執行推理
 
     print("=========start extracting relationships===========")
 
     result_data = []
-    spatial_relationship_class = onto_reasoned.SpatialRelationship
+    spatial_relationship_class = onto_reasoned[timestamp].SpatialRelationship
     all_spatial_relationships = spatial_relationship_class.instances()
 
     for spatial_instance in all_spatial_relationships:
