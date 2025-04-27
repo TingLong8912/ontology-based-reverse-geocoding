@@ -30,17 +30,21 @@ def reasoning(onto, rule_path, infer_property_values=True, model="Pellet"):
         onto.destroy(update_relation=True, update_is_a=True)
         raise Exception("Reasoning step 0 failed: " + str(e))
 
-def run_reasoning(onto):
-    onto_with_context = reasoning(onto, "./ontology/context.txt")
-    onto_with_semantic = reasoning(onto_with_context, './ontology/gis_to_semantic.txt')
+def run_reasoning(onto, timestamp):
+    onto_with_context = {}
+    onto_with_semantic = {}
+    onto_with_word = {}
+
+    onto_with_context[timestamp] = reasoning(onto[timestamp], "./ontology/context.txt")
+    onto_with_semantic[timestamp] = reasoning(onto_with_context[timestamp], './ontology/gis_to_semantic.txt')
     print("===========映射語意推論結果============")
-    for idx, indiv in enumerate(onto_with_semantic.SpatialRelationship.instances()):
-        locad_indiv = onto_with_semantic.LocationDescription(f"locad_{idx}")
+    for idx, indiv in enumerate(onto_with_semantic[timestamp].SpatialRelationship.instances()):
+        locad_indiv = onto_with_semantic[timestamp].LocationDescription(f"locad_{idx}")
         indiv.symbolize.append(locad_indiv)
     print("===========給定Quality============")
 
-    for gf in onto_with_semantic.GroundFeature.instances():
-        quality_class = onto_with_semantic['Scale']
+    for gf in onto_with_semantic[timestamp].GroundFeature.instances():
+        quality_class = onto_with_semantic[timestamp]['Scale']
         quality_instance = quality_class("scale_" + gf.name)
         quality_instance.qualityValue= ["0", ""]
         gf.hasQuality.append(quality_instance)
@@ -50,14 +54,14 @@ def run_reasoning(onto):
 
     for type_quality, quality_dict in traffic_data.items():
         for quality_class_name, quality_value in quality_dict.items():
-            quality_class = onto_with_semantic[quality_class_name]
-            if quality_class not in onto_with_semantic.classes():
+            quality_class = onto_with_semantic[timestamp][quality_class_name]
+            if quality_class not in onto_with_semantic[timestamp].classes():
                 print(f"❌ 本體中找不到類別：{quality_class_name}")
                 continue
 
-            for gf in onto_with_semantic.GroundFeature.instances():
+            for gf in onto_with_semantic[timestamp].GroundFeature.instances():
                 for existing_quality in gf.hasQuality:
-                    target_class = onto_with_semantic[type_quality]
+                    target_class = onto_with_semantic[timestamp][type_quality]
                     if isinstance(existing_quality, target_class):
                         quality_instance = quality_class(gf.name + "_" + quality_class_name)
                         gf.hasQuality.append(quality_instance)
@@ -69,7 +73,7 @@ def run_reasoning(onto):
 
     print("===========給定Quality END============")
     print("===========映射結果輸出============")
-    for gf in onto_with_semantic.GroundFeature.instances():
+    for gf in onto_with_semantic[timestamp].GroundFeature.instances():
         for q in gf.hasQuality:
             print(f"[GroundFeature] {gf.name}")
             print(f"  ↳ hasQuality → [{q}] {q.name}")
@@ -77,6 +81,6 @@ def run_reasoning(onto):
                 print(f"    ↳ qualityValue: {list(q.qualityValue)}")
 
     print("===========onto_with_word============")
-    onto_with_word = reasoning(onto_with_semantic, './ontology/ehownet.txt')
+    onto_with_word[timestamp] = reasoning(onto_with_semantic[timestamp], './ontology/ehownet.txt')
                 
-    return onto_with_word
+    return onto_with_word[timestamp]

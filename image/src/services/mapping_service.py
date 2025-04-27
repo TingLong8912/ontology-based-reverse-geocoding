@@ -11,6 +11,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     print("=========start mapping ontology===========")
     onto = {}
     timestamp = str(time.time()).replace(".", "_")
+    print("timestamp: ", timestamp)
     onto[timestamp] = get_ontology(ontology_path).load()
     class_lookup = {cls.name: cls for cls in onto[timestamp].classes()}
 
@@ -55,12 +56,14 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
 
     # 呼叫推理服務
     onto_reasoned = {}
-    onto_reasoned[timestamp] = run_reasoning(onto[timestamp])  # 執行推理
+    onto_reasoned[timestamp] = run_reasoning(onto, timestamp)  # 執行推理
 
     print("=========start extracting relationships===========")
     result_data = []
     spatial_relationship_class = onto_reasoned[timestamp].SpatialRelationship
+    print("spatial_relationship_class: ", spatial_relationship_class)
     all_spatial_relationships = spatial_relationship_class.instances()
+    print("all_spatial_relationships: ", all_spatial_relationships)
 
     for spatial_instance in all_spatial_relationships:
         subject_name = safe_name(spatial_instance)
@@ -101,5 +104,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
 
     print("=========Final Result===========")
     print(result_data)
+    
+    onto[timestamp].destroy(update_relation = True, update_is_a = True)
 
     return result_data
