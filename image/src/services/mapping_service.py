@@ -28,7 +28,6 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     context_class = onto[timestamp][context]
     context_instance = context_class('context'+str(context))
 
-
     for sr_item in sr_object:
         spatial_relation = sr_item['relation']
         refer_object_classname = sr_item['ontology_class']
@@ -59,7 +58,6 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     onto_reasoned[timestamp] = run_reasoning(onto[timestamp])  # 執行推理
 
     print("=========start extracting relationships===========")
-
     result_data = []
     spatial_relationship_class = onto_reasoned[timestamp].SpatialRelationship
     all_spatial_relationships = spatial_relationship_class.instances()
@@ -104,4 +102,6 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     print("=========Final Result===========")
     print(result_data)
 
+    onto_reasoned[timestamp].destroy(reasoner=True)
+    
     return result_data
