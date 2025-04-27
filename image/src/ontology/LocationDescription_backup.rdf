@@ -1,0 +1,4279 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/win/ontologies/locD/"
+     xml:base="http://www.semanticweb.org/win/ontologies/locD/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:locD="http://www.semanticweb.org/win/ontologies/locD#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:untitled-ontology-74="http://www.semanticweb.org/win/ontologies/2024/6/untitled-ontology-74#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/win/ontologies/locD">
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#descriptivePlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#descriptivePlace">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Endurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#geographicRepresent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#geographicRepresent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasFeature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasFigureFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasFigureFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FigureFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasGroundFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasGroundFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GroundFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasLocaliser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasLocaliser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasPlaceName -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasPlaceName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PlaceName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasQuality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Endurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Quality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasSpatialPreposition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasSpatialPreposition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialPreposition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#host -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#host">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalEndurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#lexicallyRealizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#lexicallyRealizedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialLexicalBinding"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#referTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#referTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#representsRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#representsRelation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialLexicalBinding"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#standFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#standFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#symbolize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#symbolize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#directionValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#directionValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#distanceValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#distanceValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DistanceRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#isPrefix -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#isPrefix">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#qualityValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#qualityValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Quality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#Geometry -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Geometry">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AbsoluteDirection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AbsoluteDirection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AbstractQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AbstractQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Accomplishment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Accomplishment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FunctionalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Address -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Address">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Affordance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Affordance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FunctionalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AnthropocentricFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AnthropocentricFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AbstractQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AtSpatialPreposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AtSpatialPreposition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialPreposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BackLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BackLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BasePart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BasePart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Behavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Behavior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FunctionalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BelowLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BelowLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Beneath -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Beneath">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BinarySpatialRelationship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BinarySpatialRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BottomLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BottomLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Boundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Boundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BoundaryLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BoundaryLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CentrePart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CentrePart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Concept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Concept">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NonAgentiveSocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Contains -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Contains">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Context -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Context">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CountyHighwayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyHighwayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Crosses -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Crosses">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Curve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Curve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Debris -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Debris">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DependentPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DependentPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DerivedFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DerivedFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AbstractQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DirectionFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DirectionLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DirectionLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DirectionRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DirectionRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DisasterWarning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Discharge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Discharge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Disjoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Disjoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Distance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Distance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DistanceRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DistanceRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DistanceRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Earthquake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Earthquake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#East -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#East">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EastLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EastPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EastPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EastPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EastPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Edge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Edge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Elevated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Elevated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#StyleandForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EmotiveFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EmotiveFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AnthropocentricFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EndLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EndLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EndPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EndPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Endurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Endurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Equals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Equals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Perdurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ExpresswayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExpresswayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#External -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#External">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FigureFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FigureFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FrontLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FrontLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FrontPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FrontPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FunctionalFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FunctionalFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AnthropocentricFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GeographicFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GeographicFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialLocation_q"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Geometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GeometryCollection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GeometryCollection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GroundFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GroundFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Hide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Hide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HindPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HindPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Identity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Identity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DerivedFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#InBetween -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#InBetween">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#InFront -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#InFront">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#InsideLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#InsideLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Internal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Internal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Intersects -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Intersects">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LaneBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Left -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Left">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LeftEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LeftEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LeftPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LeftPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LeftSideLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LeftSideLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LineString -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LineString">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Curve"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LinguisticFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LinguisticFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AbstractQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Localiser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Localiser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LocationDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LocationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NonPhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LocationFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LocationFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BinarySpatialRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Locatum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Locatum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Triplet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LowerRiverLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LowerRiverLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MidLandLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidLandLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MiddleLowerRiverLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MiddleLowerRiverLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MiddleRiverLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MiddleRiverLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MidnorthLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidnorthLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MidsouthLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidsouthLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MidwestLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidwestLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MultiCurve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MultiCurve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GeometryCollection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MultiLineString -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MultiLineString">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MultiCurve"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MultiPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MultiPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GeometryCollection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MultiPolygon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MultiPolygon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MultiSurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MultiSurface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MultiSurface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GeometryCollection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NameP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NameP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PlaceName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NonAgentiveSocialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NonAgentiveSocialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NonPhysicalEndurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NonPhysicalEndurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#North -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#North">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthEastEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthEastEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthWestEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthWestEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NortheastPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NortheastPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthernEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthernEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthwestLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthwestLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NorthwestPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthwestPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OnSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OnSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OutsideLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OutsideLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Overground -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Overground">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#StyleandForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Overlaps -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Overlaps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Particular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Particular"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PartsandStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PartsandStructure">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Perdurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Perdurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PhysicalEndurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PhysicalEndurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PhysicalFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PhysicalFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GeographicFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PhysicalQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PhysicalQuality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PlaceDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PlaceDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#VerbalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PlaceName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PlaceName">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PlaceP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PlaceP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PlaceName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Point -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Point">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Polygon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Polygon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#gSurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PositionalFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Prominence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Prominence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EmotiveFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Purpose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Purpose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DerivedFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatioTemporalParticular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#QuantitativeSpatilaRelationship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#QuantitativeSpatilaRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Rainfall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Rainfall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RelativeDirection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RelativeDirection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Relatum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Relatum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Triplet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RelevantPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RelevantPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ReverseGeocodingEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ReverseGeocodingEvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Accomplishment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Right -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Right">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RightEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RightEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RightPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RightPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RightSideLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RightSideLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Role -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Role">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Scale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Scale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SocialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SocialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NonPhysicalEndurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#South -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#South">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthEastEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthEastEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthWestEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthWestEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SoutheastLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SoutheastLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SoutheastPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SoutheastPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthernPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthernPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SouthwestPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthwestPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialFacet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialFacet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#GeographicFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialLexicalBinding -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialLexicalBinding"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialLocation_q -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialLocation_q">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialOperation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReverseGeocodingEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialPreposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialPreposition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialReference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialReference">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LinguisticFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialConcpet"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Triplet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EmotiveFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatioTemporalParticular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatioTemporalParticular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Particular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Specificity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Specificity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EmotiveFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#StyleandForm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#StyleandForm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PhysicalFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Surface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SurfaceLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SurfaceLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Surrounding -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Surrounding">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TopLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TopLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TopPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TopPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TopologyRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Toponym -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Toponym">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#VerbalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Touches -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Touches">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Traffic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Traffic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Transformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Transformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialOperation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Triplet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Triplet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Typology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Typology">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DerivedFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Underground -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Underground">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#StyleandForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Upper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Upper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UpperLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UpperLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UpperPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UpperPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UpperRiverLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UpperRiverLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanRoadBridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoadBridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#VerbalReference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#VerbalReference">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LinguisticFacet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#West -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#West">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WestEndPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WestEndPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WestLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WestPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WestPart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WesternPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WesternPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Within -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Within">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TopologyRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#gSurface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#gSurface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#上 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#上方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#上游 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上游">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperRiverLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#上部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#下 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#下">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BelowLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#下方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#下方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BelowLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#下游 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#下游">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LowerRiverLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#InsideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中下游 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中下游">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MiddleLowerRiverLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中北部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中北部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MidnorthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中南部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中南部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MidsouthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中游 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中游">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MiddleRiverLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中西部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中西部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MidwestLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#中部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#中部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MidLandLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#內 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#內">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#InsideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#前 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#前">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FrontLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#前方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#前方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FrontLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#北 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#北方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#北端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthernEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#北部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#南 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#南">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#南方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#南方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#南端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#南端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#南部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#南部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthernPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#右 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#右">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RightSideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#右方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#右方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RightSideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#右端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#右端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RightEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#在 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#在">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AtSpatialPreposition"/>
+        <locD:isPrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</locD:isPrefix>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#地下 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#地下">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Underground"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#外 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#外">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OutsideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#左 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#左">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LeftSideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#左方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#左方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LeftSideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#左端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#左端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LeftEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#平面 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#平面">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Overground"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#底部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#底部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BottomLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#後 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#後">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BackLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#末端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#末端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EndLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東北方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東北方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東北端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東北端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthEastEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東北部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東北部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NortheastPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東南方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東南方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SoutheastLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東南端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東南端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthEastEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東南部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東南部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SoutheastPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東西方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東西方"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東邊 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東邊">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#東部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EastPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#裡 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#裡">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#InsideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西北端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西北端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthWestEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西北部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西北部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthwestPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西南端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西南端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthWestEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西南部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西南部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthwestPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西端 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西端">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestEndPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西邊 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西邊">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#西部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WesternPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#邊 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#邊">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#面 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#面">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SurfaceLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#頂部 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#頂部">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#高架 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#高架">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Elevated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000042 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000042">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Prominence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000106 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000106">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Prominence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000137 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000137">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Prominence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000152 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000152">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Prominence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#0.000238 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#0.000238">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Prominence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/win/ontologies/locD/rel">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/win/ontologies/locD/locad">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/win/ontologies/locD/prep">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>s1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OnSite"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/rel"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LocationDescription"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/locad"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/win/ontologies/locD#symbolize"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/rel"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/locad"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialPreposition"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/prep"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/win/ontologies/locD#hasSpatialPreposition"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/locad"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/win/ontologies/locD/prep"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+
+
+
+            <!-- http://www.semanticweb.org/win/ontologies/locD#ActivityCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ActivityCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofAirport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofAirport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AgriculturalLand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AgriculturalLand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Airport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Airport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AmusementPark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AmusementPark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Arboretum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Arboretum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ArtificialStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ArtificialStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AstronomicalandMeteorologicalOrganization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AstronomicalandMeteorologicalOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BankandBankConstruction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BankandBankConstruction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BareRock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BareRock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Beadhouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Beadhouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BombShelter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BombShelter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BoundaryLine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Bridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadBuildFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Building -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Building">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#BusStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BusStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CemeteryFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CemeteryFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Church -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Church">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Cistern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Cistern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ClanShrine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ClanShrine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CliffyCoast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CliffyCoast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Coast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Coast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Coast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CoastLine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CoastLine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Coast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ColdSpringArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ColdSpringArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Mine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ConcertHall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ConcertHall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Contour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Contour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ConvenienceStore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ConvenienceStore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CountiesBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountiesBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CountyHighwayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyHighwayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CountyRoadRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyRoadRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CultivatedLand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CultivatedLand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CulturalCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CulturalCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#CulturalandEducationalOrganizationorSites -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CulturalandEducationalOrganizationorSites">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Dam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Dam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DepartmentStore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DepartmentStore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DeterminedInternationalBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DeterminedInternationalBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#InternationalBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Dock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Dock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DoubtfulBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DoubtfulBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DryPool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DryPool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EconomyStore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EconomyStore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElementarySchool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElementarySchool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedCountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedCountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CountyHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ElevatedUrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedNationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedNationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway"/>
+    </owl:Class>
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedRuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedRuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RuralRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedUrbanExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedUrbanExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ElevatedUrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ElevatedUrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Embassy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Embassy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherLandmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EnvironmentalProtectionFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EnvironmentalProtectionFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialandMiningFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ExhibitionHall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExhibitionHall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Expressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Expressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ExpresswayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExpresswayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadMileage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ExpresswayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExpresswayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FacilitiesandOrganizationsforSupportingFunctionsofLife -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FacilitiesandOrganizationsforSupportingFunctionsofLife">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Factory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Factory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FinancialInstitutions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FinancialInstitutions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FacilitiesandOrganizationsforSupportingFunctionsofLife"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FireHydrant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FireHydrant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FishLadder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FishLadder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Flume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Flume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Ford -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Ford">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Forest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Forest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Fountain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Fountain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FuneralFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FuneralFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MedicalSocailWelfareOrganizationandFuneralFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GasStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GasStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GovernmentAgenciesandOffices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GovernmentAgenciesandOffices">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GradeSeparation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GradeSeparation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Grassland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Grassland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GroundUsed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GroundUsed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Gymnasium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Gymnasium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Harbor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Harbor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HealthOffice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HealthOffice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HealthyFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HealthyFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HighSchool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HighSchool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HighSpeedRailStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HighSpeedRailStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HighSpeedRailway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HighSpeedRailway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Railroad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Tunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HistoricalMonument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HistoricalMonument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HistoricalMonumentandMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HistoricalMonumentandMemorialSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HistoricalMonumentandMemorialSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Hospital -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Hospital">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HotSpringArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HotSpringArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Mine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HydroPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HydroPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#HydrologicalStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#HydrologicalStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherLandmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#IndustrialFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#IndustrialFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialandMiningFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#IndustrialFactory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#IndustrialFactory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#IndustrialandMiningFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#IndustrialandMiningFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#InstituteofSocialEducation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#InstituteofSocialEducation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Interchange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Interchange">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#InternationalBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#InternationalBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Island -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Island">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Kindergarten -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Kindergarten">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Lagoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Lagoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Lake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Lake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Landform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Landform">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Landmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Landmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LaneTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Library -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Library">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Locks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Locks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Market -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Market">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MedicalSocailWelfareOrganizationandFuneralFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MedicalSocailWelfareOrganizationandFuneralFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MedicalandSocialWelfareOrganizations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MedicalandSocialWelfareOrganizations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MedicalSocailWelfareOrganizationandFuneralFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#MemorialArchitecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MemorialArchitecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HistoricalMonumentandMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Mine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Mine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialandMiningFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Mosque -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Mosque">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Museum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Museum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ExhibitionFacility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
+    </owl:Class>
+    
+    
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayBridege -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayBridege">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
+    </owl:Class>
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalExpresswayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadMileage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundNationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NuclearPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NuclearPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OpenConcertStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OpenConcertStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Orphanage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Orphanage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#MedicalandSocialWelfareOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OtherLandmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OtherLandmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OtherRoads -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OtherRoads">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundCountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundCountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CountyHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OvergroundUrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundRuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundRuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RuralRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundUrbanExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundUrbanExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundUrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundUrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Park -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Park">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ParkingArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ParkingArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ParticularBoundaries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ParticularBoundaries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Pavilion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Pavilion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Pond -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Pond">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PostOffice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PostOffice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FacilitiesandOrganizationsforSupportingFunctionsofLife"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincesBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincesBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadMileage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Railroad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Railroad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RailwayStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RailwayStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Ramp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Ramp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadBuildFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RapidTransitLine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RapidTransitLine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RapidTransitStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RapidTransitStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Reef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Reef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ReligiousMeetingHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ReligiousMeetingHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ResearchInstitution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ResearchInstitution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Reservoir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Reservoir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#River -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#River">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Road">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RoadBuildFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RoadBuildFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RoadMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RoadMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SurveyControlPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadRamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadRamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Ramp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Sandbar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Sandbar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ScenicSpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ScenicSpot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ServiceArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ServiceArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ShipbuildingYard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ShipbuildingYard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FacilitiesandOrganizationsforSupportingFunctionsofLife"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ShoreProperties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ShoreProperties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Sidewalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Sidewalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Skywalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Skywalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpecialEdcationSchool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpecialEdcationSchool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Spillway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Spillway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Stadium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Stadium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#TransportationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SteleTowerStatue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SteleTowerStatue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SunEnergyPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SunEnergyPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SurveyControlPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SurveyControlPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Swamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Swamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SwimmingBeach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SwimmingBeach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SwimmingPool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SwimmingPool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HealthyFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TaiwanRailway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TaiwanRailway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Railroad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Temple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Temple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReligiousPlace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Theater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Theater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ThermalPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ThermalPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TollStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TollStation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Tower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Tower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TownshipsCititesDistrictsBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TownshipsCititesDistrictsBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TrafficIsland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TrafficIsland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TransportationFacilities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TransportationFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landmark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#TransportationSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TransportationSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Tunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Tunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadBuildFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundCountyHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundCountyHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CountyHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UndergroundUrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundMarketPlace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundMarketPlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ShoppingFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundPassage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundPassage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundProvincialExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundProvincialExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundProvincialHighway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundProvincialHighway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighway"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundRuralRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundRuralRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RuralRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundUrbanExpressway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundUrbanExpressway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndergroundUrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndergroundUrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UndeterminedInternationalBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UndeterminedInternationalBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#InternationalBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanRoad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Road"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanRoadTunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoadTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Vegetation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Vegetation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#VillagesBoundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#VillagesBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#VocationalTrainingCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#VocationalTrainingCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Walls -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Walls">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ArtificialStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WaterArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WaterArea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WaterSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WaterSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialObjectType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WaterTower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WaterTower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Waterworks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Waterworks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#IndustrialFactory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Weir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Weir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Wetland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Wetland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#WindPowerPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WindPowerPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Zoo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Zoo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

@@ -1,7 +1,8 @@
-from owlready2 import sync_reasoner_pellet, Imp
+from owlready2 import sync_reasoner, sync_reasoner_pellet, Imp
 import json
 
-def reasoning(onto, rule_path, infer_property_values=True):
+
+def reasoning(onto, rule_path, infer_property_values=True, model="Pellet"):
     try:
         with open(rule_path, "r", encoding="utf-8") as f:
             rule_lines = [line.strip() for line in f if line.strip()]
@@ -17,7 +18,10 @@ def reasoning(onto, rule_path, infer_property_values=True):
                     # raise Exception(f"SWRL rule {idx + 1} failed: {rule_text}\n{str(e)}")
 
         with onto:
-            sync_reasoner_pellet(debug=True, infer_property_values=infer_property_values)
+            if model == "Pellet":
+                sync_reasoner_pellet(debug=True, infer_property_values=infer_property_values)
+            else:
+                sync_reasoner(debug=True, infer_property_values=infer_property_values)
 
         print("===========Reasoning END============")
         return onto
@@ -35,51 +39,44 @@ def run_reasoning(onto):
         indiv.symbolize.append(locad_indiv)
     print("===========給定Quality============")
 
-    # for gf in onto_with_semantic.GroundFeature.instances():
-    #     quality_class = onto_with_semantic['Scale']
-    #     quality_instance = quality_class("scale_" + gf.name)
-    #     quality_instance.qualityValue= ["0", ""]
-    #     gf.hasQuality.append(quality_instance)
+    for gf in onto_with_semantic.GroundFeature.instances():
+        quality_class = onto_with_semantic['Scale']
+        quality_instance = quality_class("scale_" + gf.name)
+        quality_instance.qualityValue= ["0", ""]
+        gf.hasQuality.append(quality_instance)
     
-    # with open("./ontology/traffic.json", encoding="utf-8") as f:
-    #     traffic_data = json.load(f)
+    with open("./ontology/traffic.json", encoding="utf-8") as f:
+        traffic_data = json.load(f)
 
-    # for type_quality, quality_dict in traffic_data.items():
-    #     for quality_class_name, quality_value in quality_dict.items():
-    #         quality_class = onto_with_semantic[quality_class_name]
-    #         if quality_class not in onto_with_semantic.classes():
-    #             print(f"❌ 本體中找不到類別：{quality_class_name}")
-    #             continue
+    for type_quality, quality_dict in traffic_data.items():
+        for quality_class_name, quality_value in quality_dict.items():
+            quality_class = onto_with_semantic[quality_class_name]
+            if quality_class not in onto_with_semantic.classes():
+                print(f"❌ 本體中找不到類別：{quality_class_name}")
+                continue
 
-    #         for gf in onto_with_semantic.GroundFeature.instances():
-    #             for existing_quality in gf.hasQuality:
-    #                 if type_quality in [cls.name for cls in existing_quality.is_a]:
-    #                 # target_class = onto_with_semantic[type_quality]
-    #                 # if isinstance(existing_quality, target_class):
-    #                     quality_instance = quality_class(gf.name+"_"+quality_class_name)
-    #                     gf.hasQuality.append(quality_instance)
-    #                     for val in quality_value:
-    #                         quality_instance.qualityValue.append(val)
-    #                 else:
-    #                     continue
+            for gf in onto_with_semantic.GroundFeature.instances():
+                for existing_quality in gf.hasQuality:
+                    target_class = onto_with_semantic[type_quality]
+                    if isinstance(existing_quality, target_class):
+                        quality_instance = quality_class(gf.name + "_" + quality_class_name)
+                        gf.hasQuality.append(quality_instance)
+                        for val in quality_value:
+                            if val and (not hasattr(quality_instance, 'qualityValue') or val not in quality_instance.qualityValue):
+                                quality_instance.qualityValue.append(val)
+                    else:
+                        continue
 
+    print("===========給定Quality END============")
     print("===========映射結果輸出============")
-    # for indiv in onto_with_semantic.GroundFeature.instances():
-    #     print(f"[GroundFeature] {indiv.name}")
-    #     for q in indiv.hasQuality:
-    #         print(f"  ↳ hasQuality → {q.name}")
-    #         if hasattr(q, "qualityValue"):
-    #             print(f"    ↳ qualityValue: {list(q.qualityValue)}")
-    
-    print("===========onto_with_word============")
-    onto_with_word = reasoning(onto_with_semantic, './ontology/ehownet.txt', True)
-
-    print("===========給定Quality END============") 
-    for gf in onto_with_word.GroundFeature.instances():
+    for gf in onto_with_semantic.GroundFeature.instances():
         for q in gf.hasQuality:
             print(f"[GroundFeature] {gf.name}")
-            print(f"  ↳ hasQuality → {q.name}")
+            print(f"  ↳ hasQuality → [{q}] {q.name}")
             if hasattr(q, "qualityValue"):
                 print(f"    ↳ qualityValue: {list(q.qualityValue)}")
+
+    print("===========onto_with_word============")
+    onto_with_word = reasoning(onto_with_semantic, './ontology/ehownet.txt')
                 
     return onto_with_word

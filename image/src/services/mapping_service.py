@@ -57,84 +57,50 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     # 呼叫推理服務
     onto_reasoned = run_reasoning(onto[timestamp])  # 執行推理
 
-    # 產出資料
-    print("=========end all reason===========")
-    object_properties = [onto_reasoned.hasLocaliser, onto_reasoned.hasPlaceName, onto_reasoned.hasSpatialPreposition]
-    
-    def extract_prefix_flag(value):
-        try:
-            return bool(value[0]) if isinstance(value, list) and len(value) > 0 else None
-        except Exception:
-            return None
-
-    data = []
-    for prop in object_properties:
-        for instance in prop.get_relations():
-            try:
-                subject, object_ = instance
-                data.append({
-                    "Property": prop.name,
-                    "Subject": safe_name(subject),
-                    "Object": safe_name(object_),
-                    "IsPrefix": extract_prefix_flag(getattr(object_, 'isPrefix', []))
-                })
-            except Exception as e:
-                print(f"⚠️ Error processing relation {prop.name}: {e}")
-                print(f"Instance content: {instance}")
-
-    print("=========before groundby===========")
-    print(data)
-
+    print("=========start extracting relationships===========")
 
     result_data = []
-    df = pd.DataFrame(data)
-    df['Subject'] = df['Subject'].astype(str)
-    grouped = df.groupby('Subject')
+    spatial_relationship_class = onto_reasoned.SpatialRelationship
+    all_spatial_relationships = spatial_relationship_class.instances()
 
-    print("=========grouped===========")
-    print(grouped.groups)
-    
-    for subject, group in grouped: 
-        place_name = group[group['Property'] == 'hasPlaceName']['Object'].values
-        localisers = group[group['Property'] == 'hasLocaliser'][['Object', 'IsPrefix']].values
-        spatial_prepositions = group[group['Property'] == 'hasSpatialPreposition']['Object'].values
+    for spatial_instance in all_spatial_relationships:
+        subject_name = safe_name(spatial_instance)
 
-        place_name = place_name[0] if place_name.size > 0 else None
+        # SpatialRelationship -hasGroundFeature-> GroundFeature -hasQuality-> Quality
+        ground_features = getattr(spatial_instance, 'hasGroundFeature', [])
+        qualities = {}
+        for ground_feature in ground_features:
+            for quality in getattr(ground_feature, 'hasQuality', []):
+                quality_value_list = getattr(quality, 'qualityValue', [])
+                quality_value = quality_value_list[0] if quality_value_list else None
+                qualities[safe_name(quality)] = quality_value
 
-        # 若沒有 localiser，仍需處理 spatial preposition
-        if localisers.size == 0:
-            if spatial_prepositions.size == 0:
-                result_data.append({
-                    "Subject": subject,
-                    "PlaceName": place_name,
-                    "Localiser": None,
-                    "IsPrefix": None,
-                    "SpatialPreposition": None
-                })
-            else:
-                for spatial_preposition in spatial_prepositions:
-                    result_data.append({
-                        "Subject": subject,
-                        "PlaceName": place_name,
-                        "Localiser": None,
-                        "IsPrefix": None,
-                        "SpatialPreposition": spatial_preposition
-                    })
-        else:
-            for localiser, is_prefix in localisers:
-                spatial_set = spatial_prepositions if spatial_prepositions.size > 0 else [None]
-                for spatial_preposition in spatial_set:
-                    result_data.append({
-                        "Subject": subject,
-                        "PlaceName": place_name,
-                        "Localiser": localiser,
-                        "IsPrefix": is_prefix,
-                        "SpatialPreposition": spatial_preposition
-                    })
+        # SpatialRelationship -symbolize-> LocationDescription -> hasPlaceName/SpatialPreposition/Localiser
+        location_descriptions = getattr(spatial_instance, 'symbolize', [])
+        place_name = None
+        spatial_preposition = None
+        localiser = None
+        for loc_desc in location_descriptions:
+            place_names = getattr(loc_desc, 'hasPlaceName', [])
+            if place_names:
+                place_name = safe_name(place_names[0])
+            spatial_prepositions = getattr(loc_desc, 'hasSpatialPreposition', [])
+            if spatial_prepositions:
+                spatial_preposition = safe_name(spatial_prepositions[0])
+            localisers = getattr(loc_desc, 'hasLocaliser', [])
+            if localiser:
+                localszer = safe_name(localisers[0])
+            
+
+        result_data.append({
+            "Subject": subject_name,
+            "PlaceName": place_name,
+            "SpatialPreposition": spatial_preposition,
+            "Localiser": localiser,
+            "Qualities": qualities if qualities else None
+        })
 
     print("=========Final Result===========")
-    result_df = pd.DataFrame(result_data)
-    grouped_result = result_df.drop_duplicates(subset=["PlaceName", "Localiser", "IsPrefix", "SpatialPreposition"]).to_dict(orient="records")
-    print(grouped_result)
+    print(result_data)
 
-    return grouped_result
+    return result_data
