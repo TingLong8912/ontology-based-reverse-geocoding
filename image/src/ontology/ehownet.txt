@@ -1,7 +1,7 @@
 OnSite(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), AtSpatialPreposition(?word) -> hasSpatialPreposition(?locad, ?word)
 External(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), OutsideLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Internal(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), InsideLocaliser(?word) -> hasLocaliser(?locad, ?word)
-Upper(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), TopLocaliser(?word) -> hasLocaliser(?locad, ?word)
+Upper(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), UpperLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Beneath(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BelowLocaliser(?word) -> hasLocaliser(?locad, ?word)
 InFront(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), FrontLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Hide(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BackLocaliser(?word) -> hasLocaliser(?locad, ?word)
