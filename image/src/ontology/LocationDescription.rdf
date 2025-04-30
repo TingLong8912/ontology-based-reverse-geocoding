@@ -3137,14 +3137,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#TopLocaliser -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TopLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#TopPart -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#TopPart">
@@ -3645,9 +3637,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#上方 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上方">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上方"/>
     
 
 
@@ -3677,9 +3667,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#下方 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#下方">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BelowLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#下方"/>
     
 
 
