@@ -29,4 +29,4 @@ OnSite(?sr1), Left(?sr2), FigureFeature(?target), hasFigureFeature(?sr1, ?target
 OnSite(?sr1), Right(?sr2), FigureFeature(?target), hasFigureFeature(?sr1, ?target), hasFigureFeature(?sr2, ?target), GroundFeature(?refer), hasGroundFeature(?sr1, ?refer), hasGroundFeature(?sr2, ?refer) -> RightPart(?sr)
 OnSite(?sr1), InFront(?sr2), FigureFeature(?target), hasFigureFeature(?sr1, ?target), hasFigureFeature(?sr2, ?target), GroundFeature(?refer), hasGroundFeature(?sr1, ?refer), hasGroundFeature(?sr2, ?refer) -> FrontPart(?sr)
 OnSite(?sr1), Hide(?sr2), FigureFeature(?target), hasFigureFeature(?sr1, ?target),  hasFigureFeature(?sr2, ?target), GroundFeature(?refer), hasGroundFeature(?sr1, ?refer), hasGroundFeature(?sr2, ?refer) -> HindPart(?sr)
-Disjoint(?sr), FigureFeature(?target), hasFigureFeature(?sr, ?target), GroundFeature(?refer), hasGroundFeature(?sr, ?refer), hasQuality(?refer, ?geometryType), Point(?geometryType) ->  -> Near(?sr)
+Disjoint(?sr), FigureFeature(?target), hasFigureFeature(?sr, ?target), GroundFeature(?refer), hasGroundFeature(?sr, ?refer), hasQuality(?refer, ?geometryType), Point(?geometryType) -> Near(?sr)
