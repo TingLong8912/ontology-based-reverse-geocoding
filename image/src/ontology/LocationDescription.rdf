@@ -1926,6 +1926,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayMileage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayMileage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RoadMileage"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayRamp -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayRamp">
