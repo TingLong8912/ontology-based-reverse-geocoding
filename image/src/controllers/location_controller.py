@@ -8,10 +8,6 @@ from utils.cleaner import clear_ontology
 
 location_bp = Blueprint("location", __name__)
 
-@location_bp.route('/api/hello', methods=['GET'])
-def hello():
-    return "Hello, world!"
-
 @location_bp.route("/api/map_location", methods=["GET"])
 def map_location():
     try:

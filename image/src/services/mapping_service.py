@@ -8,10 +8,9 @@ def safe_name(x):
     return getattr(x, 'name', str(x))
 
 def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescription.rdf'):
-    print("=========start mapping ontology===========")
     onto = {}
     timestamp = str(time.time()).replace(".", "_")
-    print("timestamp: ", timestamp)
+
     onto[timestamp] = get_ontology(ontology_path).load()
     class_lookup = {cls.name: cls for cls in onto[timestamp].classes()}
 
@@ -30,9 +29,10 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     context_instance = context_class('context'+str(context))
 
     for sr_item in sr_object:
-        spatial_relation = sr_item['relation']
-        refer_object_classname = sr_item['ontology_class']
-        refer_object_name = sr_item['result']
+        spatial_relation = sr_item.get('relation')
+        refer_object_classname = sr_item.get('ontology_class')
+        refer_object_name = sr_item.get('result')
+        geojson_data = sr_item.get('geojson')
         
         feature_class = onto[timestamp]["Feature"]
         if refer_object_classname not in class_lookup:
@@ -50,6 +50,40 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
 
         feature_instance.hasQuality.append(feature_toponym_instance)
         feature_instance.hasQuality.append(feature_typology_instance)
+
+        geometry_type = None
+        if geojson_data:
+            geom = geojson_data.get("geometry")
+            if not geom and geojson_data.get("type") == "Feature":
+                geom = geojson_data.get("geometry")
+            elif geojson_data.get("type") == "FeatureCollection":
+                features = geojson_data.get("features", [])
+                if features:
+                    geom = features[0].get("geometry")
+
+            if geom:
+                g_type = geom.get("type")
+                if g_type in {"Point", "LineString", "Polygon"}:
+                    geometry_type = g_type
+                elif g_type == "MultiPoint":
+                    geometry_type = "MultiPoint"
+                elif g_type == "MultiLineString":
+                    geometry_type = "MultiLineString"
+                elif g_type == "MultiPolygon":
+                    geometry_type = "MultiPolygon"
+
+        if geometry_type:
+            print(f"Geometry type: {geometry_type}")
+            geometry_class = onto[timestamp].Geometry
+            specific_geometry_class = onto[timestamp][geometry_type]
+            if specific_geometry_class and issubclass(specific_geometry_class, geometry_class):
+                geometry_instance = specific_geometry_class(f"referFeature{refer_object_name}_Geometry")
+                geometry_instance.qualityValue.append(str(geometry_type))
+                feature_instance.hasQuality.append(geometry_instance)
+            else:
+                geometry_instance = geometry_class(f"Geometry_{refer_object_name}")
+                geometry_instance.qualityValue.append(str(geometry_type))
+                feature_instance.hasQuality.append(geometry_instance)
 
         spatial_relation_instance.hasFeature.append(feature_instance)
         spatial_relation_instance.hasContext.append(context_instance)
