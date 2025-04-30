@@ -41,14 +41,7 @@ def run_reasoning(onto, timestamp):
     for idx, indiv in enumerate(onto_with_semantic[timestamp].SpatialRelationship.instances()):
         locad_indiv = onto_with_semantic[timestamp].LocationDescription(f"locad_{idx}")
         indiv.symbolize.append(locad_indiv)
-    print("===========給定Quality============")
-
-    for gf in onto_with_semantic[timestamp].GroundFeature.instances():
-        quality_class = onto_with_semantic[timestamp]['Scale']
-        quality_instance = quality_class("scale_" + gf.name)
-        quality_instance.qualityValue= ["0", ""]
-        gf.hasQuality.append(quality_instance)
-    
+    print("===========給定Quality============")    
     with open("./ontology/traffic.json", encoding="utf-8") as f:
         traffic_data = json.load(f)
 
