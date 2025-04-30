@@ -60,7 +60,11 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         # Add Other Info (e.g. distance, direction) to Quality
         if other_info:
             if spatial_relation == "AbsoluteDirection":
-                spatial_relation_instance.directionValue.append(str(other_info))
+                if isinstance(other_info, list):
+                    for direction in other_info:
+                        spatial_relation_instance.directionValue.append(str(direction))
+                else:
+                    spatial_relation_instance.directionValue.append(str(other_info))
 
         # Add Geometry type to Quality
         geometry_type = None
