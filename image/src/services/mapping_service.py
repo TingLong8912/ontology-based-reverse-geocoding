@@ -36,6 +36,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         refer_object_classname = sr_item.get('ontology_class')
         refer_object_name = sr_item.get('result')
         geojson_data = sr_item.get('geojson')
+        other_info = sr_item.get('other_info')
         
         clean_name = normalize_name(refer_object_name)
         
@@ -55,7 +56,13 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
 
         feature_instance.hasQuality.append(feature_toponym_instance)
         feature_instance.hasQuality.append(feature_typology_instance)
+        
+        # Add Other Info (e.g. distance, direction) to Quality
+        if other_info:
+            if spatial_relation == "AbsoluteDirection":
+                spatial_relation_instance.directionValue.append(str(other_info))
 
+        # Add Geometry type to Quality
         geometry_type = None
         if geojson_data:
             geom = geojson_data.get("geometry")
