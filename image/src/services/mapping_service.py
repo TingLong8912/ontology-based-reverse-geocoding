@@ -61,9 +61,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     print("=========start extracting relationships===========")
     result_data = []
     spatial_relationship_class = onto_reasoned[timestamp].SpatialRelationship
-    print("spatial_relationship_class: ", spatial_relationship_class)
     all_spatial_relationships = spatial_relationship_class.instances()
-    print("all_spatial_relationships: ", all_spatial_relationships)
 
     for spatial_instance in all_spatial_relationships:
         subject_name = safe_name(spatial_instance)
@@ -81,7 +79,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         location_descriptions = getattr(spatial_instance, 'symbolize', [])
         place_name = None
         spatial_preposition = None
-        localiser = None
+        localiser = []
         for loc_desc in location_descriptions:
             place_names = getattr(loc_desc, 'hasPlaceName', [])
             if place_names:
@@ -90,15 +88,16 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
             if spatial_prepositions:
                 spatial_preposition = safe_name(spatial_prepositions[0])
             localisers = getattr(loc_desc, 'hasLocaliser', [])
-            if localiser:
-                localszer = safe_name(localisers[0])
+            if localisers:
+                print("=====================hasLocaliser=====================")
+                localiser = [safe_name(loc) for loc in localisers]
             
 
         result_data.append({
             "Subject": subject_name,
             "PlaceName": place_name,
             "SpatialPreposition": spatial_preposition,
-            "Localiser": localiser,
+            "localiser": localiser if localiser else None,
             "Qualities": qualities if qualities else None
         })
 

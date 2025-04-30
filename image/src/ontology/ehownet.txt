@@ -7,7 +7,6 @@ InFront(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), FrontLocali
 Hide(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BackLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Left(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeftSideLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Right(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), RightSideLocaliser(?word) -> hasLocaliser(?locad, ?word)
-Hide(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BackLocaliser(?word) -> hasLocaliser(?locad, ?word)
 North(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), NorthLocaliser(?word) -> hasLocaliser(?locad, ?word)
 West(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), WestLocaliser(?word) -> hasLocaliser(?locad, ?word)
 East(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), EastLocaliser(?word) -> hasLocaliser(?locad, ?word)
