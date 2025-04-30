@@ -7,6 +7,9 @@ from services.reasoning_service import run_reasoning
 def safe_name(x):
     return getattr(x, 'name', str(x))
 
+def normalize_name(name):
+    return str(name).replace("+", "_").replace(" ", "_")
+
 def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescription.rdf'):
     onto = {}
     timestamp = str(time.time()).replace(".", "_")
@@ -34,6 +37,8 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         refer_object_name = sr_item.get('result')
         geojson_data = sr_item.get('geojson')
         
+        clean_name = normalize_name(refer_object_name)
+        
         feature_class = onto[timestamp]["Feature"]
         if refer_object_classname not in class_lookup:
             print(f"❌ 本體中找不到類別：{refer_object_classname}")
@@ -43,10 +48,10 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
 
         spatial_relation_class = onto[timestamp][spatial_relation]
         
-        feature_instance = feature_class('referFeature'+str(refer_object_name))
-        feature_typology_instance = feature_typology_class(str(refer_object_classname)+"_"+str(refer_object_name))
-        feature_toponym_instance = feature_toponym_class(refer_object_name)
-        spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+str(refer_object_name))
+        feature_instance = feature_class('referFeature'+clean_name)
+        feature_typology_instance = feature_typology_class(str(refer_object_classname)+"_"+clean_name)
+        feature_toponym_instance = feature_toponym_class(clean_name)
+        spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+clean_name)
 
         feature_instance.hasQuality.append(feature_toponym_instance)
         feature_instance.hasQuality.append(feature_typology_instance)
@@ -73,15 +78,15 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
                     geometry_type = "MultiPolygon"
 
         if geometry_type:
-            print(f"Geometry type: {geometry_type}")
+            print(f"Geometry type: {geometry_type} - {refer_object_name}")
             geometry_class = onto[timestamp].Geometry
             specific_geometry_class = onto[timestamp][geometry_type]
             if specific_geometry_class and issubclass(specific_geometry_class, geometry_class):
-                geometry_instance = specific_geometry_class(f"referFeature{refer_object_name}_Geometry")
+                geometry_instance = specific_geometry_class(f"referFeature{clean_name}_Geometry")
                 geometry_instance.qualityValue.append(str(geometry_type))
                 feature_instance.hasQuality.append(geometry_instance)
             else:
-                geometry_instance = geometry_class(f"Geometry_{refer_object_name}")
+                geometry_instance = geometry_class(f"Geometry_{clean_name}")
                 geometry_instance.qualityValue.append(str(geometry_type))
                 feature_instance.hasQuality.append(geometry_instance)
 
