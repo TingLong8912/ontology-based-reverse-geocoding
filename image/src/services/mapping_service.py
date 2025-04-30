@@ -59,6 +59,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         
         # Add Other Info (e.g. distance, direction) to Quality
         if other_info:
+            print(f"Other info: {other_info} - {refer_object_name}")
             if spatial_relation == "AbsoluteDirection":
                 if isinstance(other_info, list):
                     for direction in other_info:
@@ -107,6 +108,10 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
     # 呼叫推理服務
     onto_reasoned = {}
     onto_reasoned[timestamp] = run_reasoning(onto, timestamp)  # 執行推理
+
+    # Debug: print all SpatialRelationship instances and their directionValue
+    for rel in onto_reasoned[timestamp].SpatialRelationship.instances():
+        print(f"{safe_name(rel)} - directionValue: {getattr(rel, 'directionValue', [])}")
 
     print("=========start extracting relationships===========")
     result_data = []

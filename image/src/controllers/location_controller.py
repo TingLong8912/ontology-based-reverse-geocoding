@@ -20,6 +20,10 @@ def map_location():
 
     db_results = fetch_data_from_db(lon, lat, buffer_distance)
     sr_results = call_spatial_api(lon, lat, db_results)
+    for sr in sr_results:
+        if sr.get('relation') == 'AbsoluteDirection':
+            print(f"[DEBUG] AbsoluteDirection → bearing: {sr.get('bearing')}")
+            print(f"[DEBUG] AbsoluteDirection → other_info: {sr.get('other_info')}")
     locad_result = mapping_ontology(sr_results, context)
     if hasattr(locad_result, "get_json"):
         locad_result = locad_result.get_json()
