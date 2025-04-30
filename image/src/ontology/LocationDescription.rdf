@@ -360,6 +360,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#AlterLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AlterLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#AmusementPark -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AmusementPark">
@@ -372,6 +380,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#AnthropocentricFacet">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AbstractQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Approach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Approach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AlterLocation"/>
     </owl:Class>
     
 
@@ -468,14 +484,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Beneath">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DirectionFunction"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#BinarySpatialRelationship -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#BinarySpatialRelationship">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
     </owl:Class>
     
 
@@ -856,6 +864,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DistanceValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DistanceValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#Dock -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Dock">
@@ -1160,6 +1176,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Far -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Far">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DistanceValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FarLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FarLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#Feature -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Feature">
@@ -1292,6 +1324,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GeometryCollection">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#GoThrough -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#GoThrough">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AlterLocation"/>
     </owl:Class>
     
 
@@ -1705,7 +1745,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#LocationFunction -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LocationFunction">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BinarySpatialRelationship"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
     </owl:Class>
     
 
@@ -1946,6 +1986,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Near -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Near">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DistanceValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#NearLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NearLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
     </owl:Class>
     
 
@@ -2472,14 +2528,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Quality">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatioTemporalParticular"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#QuantitativeSpatilaRelationship -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#QuantitativeSpatilaRelationship">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
     </owl:Class>
     
 
@@ -4114,6 +4162,22 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#邊">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#鄰近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#鄰近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NearLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#附近 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#附近">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NearLocaliser"/>
     </owl:NamedIndividual>
     
 
