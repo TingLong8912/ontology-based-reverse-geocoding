@@ -97,7 +97,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
             "Subject": subject_name,
             "PlaceName": place_name,
             "SpatialPreposition": spatial_preposition,
-            "localiser": localiser if localiser else None,
+            "Localiser": localiser if localiser else None,
             "Qualities": qualities if qualities else None
         })
 
