@@ -122,8 +122,12 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         landmark_locs = typology_to_locs.get("Landmark", [])
 
         combinations = []
-        for r, m, l in product(road_locs, mileage_locs, landmark_locs):
-            combinations.append(f"{r}{m}（{l}）")
+        if road_locs or landmark_locs:
+            mileage_locs = mileage_locs or [""]
+            road_locs = road_locs or [""]
+            landmark_locs = landmark_locs or [""]
+            for r, m, l in product(road_locs, mileage_locs, landmark_locs):
+                combinations.append(f"{r}{m}（{l}）")
 
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
