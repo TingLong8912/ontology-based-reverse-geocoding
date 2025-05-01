@@ -32,7 +32,8 @@ def map_location():
     log_info("Mapping completed successfully") 
 
     multiLocad_results = template(locad_result, context)
-
+    print("=======MultiLocad Results======")
+    print(multiLocad_results)
     return jsonify({
         "spatial_relations": sr_results,
         "location_description": locad_result,

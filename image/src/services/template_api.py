@@ -1,5 +1,6 @@
 from owlready2 import Thing, get_ontology
 import time
+from itertools import product
 from services.ontology.assign_quality_api import assignQuality
 
 def ToFullText(locd_result):
@@ -103,6 +104,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             matching_locs = []
             for loc in onto[timestamp].LocationDescription.instances():
                 for quality in loc.hasQuality:
+                    print(f"[DEBUG] {quality.name} 的 is_a：{quality.is_a}")
                     if quality.is_a and any(cls in subclasses for cls in quality.is_a):
                         matching_locs.append(loc.name)
                         break
@@ -114,11 +116,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             for name in loc_names:
                 print(f"  - {name}")
         
-        # Clear the ontology
-        onto[timestamp].destroy(update_relation = True, update_is_a = True)
-
         # 組合 Road + RoadMileage + (Landmark)
-        from itertools import product
         road_locs = typology_to_locs.get("Road", [])
         mileage_locs = typology_to_locs.get("RoadMileage", [])
         landmark_locs = typology_to_locs.get("Landmark", [])
@@ -127,9 +125,9 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         for r, m, l in product(road_locs, mileage_locs, landmark_locs):
             combinations.append(f"{r}{m}（{l}）")
 
-        print("===========組合結果============")
-        for i, combination in enumerate(combinations):
-            print(f"組合 {i + 1}: {combination}")
+        # Clear the ontology
+        onto[timestamp].destroy(update_relation = True, update_is_a = True)
+
         return combinations
     elif context == "Disaster":
         pass
