@@ -1,6 +1,10 @@
 import requests
 
 def call_spatial_api(lon, lat, refer_geom_dict):
+    """
+    Call the spatial relation API to get the spatial relations between the target geometry and reference geometries.
+    """
+    
     print("execute spatial relation...")
 
     target_geom = {

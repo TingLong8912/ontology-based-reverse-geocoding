@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request, Response
 import json
 from services.db_service import fetch_data_from_db
 from services.spatial_relation_api import call_spatial_api
-from services.mapping_service import mapping_ontology
+from services.semantic_reasoning_service import RunSemanticReasoning
 from services.template_api import template
 from utils.logger import log_error, log_info  
 from utils.cleaner import clear_ontology  
@@ -25,7 +25,7 @@ def map_location():
         if sr.get('relation') == 'AbsoluteDirection':
             print(f"[DEBUG] AbsoluteDirection → bearing: {sr.get('bearing')}")
             print(f"[DEBUG] AbsoluteDirection → other_info: {sr.get('other_info')}")
-    locad_result = mapping_ontology(sr_results, context)
+    locad_result = RunSemanticReasoning(sr_results, context)
     if hasattr(locad_result, "get_json"):
         locad_result = locad_result.get_json()
 
@@ -35,5 +35,6 @@ def map_location():
 
     return jsonify({
         "spatial_relations": sr_results,
-        "location_description": locad_result
+        "location_description": locad_result,
+        "multiLocad_results": multiLocad_results
     })
