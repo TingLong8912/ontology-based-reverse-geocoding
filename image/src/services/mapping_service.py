@@ -50,7 +50,7 @@ def mapping_ontology(sr_object, context, ontology_path='./ontology/LocationDescr
         spatial_relation_class = onto[timestamp][spatial_relation]
         
         feature_instance = feature_class('referFeature'+clean_name)
-        feature_typology_instance = feature_typology_class(clean_name+"_Typology"+str(refer_object_classname))
+        feature_typology_instance = feature_typology_class(clean_name+"_Typology_"+str(refer_object_classname))
         feature_typology_instance.qualityValue.append(str(refer_object_classname))
         feature_toponym_instance = feature_toponym_class(clean_name)
         spatial_relation_instance = spatial_relation_class(str(spatial_relation)+"_"+clean_name)
