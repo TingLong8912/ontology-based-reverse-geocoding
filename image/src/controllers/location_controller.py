@@ -3,6 +3,7 @@ import json
 from services.db_service import fetch_data_from_db
 from services.spatial_relation_api import call_spatial_api
 from services.mapping_service import mapping_ontology
+from services.template_api import template
 from utils.logger import log_error, log_info  
 from utils.cleaner import clear_ontology  
 
@@ -29,6 +30,8 @@ def map_location():
         locad_result = locad_result.get_json()
 
     log_info("Mapping completed successfully") 
+
+    multiLocad_results = template(locad_result, context)
 
     return jsonify({
         "spatial_relations": sr_results,
