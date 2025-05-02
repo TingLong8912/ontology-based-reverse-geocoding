@@ -126,6 +126,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             mileage_locs = mileage_locs or [""]
             converted_mileage_locs = []
             for m in mileage_locs:
+                print("[DEBUG] mileage_locs:", m)
                 if "K_" in m:
                     try:
                         km, m_part = m.split("K_")
@@ -135,6 +136,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                         converted_mileage_locs.append(m)  
                 else:
                     converted_mileage_locs.append(m)
+            print("[DEBUG] converted_mileage_locs:", converted_mileage_locs)
             mileage_locs = converted_mileage_locs
             road_locs = road_locs or [""]
             landmark_locs = landmark_locs or [""]
