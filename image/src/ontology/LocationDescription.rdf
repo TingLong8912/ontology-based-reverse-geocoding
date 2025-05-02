@@ -691,7 +691,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#CountyHighwayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CountyHighwayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -1131,7 +1131,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#ExpresswayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ExpresswayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -1651,7 +1651,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#LaneBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -1961,7 +1961,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NationalHighwayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -2439,7 +2439,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialExpresswayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -2471,7 +2471,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ProvincialHighwayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -2751,7 +2751,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -3453,7 +3453,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanExpresswayBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -3477,7 +3477,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#UrbanRoadBridge -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoadBridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Bridge"/>
     </owl:Class>
     
 
@@ -3658,14 +3658,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#Bridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRoad"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/yantinglong/ontologies/2025/0/spatialojbecttype#SpatialObjectType"/>
@@ -3815,14 +3807,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#北 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#北方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北方">
@@ -3843,14 +3827,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北部">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#南 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#南">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser"/>
     </owl:NamedIndividual>
     
 
@@ -3992,14 +3968,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#東 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#東北方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東北方">
@@ -4086,14 +4054,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#西 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#西北端 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西北端">
@@ -4162,14 +4122,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#邊">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#BoundaryLocaliser"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/win/ontologies/locD#鄰近 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#鄰近">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NearLocaliser"/>
     </owl:NamedIndividual>
     
 

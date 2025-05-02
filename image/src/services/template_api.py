@@ -124,6 +124,18 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         combinations = []
         if road_locs or landmark_locs:
             mileage_locs = mileage_locs or [""]
+            converted_mileage_locs = []
+            for m in mileage_locs:
+                if "K_" in m:
+                    try:
+                        km, m_part = m.split("K_")
+                        km_float = float(km) + float(m_part) / 1000
+                        converted_mileage_locs.append(f"{km_float:.1f}公里")
+                    except ValueError:
+                        converted_mileage_locs.append(m)  
+                else:
+                    converted_mileage_locs.append(m)
+            mileage_locs = converted_mileage_locs
             road_locs = road_locs or [""]
             landmark_locs = landmark_locs or [""]
             for r, m, l in product(road_locs, mileage_locs, landmark_locs):
