@@ -6772,3 +6772,5 @@
 2025-05-05 17:29:17,067 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 24140
 2025-05-05 17:29:19,302 - utils.logger - INFO - Mapping completed successfully
 2025-05-05 17:29:19,489 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 17:29:19] "[37mGET /api/map_location?lat=25.01632504182463&lon=121.94488912714546 HTTP/1.1[0m" 200 -
+2025-05-05 17:32:03,101 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 17:32:03,221 - werkzeug - INFO -  * Restarting with stat

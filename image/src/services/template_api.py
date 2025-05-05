@@ -233,7 +233,10 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
                     combinations["avg_quality"].append(avg_qualities)
-                    combinations["combination"].append(f"{r}{m}（{l}）")
+                    if l == "": 
+                        combinations["combination"].append(f"{r}{m}")
+                    else:
+                        combinations["combination"].append(f"{r}{m}（{l}）")
 
             # 需要加上 Admin（一般道路）
             county_locs = county_locs or [""]
@@ -255,7 +258,10 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
                     combinations["avg_quality"].append(avg_qualities)
-                    combinations["combination"].append(f"{a}{t}{r}{m}（{l}）")
+                    if l == "":
+                        combinations["combination"].append(f"{a}{t}{r}{m}")
+                    else:
+                        combinations["combination"].append(f"{a}{t}{r}{m}（{l}）")
 
         # 取得 top_n 的描述（依照平均 quality 值排序）
         top_n = 5  
