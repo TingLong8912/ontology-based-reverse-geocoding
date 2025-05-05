@@ -202,6 +202,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             elif category == "RoadMileage":
                 df.at[idx, "RoadMileage"] = place_name
         
+        print(df)
         results = []
 
         template_fields = [
@@ -217,10 +218,9 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             for field in template_fields
         }
 
-        # 取得所有組合（笛卡兒積）
-        combinations = list(product(*field_values.values()))
+        print(field_values)
 
-        # 組合成描述句
+        combinations = list(product(*field_values.values()))
         results = ["".join(parts) for parts in combinations]
        
         # Print the results

@@ -1,4 +1,3 @@
-OnSite(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), AtSpatialPreposition(?word) -> hasSpatialPreposition(?locad, ?word)
 External(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), OutsideLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Internal(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), InsideLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Upper(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), UpperLocaliser(?word) -> hasLocaliser(?locad, ?word)
