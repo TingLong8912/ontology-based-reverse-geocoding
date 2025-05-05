@@ -220,6 +220,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#hasCombined -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#hasCombined">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialRelationship"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#isPrefix -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#isPrefix">
@@ -916,6 +925,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser"/>
     </owl:Class>
     
 
@@ -2042,6 +2052,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthwestLocaliser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SoutheastLocaliser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
     </owl:Class>
     
 
@@ -2888,6 +2904,8 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
     </owl:Class>
     
 

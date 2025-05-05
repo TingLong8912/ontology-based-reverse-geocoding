@@ -36,6 +36,39 @@ def ToFullText(locd_result):
 
     return full_text
 
+
+def get_quality_values(onto, locad_indiv_name, target_quality: list):
+    """
+    取得某個 Typology 類別對應的所有 Quality 值。
+    :param onto: 已載入的本體對象
+    :param locad_indiv_name: 目標 LocationDescription 個體名稱
+    :param target_quality: 欲檢索的 quality 類別名稱清單
+    :return: {locad_indiv_name: {target_quality1: [], target_quality2: [], ...}}
+    """
+    result = {locad_indiv_name: {q: [] for q in target_quality}}
+
+    for loc in onto.LocationDescription.instances():
+        if loc.name == locad_indiv_name:
+            for quality in loc.hasQuality:
+                if hasattr(quality, "qualityValue"):
+                    for cls in quality.is_a:
+                        if cls.name in target_quality:
+                            values = [str(v) for v in quality.qualityValue]
+                            result[locad_indiv_name][cls.name].extend(values)
+    return result
+
+def average_quality(onto, loc_names: list, qualities: list):
+    """
+    This function calculates the average quality values for a list of location names.
+    """
+    values = {q: [] for q in qualities}
+    for name in loc_names:
+        q_dict = get_quality_values(onto, name, qualities)[name]
+        for q in qualities:
+            values[q].extend([float(v) for v in q_dict[q] if v.replace('.', '', 1).isdigit()])
+    print("執行平均結果：", loc_names, values)
+    return {q: (sum(vals) / len(vals)) if vals else None for q, vals in values.items()}
+
 def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf', target_typologies=None):
     """
     This function is used to generate a template for the location description.
@@ -160,7 +193,10 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
 
         landmark_locs = typology_to_locs.get("Landmark", [])
 
-        combinations = []
+        combinations = {
+            'combination': [],
+            'avg_quality': []
+        }
         if road_locs or landmark_locs:
             # 里程轉換
             all_mileage_names = [m for m in mileage_locs] or [""]
@@ -194,7 +230,10 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     count_za = sum(1 for e in elements[1:] if "在" in e)
                     if count_za >= 1:
                         continue
-                    combinations.append(f"{r}{m}（{l}）")
+                    qualities_to_check = ["Scale", "Prominence"]
+                    avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
+                    combinations["avg_quality"].append(avg_qualities)
+                    combinations["combination"].append(f"{r}{m}（{l}）")
 
             # 需要加上 Admin（一般道路）
             county_locs = county_locs or [""]
@@ -213,12 +252,20 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     count_za = sum(1 for e in elements[1:] if "在" in e)
                     if count_za >= 1:
                         continue
-                    combinations.append(f"{a}{t}{r}{m}（{l}）")
+                    qualities_to_check = ["Scale", "Prominence"]
+                    avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
+                    combinations["avg_quality"].append(avg_qualities)
+                    combinations["combination"].append(f"{a}{t}{r}{m}（{l}）")
+
+        # 取得 top_n 的描述（依照平均 quality 值排序）
+        top_n = 5  
+        combined_with_quality = list(zip(combinations['combination'], combinations['avg_quality']))
+        combined_with_quality.sort(key=lambda x: sum(v for v in x[1].values() if v is not None) / max(len([v for v in x[1].values() if v is not None]), 1), reverse=True)
+        top_descriptions = [desc for desc, _ in combined_with_quality[:top_n]]
 
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
 
-        print(combinations)
-        return combinations
+        return top_descriptions
     elif context == "Disaster":
         pass
