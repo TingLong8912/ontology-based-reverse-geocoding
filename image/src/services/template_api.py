@@ -61,13 +61,24 @@ def average_quality(onto, loc_names: list, qualities: list):
     """
     This function calculates the average quality values for a list of location names.
     """
+    # Add scoring logic
+    w1 = 0.6
+    w2 = 0.4
+    
     values = {q: [] for q in qualities}
     for name in loc_names:
         q_dict = get_quality_values(onto, name, qualities)[name]
         for q in qualities:
             values[q].extend([float(v) for v in q_dict[q] if v.replace('.', '', 1).isdigit()])
-    print("執行平均結果：", loc_names, values)
-    return {q: (sum(vals) / len(vals)) if vals else None for q, vals in values.items()}
+    
+    scale_value = float(values.get("Scale", [1])[0]) 
+    prominence_value = float(values.get("Prominence", [0])[0])
+    if scale_value is None or scale_value == 0:
+        scale_value = 1
+    score = w1 * (1 / scale_value) + w2 * prominence_value
+
+    print("執行平均結果：", loc_names, score)
+    return {q: score}
 
 def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf', target_typologies=None):
     """
@@ -232,7 +243,6 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                         continue
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
-                    combinations["avg_quality"].append(avg_qualities)
                     if l == "": 
                         combinations["combination"].append(f"{r}{m}")
                     else:
@@ -257,6 +267,15 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                         continue
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
+                    # Add scoring logic
+                    w1 = 0.6
+                    w2 = 0.4
+                    scale_value = avg_qualities.get("Scale", 1)  # Avoid divide-by-zero
+                    prominence_value = avg_qualities.get("Prominence", 0)
+                    if scale_value is None or scale_value == 0:
+                        scale_value = 1
+                    score = w1 * (1 / scale_value) + w2 * prominence_value
+                    avg_qualities["score"] = score
                     combinations["avg_quality"].append(avg_qualities)
                     if l == "":
                         combinations["combination"].append(f"{a}{t}{r}{m}")
@@ -268,7 +287,8 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         combined_with_quality = list(zip(combinations['combination'], combinations['avg_quality']))
         combined_with_quality.sort(key=lambda x: sum(v for v in x[1].values() if v is not None) / max(len([v for v in x[1].values() if v is not None]), 1), reverse=True)
         top_descriptions = [desc for desc, _ in combined_with_quality[:top_n]]
-
+        print("Top descriptions:", top_descriptions)
+        
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
 
