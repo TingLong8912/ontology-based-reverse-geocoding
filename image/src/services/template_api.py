@@ -145,36 +145,75 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             else:
                 road_locs_with_admin.append(loc_name)
 
+        # 建立以道路類別為 key 的 mileage 對應
+        mileage_by_road = {}
+
         mileage_locs = typology_to_locs.get("RoadMileage", [])
+        for mileage_name in mileage_locs:
+            if mileage_name == "":
+                continue
+            mileage_indiv = onto[timestamp].LocationDescription(mileage_name)
+            for q in mileage_indiv.hasQuality:
+                if q.is_a:
+                    for cls in q.is_a:
+                        mileage_by_road.setdefault(cls, []).append(mileage_name)
+
         landmark_locs = typology_to_locs.get("Landmark", [])
 
         combinations = []
         if road_locs or landmark_locs:
-            mileage_locs = mileage_locs or [""]
-            converted_mileage_locs = []
-            for m in mileage_locs:
-                print("[DEBUG] mileage_locs:", m)
-                if "K_" in m:
+            # 里程轉換
+            all_mileage_names = [m for m in mileage_locs] or [""]
+            converted_mileage_map = {}
+            for m in all_mileage_names:
+                if m == "":
+                    converted_mileage_map[m] = ""
+                elif "K_" in m:
                     try:
                         km, m_part = m.split("K_")
                         km_float = float(km) + float(m_part) / 1000
-                        converted_mileage_locs.append(f"{km_float:.1f}公里")
+                        converted_mileage_map[m] = f"{km_float:.1f}公里"
                     except ValueError:
-                        converted_mileage_locs.append(m)
+                        converted_mileage_map[m] = m
                 else:
-                    converted_mileage_locs.append(m)
-            print("[DEBUG] converted_mileage_locs:", converted_mileage_locs)
-            mileage_locs = converted_mileage_locs
+                    converted_mileage_map[m] = m
             landmark_locs = landmark_locs or [""]
 
             # 不需要加上 Admin（特殊道路）
-            for r, m, l in product(road_locs_without_admin, mileage_locs, landmark_locs):
-                combinations.append(f"{r}{m}（{l}）")
+            for r in road_locs_without_admin:
+                loc_indiv = onto[timestamp].LocationDescription(r)
+                road_classes = [cls for q in loc_indiv.hasQuality for cls in (q.is_a or []) if cls in special_road_descendants]
+                matched_mileages = []
+                for rc in road_classes:
+                    matched_mileages += mileage_by_road.get(rc, [])
+                matched_mileages = matched_mileages or [""]
+                # 轉換里程
+                matched_mileages = [converted_mileage_map.get(m, m) for m in matched_mileages]
+                for m, l in product(matched_mileages, landmark_locs):
+                    elements = [r, m, l]
+                    count_za = sum(1 for e in elements[1:] if "在" in e)
+                    if count_za >= 1:
+                        continue
+                    combinations.append(f"{r}{m}（{l}）")
 
             # 需要加上 Admin（一般道路）
             county_locs = county_locs or [""]
-            for a, r, m, l in product(county_locs, road_locs_with_admin, mileage_locs, landmark_locs):
-                combinations.append(f"{a}{r}{m}（{l}）")
+            township_locs = township_locs or [""]
+            for r in road_locs_with_admin:
+                loc_indiv = onto[timestamp].LocationDescription(r)
+                road_classes = [cls for q in loc_indiv.hasQuality for cls in (q.is_a or []) if cls not in special_road_descendants]
+                matched_mileages = []
+                for rc in road_classes:
+                    matched_mileages += mileage_by_road.get(rc, [])
+                matched_mileages = matched_mileages or [""]
+                matched_mileages = [converted_mileage_map.get(m, m) for m in matched_mileages]
+                for a, t, m, l in product(county_locs, township_locs, matched_mileages, landmark_locs):
+                    # 檢查是否含有多個 "在"，但只檢查 a 之後的元素
+                    elements = [a, t, r, m, l]
+                    count_za = sum(1 for e in elements[1:] if "在" in e)
+                    if count_za >= 1:
+                        continue
+                    combinations.append(f"{a}{t}{r}{m}（{l}）")
 
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
