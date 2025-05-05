@@ -174,70 +174,62 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             (filtered_locad_df["SpatialPrepositions"].notna() & (filtered_locad_df["SpatialPrepositions"] != "")) |
             (filtered_locad_df["Localisers"].notna() & (filtered_locad_df["Localisers"] != ""))
         ]
-        grouped_locad_df = filtered_locad_df.copy()
-        grouped_locad_df["Group"] = pd.factorize(list(zip(
-            grouped_locad_df["SpatialPrepositions"].astype(str),
-            grouped_locad_df["Localisers"].astype(str)
-        )))[0]
 
+        print("===========組合結果============")    
+        df = filtered_locad_df.copy()
+
+        df["CountiesBoundary"] = ""
+        df["TownshipsCititesDistrictsBoundary"] = ""
+        df["RoadMileage"] = ""
+        df["Road"] = ""
+        df["Landmark"] = ""
+
+        # 映射分類邏輯
+        for idx, row in df.iterrows():
+            category = row["Category"]
+            subtype = row["Subtype"]
+            place_name = row["Name"]
+
+            if category == "BoundaryLine":
+                if "CountiesBoundary" in subtype:
+                    df.at[idx, "CountiesBoundary"] = place_name
+                elif "TownshipsCititesDistrictsBoundary" in subtype:
+                    df.at[idx, "TownshipsCititesDistrictsBoundary"] = place_name
+            elif category == "Road":
+                df.at[idx, "Road"] = place_name
+            elif category == "Landmark":
+                df.at[idx, "Landmark"] = place_name
+            elif category == "RoadMileage":
+                df.at[idx, "RoadMileage"] = place_name
+        
+        results = []
+
+        template_fields = [
+            'CountiesBoundary',
+            'TownshipsCititesDistrictsBoundary',
+            'Road',
+            'RoadMileage',
+            'Landmark'
+        ]
+
+        field_values = {
+            field: df[field][df[field] != ""].unique().tolist()
+            for field in template_fields
+        }
+
+        # 取得所有組合（笛卡兒積）
+        combinations = list(product(*field_values.values()))
+
+        # 組合成描述句
+        results = ["".join(parts) for parts in combinations]
+       
+        # Print the results
+        print("===========組合結果============")
+        for result in results:
+            print(result)
 
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
-
-        print("===========組合結果============")    
-        template = "{SpatialPrepositions}{CountiesBoundary}{TownshipsCititesDistrictsBoundary}{Road}{Landmark}{Localisers}"
-        results = []
-                    
-        for group, group_data in grouped_locad_df.groupby("Group"):
-            # 準備組合
-            group_combination = {
-                'SpatialPrepositions': '',
-                'CountiesBoundary': '',
-                'TownshipsCititesDistrictsBoundary': '',
-                'Road': '',
-                'Landmark': '',
-                'Localisers': ''
-            }
-    
-            # 根據每個 Category 填入對應的 Name 值
-            for category in ['BoundaryLine', 'Road']:
-                category_data = group_data[group_data['Category'] == category]
-                
-                if category == 'BoundaryLine':
-                    # 優先選擇 CountiesBoundary 和 TownshipsCititesDistrictsBoundary
-                    counties = category_data[category_data['Subtype'] == 'CountiesBoundary']
-                    townships = category_data[category_data['Subtype'] == 'TownshipsCititesDistrictsBoundary']
-                    
-                    # 組合 CountiesBoundary 和 TownshipsCititesDistrictsBoundary
-                    if not counties.empty:
-                        group_combination['CountiesBoundary'] = counties['PlaceNames'].iloc[0]
-                        group_combination['SpatialPrepositions'] = counties['SpatialPrepositions'].iloc[0] if counties['SpatialPrepositions'].iloc[0] else ""
-                        group_combination['Localisers'] = counties['Localisers'].iloc[0] if counties['Localisers'].iloc[0] else ""
-                        
-                    if not townships.empty:
-                        group_combination['TownshipsCititesDistrictsBoundary'] = townships['PlaceNames'].iloc[0]
-                        if townships['SpatialPrepositions'].iloc[0]:
-                            group_combination['SpatialPrepositions'] = townships['SpatialPrepositions'].iloc[0]  # 更新 SpatialPreposition
-                        if townships['Localisers'].iloc[0]:
-                            group_combination['Localisers'] = townships['Localisers'].iloc[0]  # 更新 Localiser
-                
-                if category == 'Road':
-                    road = category_data['PlaceNames'].tolist()
-                    group_combination['Road'] = road[0] if road else ""
-        
-                # 拼接模板並添加 Landmark 資訊
-                result = template.format(**group_combination)
-                
-                # 如果有 Landmark 資訊，加入
-                landmark_data = group_data[group_data['Category'] == 'Landmark']
-                if not landmark_data.empty:
-                    landmarks = landmark_data['PlaceNames'].tolist()
-                    result += ''.join(landmarks)
-                
-                # 保存結果
-                results.append(result)
-
-        print(results)
 
         return results
     elif context == "Disaster":
