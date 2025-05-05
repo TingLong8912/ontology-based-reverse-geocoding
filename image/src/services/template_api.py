@@ -163,16 +163,12 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                         "SpatialPrepositions": ", ".join(entry["spatialPrepositions"]),
                         "Localisers": ", ".join(entry["localisers"]),
                     })
-
+        print("===========flattened_data============")    
         target_typologies = ['Road', 'RoadMileage', 'Landmark', "CountiesBoundary", "TownshipsCititesDistrictsBoundary"]         
        
         locad_df = pd.DataFrame(flattened_data)
         filtered_locad_df = locad_df[
             locad_df["Category"].isin(target_typologies) | locad_df["Subtype"].isin(target_typologies)
-        ]
-        filtered_locad_df = filtered_locad_df[
-            (filtered_locad_df["SpatialPrepositions"].notna() & (filtered_locad_df["SpatialPrepositions"] != "")) |
-            (filtered_locad_df["Localisers"].notna() & (filtered_locad_df["Localisers"] != ""))
         ]
 
         print("===========組合結果============")    
@@ -202,7 +198,6 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             elif category == "RoadMileage":
                 df.at[idx, "RoadMileage"] = place_name
         
-        print(df)
         results = []
 
         template_fields = [
@@ -218,9 +213,16 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             for field in template_fields
         }
 
-        print(field_values)
+        # 避免完全空值欄位造成無意義組合
+        field_values = {k: v for k, v in field_values.items() if v}
+        if not field_values:
+            return []
 
-        combinations = list(product(*field_values.values()))
+        # 保持原本順序
+        ordered_fields = [f for f in template_fields if f in field_values]
+
+        # 組合輸出
+        combinations = ["".join(parts) for parts in product(*(field_values[f] for f in ordered_fields))]
         results = ["".join(parts) for parts in combinations]
        
         # Print the results
