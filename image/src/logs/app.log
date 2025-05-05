@@ -1,0 +1,469 @@
+2025-05-05 04:32:40,376 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:41,370 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:32:41,383 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:41,520 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:32:41,532 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:41,706 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:32:41,719 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:41,868 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:32:41,880 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:42,024 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:32:42,039 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:42,176 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 339261
+2025-05-05 04:32:42,248 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:42,401 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 339257
+2025-05-05 04:32:42,545 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:42,738 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:32:42,750 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:42,924 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:32:42,936 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,102 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 339327
+2025-05-05 04:32:43,202 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,308 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:32:43,314 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,402 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:32:43,404 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,492 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:32:43,493 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,582 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:32:43,584 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,674 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:32:43,678 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,775 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 4800
+2025-05-05 04:32:43,778 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,858 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 4796
+2025-05-05 04:32:43,861 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:43,955 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:32:43,961 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,065 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:32:44,070 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,170 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 4858
+2025-05-05 04:32:44,177 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,272 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:32:44,278 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,391 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 200 38596
+2025-05-05 04:32:44,408 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,527 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:32:44,533 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,637 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:32:44,640 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,749 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:32:44,752 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,859 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 404 55
+2025-05-05 04:32:44,865 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:44,972 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 404 51
+2025-05-05 04:32:44,976 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,077 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:32:45,082 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,197 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:32:45,202 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,315 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 38665
+2025-05-05 04:32:45,333 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,473 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:32:45,479 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,609 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:32:45,618 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,735 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:32:45,742 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:45,868 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:32:45,879 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,000 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:32:46,005 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,141 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 171301
+2025-05-05 04:32:46,198 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,327 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 171297
+2025-05-05 04:32:46,382 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,510 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:32:46,518 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,634 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:32:46,643 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,777 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 171360
+2025-05-05 04:32:46,831 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,921 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:32:46,924 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:46,989 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:32:46,991 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,094 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:32:47,097 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,204 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:32:47,208 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,313 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:32:47,316 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,428 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 29993
+2025-05-05 04:32:47,442 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,558 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 29989
+2025-05-05 04:32:47,569 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,681 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:32:47,684 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,784 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:32:47,788 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:32:47,893 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 30060
+2025-05-05 04:32:50,024 - utils.logger - INFO - Mapping completed successfully
+2025-05-05 04:32:50,069 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:32:50] "[35m[1mGET /api/map_location?lat=25.10323335718948&lon=121.56022008021776 HTTP/1.1[0m" 500 -
+2025-05-05 04:32:50,081 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:32:50] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2025-05-05 04:32:50,081 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:32:50] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2025-05-05 04:32:50,081 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:32:50] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2025-05-05 04:32:50,096 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:32:50] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2025-05-05 04:32:50,097 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:32:50] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2025-05-05 04:35:44,458 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:35:44,545 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:35:49,739 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:35:49,799 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:11,202 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:11,261 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:15,422 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:15,477 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:18,624 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:18,677 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:25,860 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:25,919 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:30,069 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:30,122 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:32,238 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:32,289 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:35,416 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:35,476 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:38,623 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:38,680 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:40,788 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:40,839 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:43,972 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:44,031 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:36:48,157 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:36:48,224 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:40:00,518 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:01,591 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:40:01,603 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:01,752 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:40:01,766 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:01,906 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:40:01,918 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:02,077 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:40:02,090 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:02,233 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:40:02,246 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:02,408 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 339261
+2025-05-05 04:40:02,480 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:02,646 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 339257
+2025-05-05 04:40:02,710 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:02,855 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:40:02,868 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,027 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:40:03,040 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,194 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 339327
+2025-05-05 04:40:03,249 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,333 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:40:03,337 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,434 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:40:03,439 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,528 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:40:03,533 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,641 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:40:03,643 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,740 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:40:03,744 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,828 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 4800
+2025-05-05 04:40:03,833 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:03,933 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 4796
+2025-05-05 04:40:03,937 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,028 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:40:04,033 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,135 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:40:04,141 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,236 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 4858
+2025-05-05 04:40:04,242 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,332 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:40:04,338 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,456 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 200 38596
+2025-05-05 04:40:04,473 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,603 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:40:04,610 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,724 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:40:04,729 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,862 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:40:04,868 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:04,969 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 404 55
+2025-05-05 04:40:04,974 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,110 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 404 51
+2025-05-05 04:40:05,117 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,255 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:40:05,261 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,403 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:40:05,409 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,538 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 38665
+2025-05-05 04:40:05,555 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,692 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:40:05,701 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,830 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:40:05,838 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:05,968 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:40:05,976 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:06,112 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:40:06,121 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:06,259 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:40:06,268 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:06,393 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 171301
+2025-05-05 04:40:06,435 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:06,570 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 171297
+2025-05-05 04:40:06,615 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:06,740 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:40:06,749 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:06,869 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:40:06,877 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,023 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 171360
+2025-05-05 04:40:07,093 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,191 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 04:40:07,194 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,308 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 04:40:07,313 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,415 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 04:40:07,425 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,526 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 04:40:07,532 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,642 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 04:40:07,649 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,762 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 29993
+2025-05-05 04:40:07,770 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,848 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 29989
+2025-05-05 04:40:07,860 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:07,937 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 04:40:07,943 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:08,055 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 04:40:08,058 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 04:40:08,179 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 30060
+2025-05-05 04:40:10,207 - utils.logger - INFO - Mapping completed successfully
+2025-05-05 04:40:10,251 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:40:10] "[35m[1mGET /api/map_location?lat=25.10323335718948&lon=121.56022008021776 HTTP/1.1[0m" 500 -
+2025-05-05 04:40:10,260 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:40:10] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2025-05-05 04:40:10,261 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:40:10] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2025-05-05 04:40:10,262 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:40:10] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2025-05-05 04:40:10,274 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:40:10] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2025-05-05 04:40:10,276 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 04:40:10] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2025-05-05 04:41:34,694 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:41:34,778 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:41:40,972 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:41:41,033 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:41:46,183 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:41:46,241 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:41:51,413 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:41:51,468 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:41:53,597 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:41:53,657 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:41:58,809 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:41:58,864 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 04:59:30,647 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 04:59:30,768 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 05:27:58,233 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:00,463 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:00,476 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:00,700 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:28:00,713 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:00,899 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:00,910 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:01,076 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:01,088 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:01,264 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:01,276 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:01,476 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 339261
+2025-05-05 05:28:01,622 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:01,787 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 339257
+2025-05-05 05:28:01,863 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:02,026 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:02,040 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:02,212 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:02,225 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:02,452 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 339327
+2025-05-05 05:28:02,840 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:02,982 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:02,987 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,123 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:28:03,128 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,242 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:03,247 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,384 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:03,388 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,532 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:03,537 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,692 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 4800
+2025-05-05 05:28:03,697 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,829 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 4796
+2025-05-05 05:28:03,834 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:03,968 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:03,972 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:04,098 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:04,102 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:04,224 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 4858
+2025-05-05 05:28:04,230 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:04,351 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:04,357 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:04,521 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 200 38596
+2025-05-05 05:28:04,561 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:04,728 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:04,734 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:04,891 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:04,896 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,035 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:05,040 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,199 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 404 55
+2025-05-05 05:28:05,204 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,330 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 404 51
+2025-05-05 05:28:05,335 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,469 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:05,473 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,602 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:05,607 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,706 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 38665
+2025-05-05 05:28:05,736 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:05,870 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:05,878 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:06,097 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:28:06,106 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:06,315 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:06,324 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:06,489 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:06,497 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:06,671 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:06,679 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:06,850 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 171301
+2025-05-05 05:28:07,054 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:07,253 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 171297
+2025-05-05 05:28:07,424 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:07,592 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:07,600 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:07,839 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:07,848 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:08,150 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 171360
+2025-05-05 05:28:08,311 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:08,464 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:08,469 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:08,635 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:28:08,640 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:08,810 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:08,815 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:08,968 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:08,973 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:09,123 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:09,128 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:09,288 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 29993
+2025-05-05 05:28:09,317 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:09,443 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 29989
+2025-05-05 05:28:09,461 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:09,609 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:09,614 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:09,796 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:09,801 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:09,983 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 30060
+2025-05-05 05:28:12,095 - utils.logger - INFO - Mapping completed successfully
+2025-05-05 05:28:12,153 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:28:12] "[35m[1mGET /api/map_location?lat=25.10323335718948&lon=121.56022008021776 HTTP/1.1[0m" 500 -
+2025-05-05 05:28:12,164 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:28:12] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2025-05-05 05:28:12,164 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:28:12] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2025-05-05 05:28:12,165 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:28:12] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2025-05-05 05:28:12,177 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:28:12] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2025-05-05 05:28:12,180 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:28:12] "[37mGET /api/map_location?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2025-05-05 05:28:39,968 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 05:28:40,065 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 05:28:42,173 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 05:28:42,231 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 05:28:48,392 - werkzeug - INFO -  * Detected change in '/src/services/template_api.py', reloading
+2025-05-05 05:28:48,454 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 05:28:56,031 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:56,229 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:56,241 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:56,458 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:28:56,471 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:56,693 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:56,704 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:56,917 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:56,929 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:57,169 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:57,181 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:57,407 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 339261
+2025-05-05 05:28:57,528 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:57,723 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 339257
+2025-05-05 05:28:57,853 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:58,122 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:58,134 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:58,370 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:58,383 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:58,616 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 339327
+2025-05-05 05:28:58,725 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:58,874 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:28:58,879 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,000 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:28:59,005 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,099 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:28:59,103 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,226 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:28:59,231 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,354 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:28:59,359 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,495 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 4800
+2025-05-05 05:28:59,499 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,618 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 4796
+2025-05-05 05:28:59,623 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,724 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:28:59,727 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:28:59,880 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:28:59,884 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,022 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 4858
+2025-05-05 05:29:00,029 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,179 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:29:00,184 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,337 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 200 38596
+2025-05-05 05:29:00,368 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,476 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:29:00,481 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,622 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:29:00,627 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,779 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:29:00,784 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:00,960 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 404 55
+2025-05-05 05:29:00,965 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:01,126 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 404 51
+2025-05-05 05:29:01,132 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:01,322 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:29:01,329 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:01,514 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:29:01,519 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:01,699 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 38665
+2025-05-05 05:29:01,734 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:01,916 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:29:01,924 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:02,183 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:29:02,192 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:02,466 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:29:02,475 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:02,699 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:29:02,708 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:02,942 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:29:02,951 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:03,130 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 171301
+2025-05-05 05:29:03,198 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:03,379 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 171297
+2025-05-05 05:29:03,471 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:03,681 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:29:03,690 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:03,901 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:29:03,909 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:04,085 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 171360
+2025-05-05 05:29:04,205 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:04,318 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/equals HTTP/1.1" 404 51
+2025-05-05 05:29:04,320 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:04,470 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/disjoint HTTP/1.1" 404 53
+2025-05-05 05:29:04,476 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:04,618 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/touches HTTP/1.1" 500 93
+2025-05-05 05:29:04,623 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:04,831 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/contains HTTP/1.1" 500 109
+2025-05-05 05:29:04,833 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:05,021 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/covers HTTP/1.1" 500 92
+2025-05-05 05:29:05,027 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:05,274 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/intersects HTTP/1.1" 200 29993
+2025-05-05 05:29:05,302 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:05,477 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/within HTTP/1.1" 200 29989
+2025-05-05 05:29:05,502 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:05,700 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/crosses HTTP/1.1" 500 96
+2025-05-05 05:29:05,707 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:05,859 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/overlaps HTTP/1.1" 500 88
+2025-05-05 05:29:05,864 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): getroadmile.sgis.tw:443
+2025-05-05 05:29:06,049 - urllib3.connectionpool - DEBUG - https://getroadmile.sgis.tw:443 "POST /spatial-operation/azimuth HTTP/1.1" 200 30060
+2025-05-05 05:29:08,128 - utils.logger - INFO - Mapping completed successfully
+2025-05-05 05:29:08,226 - werkzeug - INFO - 192.168.65.1 - - [05/May/2025 05:29:08] "[37mGET /api/map_location?lat=25.10323335718948&lon=121.56022008021776 HTTP/1.1[0m" 200 -

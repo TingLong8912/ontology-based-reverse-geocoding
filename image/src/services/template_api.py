@@ -2,6 +2,7 @@ from owlready2 import Thing, get_ontology
 import time
 from itertools import product
 from services.ontology.assign_quality_api import assignQuality
+import pandas as pd
 
 def ToFullText(locd_result):
     """
@@ -9,6 +10,7 @@ def ToFullText(locd_result):
     """
 
     full_text = {}
+    full_text_components = {}
 
     for entry in locd_result:
         qualities = entry.get("Qualities", {})
@@ -16,6 +18,7 @@ def ToFullText(locd_result):
 
         if typology not in full_text:
             full_text[typology] = []
+            full_text_components[typology] = []
 
         spatial_preposition = entry.get('SpatialPreposition', '')
         place_name = entry.get('PlaceName', '')
@@ -25,16 +28,29 @@ def ToFullText(locd_result):
             spatial_preposition = ''
 
         if localisers == None:
-            localiser = ''
+            localisers = ['']
+
+        for localiser in localisers:
             full_text[typology].append(f"{spatial_preposition}{place_name}{localiser}")
-        else:
-            for localiser in localisers:
-                full_text[typology].append(f"{spatial_preposition}{place_name}{localiser}")
+            full_text_components[typology].append({
+                "spatial_preposition": spatial_preposition or '',
+                "place_name": place_name or '',
+                "localiser": localiser or ''
+            })
 
     for typology in full_text:
         full_text[typology] = list(set(full_text[typology]))
-
-    return full_text
+        # Remove duplicates in full_text_components accordingly
+        seen = set()
+        unique_components = []
+        for comp in full_text_components[typology]:
+            comp_tuple = (comp['spatial_preposition'], comp['place_name'], comp['localiser'])
+            if comp_tuple not in seen:
+                seen.add(comp_tuple)
+                unique_components.append(comp)
+        full_text_components[typology] = unique_components
+        print("full_text_components[typology]:", full_text_components[typology])
+    return full_text, full_text_components
 
 def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf', target_typologies=None):
     """
@@ -42,7 +58,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
     It takes the location description and context as input and returns a template depending on the context.
     """
     if context == "Traffic":
-        full_text_dict = ToFullText(locd_result)
+        full_text_dict, full_text_components = ToFullText(locd_result)
         print(full_text_dict)
 
         """
@@ -66,14 +82,23 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         # Assign classes and instances from full_text
         print("===========映射位置描述文字結果============")
         for typology, phrases in full_text_dict.items():
-            for phrase in phrases:
+            components = full_text_components[typology]
+            for idx, phrase in enumerate(phrases):
+                comp = components[idx]
                 locad_indiv = onto[timestamp].LocationDescription(str(phrase))
                 typology_class = onto[timestamp][typology]
                 typology_instance = typology_class(str(phrase) + "_Typology" + str(typology))
                 typology_instance.qualityValue.append(str(typology))
 
                 locad_indiv.hasQuality.append(typology_instance)
-
+                
+                if comp['spatial_preposition'] != '':
+                    locad_indiv.hasSpatialPreposition = [onto[timestamp].SpatialPreposition(comp['spatial_preposition'])]
+                if comp['place_name'] != '':
+                    locad_indiv.hasPlaceName = [onto[timestamp].PlaceName(comp['place_name'])]
+                if comp['localiser'] != '':
+                    locad_indiv.hasLocaliser = [onto[timestamp].Localiser(comp['localiser'])]
+    
         # Assign quality
         print("===========給定Quality============")
         onto[timestamp] = assignQuality(onto[timestamp], "LocationDescription")
@@ -81,71 +106,139 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         # 檢查映射結果
         print("===========映射結果輸出============")
         for gf in onto[timestamp].LocationDescription.instances():
+            print(f"[LocationDescription] {gf.name}")
             for q in gf.hasQuality:
-                print(f"[LocationDescription] {gf.name}")
                 print(f"  ↳ hasQuality → [{q}] {q.name}")
                 if hasattr(q, "qualityValue"):
                     print(f"    ↳ qualityValue: {list(q.qualityValue)}")
-
-
+            for q in gf.hasPlaceName:
+                print(f"  ↳ hasPlaceName → [{q}] {q.name}")
+            for q in gf.hasLocaliser:
+                print(f"  ↳ hasLocaliser → [{q}] {q.name}")
+            for q in gf.hasSpatialPreposition:
+                print(f"  ↳ hasSpatialPreposition → [{q}] {q.name}")
 
         """
         Retrival
         """
-        target_typologies = ['Road', 'RoadMileage', 'Landmark']
+        infer_typologies = ['Road', 'RoadMileage', 'Landmark', "BoundaryLine"]
 
         print("===========根據 typology 類別搜尋 LocationDescription ===========")
         typology_to_locs = {}
 
-        for typology_name in target_typologies:
+        for typology_name in infer_typologies:
             typology_class = onto[timestamp][typology_name]
             subclasses = list(typology_class.descendants()) 
-            print(f"【{typology_name}】類別的子類別：", subclasses)
-            matching_locs = []
+            class_to_locs = {}
             for loc in onto[timestamp].LocationDescription.instances():
                 for quality in loc.hasQuality:
-                    print(f"[DEBUG] {quality.name} 的 is_a：{quality.is_a}")
-                    if quality.is_a and any(cls in subclasses for cls in quality.is_a):
-                        matching_locs.append(loc.name)
-                        break
-            if matching_locs:
-                typology_to_locs[typology_name] = matching_locs
+                    cls = quality.__class__
+                    if cls in subclasses:
+                        cls_name = cls.name
+                        if cls_name not in class_to_locs:
+                            class_to_locs[cls_name] = []
+                        class_to_locs[cls_name].append(
+                            {
+                                "name": loc.name,
+                                "placeNames": [p.name for p in loc.hasPlaceName],
+                                "spatialPrepositions": [sp.name for sp in loc.hasSpatialPreposition],
+                                "localisers": [l.name for l in loc.hasLocaliser]
+                            }
+                        )
+            if class_to_locs:
+                typology_to_locs[typology_name] = class_to_locs
 
-        for typology, loc_names in typology_to_locs.items():
-            print(f"【{typology}】類別下的地點描述：")
-            for name in loc_names:
-                print(f"  - {name}")
-        
-        # 組合 Road + RoadMileage + (Landmark)
-        road_locs = typology_to_locs.get("Road", [])
-        mileage_locs = typology_to_locs.get("RoadMileage", [])
-        landmark_locs = typology_to_locs.get("Landmark", [])
+        print("===========地點描述資料檢查============")
+        print(typology_to_locs)
 
-        combinations = []
-        if road_locs or landmark_locs:
-            mileage_locs = mileage_locs or [""]
-            converted_mileage_locs = []
-            for m in mileage_locs:
-                print("[DEBUG] mileage_locs:", m)
-                if "K_" in m:
-                    try:
-                        km, m_part = m.split("K_")
-                        km_float = float(km) + float(m_part) / 1000
-                        converted_mileage_locs.append(f"{km_float:.1f}公里")
-                    except ValueError:
-                        converted_mileage_locs.append(m)  
-                else:
-                    converted_mileage_locs.append(m)
-            print("[DEBUG] converted_mileage_locs:", converted_mileage_locs)
-            mileage_locs = converted_mileage_locs
-            road_locs = road_locs or [""]
-            landmark_locs = landmark_locs or [""]
-            for r, m, l in product(road_locs, mileage_locs, landmark_locs):
-                combinations.append(f"{r}{m}（{l}）")
+        flattened_data = []
+        for category, subtypes in typology_to_locs.items():
+            for subtype, entries in subtypes.items():
+                for entry in entries:
+                    flattened_data.append({
+                        "Category": category,
+                        "Subtype": subtype,
+                        "Name": entry["name"],
+                        "PlaceNames": ", ".join(entry["placeNames"]),
+                        "SpatialPrepositions": ", ".join(entry["spatialPrepositions"]),
+                        "Localisers": ", ".join(entry["localisers"]),
+                    })
+
+        target_typologies = ['Road', 'RoadMileage', 'Landmark', "CountiesBoundary", "TownshipsCititesDistrictsBoundary"]         
+       
+        locad_df = pd.DataFrame(flattened_data)
+        filtered_locad_df = locad_df[
+            locad_df["Category"].isin(target_typologies) | locad_df["Subtype"].isin(target_typologies)
+        ]
+        filtered_locad_df = filtered_locad_df[
+            (filtered_locad_df["SpatialPrepositions"].notna() & (filtered_locad_df["SpatialPrepositions"] != "")) |
+            (filtered_locad_df["Localisers"].notna() & (filtered_locad_df["Localisers"] != ""))
+        ]
+        grouped_locad_df = filtered_locad_df.copy()
+        grouped_locad_df["Group"] = pd.factorize(list(zip(
+            grouped_locad_df["SpatialPrepositions"].astype(str),
+            grouped_locad_df["Localisers"].astype(str)
+        )))[0]
+
 
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
 
-        return combinations
+        print("===========組合結果============")    
+        template = "{SpatialPrepositions}{CountiesBoundary}{TownshipsCititesDistrictsBoundary}{Road}{Landmark}{Localisers}"
+        results = []
+                    
+        for group, group_data in grouped_locad_df.groupby("Group"):
+            # 準備組合
+            group_combination = {
+                'SpatialPrepositions': '',
+                'CountiesBoundary': '',
+                'TownshipsCititesDistrictsBoundary': '',
+                'Road': '',
+                'Landmark': '',
+                'Localisers': ''
+            }
+    
+            # 根據每個 Category 填入對應的 Name 值
+            for category in ['BoundaryLine', 'Road']:
+                category_data = group_data[group_data['Category'] == category]
+                
+                if category == 'BoundaryLine':
+                    # 優先選擇 CountiesBoundary 和 TownshipsCititesDistrictsBoundary
+                    counties = category_data[category_data['Subtype'] == 'CountiesBoundary']
+                    townships = category_data[category_data['Subtype'] == 'TownshipsCititesDistrictsBoundary']
+                    
+                    # 組合 CountiesBoundary 和 TownshipsCititesDistrictsBoundary
+                    if not counties.empty:
+                        group_combination['CountiesBoundary'] = counties['PlaceNames'].iloc[0]
+                        group_combination['SpatialPrepositions'] = counties['SpatialPrepositions'].iloc[0] if counties['SpatialPrepositions'].iloc[0] else ""
+                        group_combination['Localisers'] = counties['Localisers'].iloc[0] if counties['Localisers'].iloc[0] else ""
+                        
+                    if not townships.empty:
+                        group_combination['TownshipsCititesDistrictsBoundary'] = townships['PlaceNames'].iloc[0]
+                        if townships['SpatialPrepositions'].iloc[0]:
+                            group_combination['SpatialPrepositions'] = townships['SpatialPrepositions'].iloc[0]  # 更新 SpatialPreposition
+                        if townships['Localisers'].iloc[0]:
+                            group_combination['Localisers'] = townships['Localisers'].iloc[0]  # 更新 Localiser
+                
+                if category == 'Road':
+                    road = category_data['PlaceNames'].tolist()
+                    group_combination['Road'] = road[0] if road else ""
+        
+                # 拼接模板並添加 Landmark 資訊
+                result = template.format(**group_combination)
+                
+                # 如果有 Landmark 資訊，加入
+                landmark_data = group_data[group_data['Category'] == 'Landmark']
+                if not landmark_data.empty:
+                    landmarks = landmark_data['PlaceNames'].tolist()
+                    result += ''.join(landmarks)
+                
+                # 保存結果
+                results.append(result)
+
+        print(results)
+
+        return results
     elif context == "Disaster":
         pass
