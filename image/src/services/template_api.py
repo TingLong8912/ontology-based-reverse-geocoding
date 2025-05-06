@@ -36,7 +36,6 @@ def ToFullText(locd_result):
 
     return full_text
 
-
 def get_quality_values(onto, locad_indiv_name, target_quality: list):
     """
     取得某個 Typology 類別對應的所有 Quality 值。
@@ -100,6 +99,7 @@ def average_quality(onto, loc_names: list, qualities: list):
 
     print("執行平均結果：", loc_names, score)
     return {q: score}
+
 
 def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf', target_typologies=None):
     """
@@ -197,7 +197,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
 
         road_locs_without_admin = []
         road_locs_with_admin = []
-
+    
         for loc_name in road_locs:
             loc_indiv = onto[timestamp].LocationDescription(loc_name)
             is_special_road = False
@@ -210,9 +210,8 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             else:
                 road_locs_with_admin.append(loc_name)
 
-        # 建立以道路類別為 key 的 mileage 對應
+        # 建立mileage為key的道路類別紀錄
         mileage_by_road = {}
-
         mileage_locs = typology_to_locs.get("RoadMileage", [])
         for mileage_name in mileage_locs:
             if mileage_name == "":
@@ -221,7 +220,9 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             for q in mileage_indiv.hasQuality:
                 if q.is_a:
                     for cls in q.is_a:
-                        mileage_by_road.setdefault(cls, []).append(mileage_name)
+                        road_type = cls.name.replace("Mileage", "")
+                        mileage_by_road.setdefault(road_type, []).append(mileage_name)
+        
 
         landmark_locs = typology_to_locs.get("Landmark", [])
 
@@ -230,33 +231,31 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             'avg_quality': []
         }
         if road_locs or landmark_locs:
-            # 里程轉換
-            all_mileage_names = [m for m in mileage_locs] or [""]
-            converted_mileage_map = {}
-            for m in all_mileage_names:
-                if m == "":
-                    converted_mileage_map[m] = ""
-                elif "K_" in m:
-                    try:
-                        km, m_part = m.split("K_")
-                        km_float = float(km) + float(m_part) / 1000
-                        converted_mileage_map[m] = f"{km_float:.1f}公里"
-                    except ValueError:
-                        converted_mileage_map[m] = m
-                else:
-                    converted_mileage_map[m] = m
             landmark_locs = landmark_locs or [""]
 
             # 不需要加上 Admin（特殊道路）
             for r in road_locs_without_admin:
+                # Mileage <-> Road
                 loc_indiv = onto[timestamp].LocationDescription(r)
-                road_classes = [cls for q in loc_indiv.hasQuality for cls in (q.is_a or []) if cls in special_road_descendants]
+                
+                print("=============Mileage <-> Road=============")
                 matched_mileages = []
-                for rc in road_classes:
-                    matched_mileages += mileage_by_road.get(rc, [])
+                for quality in loc_indiv.hasQuality:
+                    cls = quality.is_a[0]
+                    super_classes = [ super_cls.name for super_cls in list(cls.ancestors())]
+                    for key, item in mileage_by_road.items():
+                        print("matched_mileage key: ", key)
+                        print("super_classes: ", super_classes)
+                        if key in super_classes:
+                            print("work!!!!")
+                            matched_mileages+=item
+                            break
+                    break
+            
+                print("matched_mileages:", matched_mileages)
+     
                 matched_mileages = matched_mileages or [""]
-                # 轉換里程
-                matched_mileages = [converted_mileage_map.get(m, m) for m in matched_mileages]
+
                 for m, l in product(matched_mileages, landmark_locs):
                     elements = [r, m, l]
                     count_za = sum(1 for e in elements[1:] if "在" in e)
@@ -276,13 +275,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             for r in road_locs_with_admin:
                 loc_indiv = onto[timestamp].LocationDescription(r)
                 road_classes = [cls for q in loc_indiv.hasQuality for cls in (q.is_a or []) if cls not in special_road_descendants]
-                matched_mileages = []
-                for rc in road_classes:
-                    matched_mileages += mileage_by_road.get(rc, [])
-                matched_mileages = matched_mileages or [""]
-                matched_mileages = [converted_mileage_map.get(m, m) for m in matched_mileages]
-                for a, t, m, l in product(county_locs, township_locs, matched_mileages, landmark_locs):
-                    # 檢查是否含有多個 "在"，但只檢查 a 之後的元素
+                for a, t, l in product(county_locs, township_locs, landmark_locs):
                     elements = [a, t, r, m, l]
                     count_za = sum(1 for e in elements[1:] if "在" in e)
                     if count_za >= 1:
@@ -291,9 +284,9 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
                     combinations["avg_quality"].append(avg_qualities)
                     if l == "":
-                        combinations["combination"].append(f"{a}{t}{r}{m}")
+                        combinations["combination"].append(f"{a}{t}{r}")
                     else:
-                        combinations["combination"].append(f"{a}{t}{r}{m}（{l}）")
+                        combinations["combination"].append(f"{a}{t}{r}（{l}）")
 
         # 取得 top_n 的描述（依照平均 quality 值排序）
         top_n = 5  

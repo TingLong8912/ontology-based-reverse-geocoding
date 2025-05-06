@@ -2230,15 +2230,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialExpressway -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialExpressway">
@@ -4058,9 +4049,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#東邊 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東邊">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#東邊"/>
     
 
 
@@ -4130,9 +4119,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#西邊 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西邊">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#西邊"/>
     
 
 
