@@ -23,6 +23,10 @@
     "Prominence": ["0.000106"],
     "PartsandStructure": ["隧道", "橋樑", "匝道"]
   },
+  "Lane": {
+    "Scale": ["15"],
+    "Prominence": ["0"]
+  },
   "OtherRoads": {
     "Scale": ["17"],
     "Prominence": ["0.000042"],
