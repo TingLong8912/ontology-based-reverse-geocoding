@@ -276,7 +276,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                 loc_indiv = onto[timestamp].LocationDescription(r)
                 road_classes = [cls for q in loc_indiv.hasQuality for cls in (q.is_a or []) if cls not in special_road_descendants]
                 for a, t, l in product(county_locs, township_locs, landmark_locs):
-                    elements = [a, t, r, m, l]
+                    elements = [a, t, r, l]
                     count_za = sum(1 for e in elements[1:] if "在" in e)
                     if count_za >= 1:
                         continue
