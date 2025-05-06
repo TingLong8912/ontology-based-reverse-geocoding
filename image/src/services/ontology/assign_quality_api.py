@@ -18,9 +18,11 @@ def assignQuality(onto_with_semantic, who_has_quality, data_path="./ontology/tra
             for gf in onto_with_semantic[who_has_quality].instances():
                 for existing_quality in gf.hasQuality:
                     target_class = onto_with_semantic[type_quality]
+                    print(gf.name, "->",type_quality)
                     if isinstance(existing_quality, target_class):
                         quality_instance = quality_class(gf.name + "_" + quality_class_name)
                         gf.hasQuality.append(quality_instance)
+                        print(f"  ↳ hasQuality → [{quality_class_name}] {quality_instance.name}")
                         for val in quality_value:
                             if val and (not hasattr(quality_instance, 'qualityValue') or val not in quality_instance.qualityValue):
                                 quality_instance.qualityValue.append(val)

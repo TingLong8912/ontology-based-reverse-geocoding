@@ -90,5 +90,9 @@
   },
   "OvergroundUrbanRoad": {
     "StyleandForm": ["平面"]
+  },
+  "Station": {
+    "Scale": ["11"],
+    "Prominence": ["0.01"]
   }
 }

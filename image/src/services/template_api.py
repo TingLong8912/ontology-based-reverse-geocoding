@@ -45,15 +45,18 @@ def get_quality_values(onto, locad_indiv_name, target_quality: list):
     :param target_quality: 欲檢索的 quality 類別名稱清單
     :return: {locad_indiv_name: {target_quality1: [], target_quality2: [], ...}}
     """
+    print("===========取得 locad_indiv Quality 值============")
     result = {locad_indiv_name: {q: [] for q in target_quality}}
 
     for loc in onto.LocationDescription.instances():
         if loc.name == locad_indiv_name:
+            print("[DEBUG] locad_indiv_name:", loc.name)
             for quality in loc.hasQuality:
                 if hasattr(quality, "qualityValue"):
                     for cls in quality.is_a:
                         if cls.name in target_quality:
                             values = [str(v) for v in quality.qualityValue]
+                            print("-> quality:", quality.name, "values:", values)
                             result[locad_indiv_name][cls.name].extend(values)
     return result
 
@@ -65,16 +68,34 @@ def average_quality(onto, loc_names: list, qualities: list):
     w1 = 0.6
     w2 = 0.4
     
+    print("===========計算平均 Quality 值============")
+    print("loc_names:", loc_names)
     values = {q: [] for q in qualities}
+
+    # 對所有 loc_names 蒐集品質數值
     for name in loc_names:
         q_dict = get_quality_values(onto, name, qualities)[name]
         for q in qualities:
-            values[q].extend([float(v) for v in q_dict[q] if v.replace('.', '', 1).isdigit()])
-    
-    scale_value = float(values.get("Scale", [1])[0]) 
-    prominence_value = float(values.get("Prominence", [0])[0])
-    if scale_value is None or scale_value == 0:
+            for v in q_dict[q]:
+                try:
+                    values[q].append(float(v))
+                except ValueError:
+                    continue
+
+    # 計算平均值（若為空則給預設值）
+    scale_values = values.get("Scale", [])
+    prominence_values = values.get("Prominence", [])
+
+    print("Scale values:", scale_values)
+    print("Prominence values:", prominence_values)
+    scale_value = sum(scale_values) / len(scale_values) if scale_values else 1
+    prominence_value = sum(prominence_values) / len(prominence_values) if prominence_values else 0
+
+    if scale_value == 0:
         scale_value = 1
+
+    print("平均 Scale 值:", scale_value)
+    print("平均 Prominence 值:", prominence_value)
     score = w1 * (1 / scale_value) + w2 * prominence_value
 
     print("執行平均結果：", loc_names, score)
@@ -243,6 +264,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                         continue
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
+                    combinations["avg_quality"].append(avg_qualities)
                     if l == "": 
                         combinations["combination"].append(f"{r}{m}")
                     else:
@@ -267,15 +289,6 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                         continue
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check)
-                    # Add scoring logic
-                    w1 = 0.6
-                    w2 = 0.4
-                    scale_value = avg_qualities.get("Scale", 1)  # Avoid divide-by-zero
-                    prominence_value = avg_qualities.get("Prominence", 0)
-                    if scale_value is None or scale_value == 0:
-                        scale_value = 1
-                    score = w1 * (1 / scale_value) + w2 * prominence_value
-                    avg_qualities["score"] = score
                     combinations["avg_quality"].append(avg_qualities)
                     if l == "":
                         combinations["combination"].append(f"{a}{t}{r}{m}")
@@ -285,10 +298,13 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         # 取得 top_n 的描述（依照平均 quality 值排序）
         top_n = 5  
         combined_with_quality = list(zip(combinations['combination'], combinations['avg_quality']))
+
+        print("combined_with_quality:", combined_with_quality)
+
         combined_with_quality.sort(key=lambda x: sum(v for v in x[1].values() if v is not None) / max(len([v for v in x[1].values() if v is not None]), 1), reverse=True)
         top_descriptions = [desc for desc, _ in combined_with_quality[:top_n]]
         print("Top descriptions:", top_descriptions)
-        
+
         # Clear the ontology
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
 
