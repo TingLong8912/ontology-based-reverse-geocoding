@@ -10271,3 +10271,15 @@
 2025-05-06 04:07:02,363 - utils.logger - INFO - Mapping completed successfully
 2025-05-06 04:07:02,486 - werkzeug - INFO - 192.168.65.1 - - [06/May/2025 04:07:02] "[37mGET /api/map_location?lat=25.012405699805782&lon=121.5387416113812 HTTP/1.1[0m" 200 -
 2025-05-06 04:07:28,948 - werkzeug - INFO - 192.168.65.1 - - [06/May/2025 04:07:28] "[35m[1mGET /api/map_location?lat=25.012405699805782&lon=121.5387416113812 HTTP/1.1[0m" 500 -
+2025-05-06 04:29:56,954 - werkzeug - INFO -  * Detected change in '/src/controllers/location_controller.py', reloading
+2025-05-06 04:29:57,115 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 04:30:02,290 - werkzeug - INFO -  * Detected change in '/src/controllers/location_controller.py', reloading
+2025-05-06 04:30:02,360 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 04:30:41,102 - werkzeug - INFO -  * Detected change in '/src/controllers/location_controller.py', reloading
+2025-05-06 04:30:41,194 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 04:30:49,409 - werkzeug - INFO -  * Detected change in '/src/controllers/location_controller.py', reloading
+2025-05-06 04:30:49,468 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 04:30:55,648 - werkzeug - INFO -  * Detected change in '/src/controllers/location_controller.py', reloading
+2025-05-06 04:30:55,707 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 04:31:24,261 - werkzeug - INFO -  * Detected change in '/src/controllers/location_controller.py', reloading
+2025-05-06 04:31:24,324 - werkzeug - INFO -  * Restarting with stat

@@ -19,6 +19,9 @@ def map_location():
     except (TypeError, ValueError):
         return jsonify({"error": "Invalid coordinates"}), 400
 
+    if not (121.5 <= lon <= 122 and 25 <= lat <= 25.5):
+        return jsonify({"error": "Location is outside the experimental map coverage."}), 400
+
     db_results = fetch_data_from_db(lon, lat, buffer_distance)
     sr_results = call_spatial_api(lon, lat, db_results)
     for sr in sr_results:
