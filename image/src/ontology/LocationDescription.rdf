@@ -2230,6 +2230,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundNationalFreeway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NationalExpressway"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialExpressway -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OvergroundProvincialExpressway">
