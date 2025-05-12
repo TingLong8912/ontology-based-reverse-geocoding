@@ -70,5 +70,5 @@ def run_reasoning(onto, timestamp):
 
     print("===========推論(3): 詞意產生詞彙文字============")
     onto_with_word[timestamp] = reasoning(onto_with_semantic[timestamp], './ontology/ehownet.txt')
-                
+
     return onto_with_word[timestamp]

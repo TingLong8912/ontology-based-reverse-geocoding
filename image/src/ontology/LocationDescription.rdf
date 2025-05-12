@@ -601,6 +601,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Cliff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Cliff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReliefLand"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#CliffyCoast -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#CliffyCoast">
@@ -668,7 +676,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#Contour -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Contour">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landform"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Relief"/>
     </owl:Class>
     
 
@@ -769,9 +777,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Debris -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#DebrisFlow -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Debris">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#DebrisFlow">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
     </owl:Class>
     
@@ -841,14 +849,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Discharge -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Discharge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#Disjoint -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Disjoint">
@@ -905,9 +905,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Earthquake -->
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EarthquakeEW -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Earthquake">
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EarthquakeEW">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
     </owl:Class>
     
@@ -1238,6 +1238,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FishLadder">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FlowDirection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FlowDirection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RunningWaterProperties"/>
     </owl:Class>
     
 
@@ -1678,6 +1686,30 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LaneTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LeaveFor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LeaveFor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AlterLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LeaveForNorthLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LeaveForNorthLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#LeaveForSouthLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LeaveForSouthLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
     </owl:Class>
     
 
@@ -2571,14 +2603,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/win/ontologies/locD#Rainfall -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Rainfall">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/win/ontologies/locD#Ramp -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Ramp">
@@ -2643,6 +2667,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Relief -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Relief">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ReliefLand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ReliefLand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#VariousLandform"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#ReligiousMeetingHouse -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ReligiousMeetingHouse">
@@ -2671,6 +2711,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Reservoir">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WaterArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ReservoirDis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ReservoirDis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
     </owl:Class>
     
 
@@ -2723,6 +2771,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RiverMouth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RiverMouth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FlowDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RiverSource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RiverSource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FlowDirection"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver">
@@ -2763,6 +2827,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RunningWaterProperties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RunningWaterProperties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RiverandAffiliatedFacilitiesofRiver"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#RuralRoad -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoad">
@@ -2791,6 +2863,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RuralRoadTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SandDune -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SandDune">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReliefLand"/>
     </owl:Class>
     
 
@@ -3082,6 +3162,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SpotElevation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SpotElevation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Relief"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#Stadium -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Stadium">
@@ -3194,6 +3282,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Terrace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Terrace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ReliefLand"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#Theater -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Theater">
@@ -3206,6 +3302,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ThermalPowerPlant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Thunderstorm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Thunderstorm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
     </owl:Class>
     
 
@@ -3310,6 +3414,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Triplet">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SpatialReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Tsunami -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Tsunami">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DisasterWarning"/>
     </owl:Class>
     
 
@@ -3511,6 +3623,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UrbanRoadTunnel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#HighwayTunnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#VariousLandform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#VariousLandform">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Landform"/>
     </owl:Class>
     
 
@@ -3724,9 +3844,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#上部 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上部">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperPartLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#上部"/>
     
 
 
@@ -3832,6 +3950,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#北上 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北上">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LeaveForNorthLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#北方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北方">
@@ -3852,6 +3978,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#北部">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#南下 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#南下">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#LeaveForSouthLocaliser"/>
     </owl:NamedIndividual>
     
 
@@ -3987,9 +4121,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#末端 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#末端">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EndLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#末端"/>
     
 
 
@@ -4165,9 +4297,7 @@
 
     <!-- http://www.semanticweb.org/win/ontologies/locD#頂部 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#頂部">
-        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#UpperPartLocaliser"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#頂部"/>
     
 
 

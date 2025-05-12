@@ -109,6 +109,18 @@ def RunSemanticReasoning(sr_object, context, ontology_path='./ontology/LocationD
                 geometry_instance.qualityValue.append(str(geometry_type))
                 feature_instance.hasQuality.append(geometry_instance)
 
+        # Add RoadDirection to Quality
+        action_class = onto[timestamp].Action
+        if geojson_data:
+            feature = geojson_data.get("features")[0]
+            if feature:
+                feature_property = feature.get("properties", {})
+                road_direction = feature_property.get("Direction", None)
+                if road_direction != None:
+                    action_instance = action_class(f"referFeature{clean_name}_Action")
+                    action_instance.qualityValue.append(str(road_direction))
+                    feature_instance.hasQuality.append(action_instance)
+
         spatial_relation_instance.hasFeature.append(feature_instance)
         spatial_relation_instance.hasContext.append(context_instance)
 

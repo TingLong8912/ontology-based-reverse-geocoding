@@ -100,7 +100,6 @@ def average_quality(onto, loc_names: list, qualities: list):
     print("執行平均結果：", loc_names, score)
     return {q: score}
 
-
 def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf', target_typologies=None):
     """
     This function is used to generate a template for the location description.
@@ -288,6 +287,10 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     else:
                         combinations["combination"].append(f"{a}{t}{r}（{l}）")
 
+        else:
+            print("No road or landmark locations found.")
+            # 需要處理
+            
         # 取得 top_n 的描述（依照平均 quality 值排序）
         top_n = 5  
         combined_with_quality = list(zip(combinations['combination'], combinations['avg_quality']))

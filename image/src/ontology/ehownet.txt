@@ -44,4 +44,6 @@ EndPart(?rel), South(?rel), West(?rel), LocationDescription(?locad), symbolize(?
 North(?rel), East(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), NortheastLocaliser(?word) -> hasLocaliser(?locad, ?word)
 South(?rel), East(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), SoutheastLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Near(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), NearLocaliser(?word) -> hasLocaliser(?locad, ?word)
+LeaveFor(?rel), South(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeaveForSouthLocaliser(?word) -> hasLocaliser(?locad, ?word)
+LeaveFor(?rel), North(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeaveForNorthLocaliser(?word) -> hasLocaliser(?locad, ?word)
 SpatialRelationship(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFeature(?rel, ?ground), GroundFeature(?ground), hasQuality(?ground, ?name), Toponym(?name) -> hasPlaceName(?locad, ?name)
