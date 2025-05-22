@@ -2056,6 +2056,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Nearshore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Nearshore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#NonAgentiveSocialObject -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NonAgentiveSocialObject">
@@ -2186,6 +2194,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OpenConcertStage">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RecreationFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OpenSeaLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OpenSeaLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
     </owl:Class>
     
 
@@ -2903,6 +2919,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SchoolsandTrainingOrganizations">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#CulturalandEducationalOrganizationorSites"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Sea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Sea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OtherWaterSystem"/>
     </owl:Class>
     
 
@@ -4059,6 +4083,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#外">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OutsideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#外海 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#外海">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OpenSeaLocaliser"/>
     </owl:NamedIndividual>
     
 

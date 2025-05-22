@@ -1,6 +1,8 @@
 import psycopg2
 import os
 import json
+from owlready2 import Thing, get_ontology
+import time
 
 DB_CONFIG = {
     "dbname": "gistl",
@@ -13,7 +15,7 @@ DB_CONFIG = {
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
 
-def fetch_data_from_db(lon, lat, buffer_distance):
+def fetch_data_from_db(lon, lat, buffer_distance, target_typologies):
     print("get db data...")
 
     schema_name = "LocaDescriber"
@@ -31,9 +33,32 @@ def fetch_data_from_db(lon, lat, buffer_distance):
         """, (schema_name,))
         
         table_names = [row[0] for row in cur.fetchall()]  # 提取表名
-        table_data = {}
 
+        # Load the ontology
+        onto = {}
+        ontology_path='./ontology/LocationDescription.rdf'
+        timestamp = str(time.time()).replace(".", "_")
+        onto[timestamp] = get_ontology(ontology_path).load()
+        with onto[timestamp]:
+            class BaseThing(Thing): pass
+            class Particular(BaseThing): pass
+            class PlaceName(BaseThing): pass
+            class Localiser(BaseThing): pass
+            class SpatialPreposition(BaseThing): pass
+            class SpatialObjectType(BaseThing): pass
+
+        # subclasses
+        subclasses = []
+        for typology_name in target_typologies:
+            print(typology_name)
+            typology_class = onto[timestamp][typology_name]
+            subclasses += [cls.name for cls in typology_class.descendants()]
+        subclasses = list(set(subclasses))
+        
+        table_names = [table for table in table_names if table in subclasses]
+        
         # Step 2: 遍歷每個表，查詢相交的空間物件
+        table_data = {}
         for table in table_names:
             try:
                 query = f"""
@@ -66,9 +91,9 @@ def fetch_data_from_db(lon, lat, buffer_distance):
                         "type": "FeatureCollection",
                         "features": geojson_features
                     }
-
             except psycopg2.Error as e:
-                print(f"Skipping table {table} due to error: {e}")
+                pass
+                # print(f"Skipping table {table} due to error: {e}")
 
     except psycopg2.Error as e:
         print(f"[DB ERROR] Unable to fetch table names: {e}")

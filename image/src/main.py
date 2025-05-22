@@ -4,9 +4,17 @@ from flask_cors import CORS
 import time
 from controllers.location_controller import location_bp
 from owlready2 import Thing, get_ontology, sync_reasoner, Imp
+# from config import DevelopmentConfig, ProductionConfig
+# import os
 
 app = Flask(__name__)
 CORS(app)
+
+# if os.getenv('FLASK_ENV') == 'production':
+#     app.config.from_object(ProductionConfig)
+# else:
+#     app.config.from_object(DevelopmentConfig)
+
 
 """
 NEW API

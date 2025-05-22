@@ -1,5 +1,6 @@
 from owlready2 import Thing, get_ontology
 import time
+import json
 from itertools import product
 from services.ontology.assign_quality_api import assignQuality
 
@@ -100,85 +101,100 @@ def average_quality(onto, loc_names: list, qualities: list):
     print("執行平均結果：", loc_names, score)
     return {q: score}
 
-def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf', target_typologies=None):
+def retrieve_typology_locations(onto, timestamp, context):
+    """
+    This function is used to retrieve the description of target typology 
+    """
+    print("===========根據 typology 類別搜尋 LocationDescription ===========")
+
+    data_path = "./ontology/context_to_typology.json"
+    with open(data_path, encoding="utf-8") as f:
+        CONTEXT_TO_TYPOLOGIES = json.load(f)
+    target_typologies = CONTEXT_TO_TYPOLOGIES.get(
+        context,
+        ['CountiesBoundary', 'TownshipsCititesDistrictsBoundary', 'VillagesBoundary']
+    )
+
+    print("target_typologies: ", target_typologies)
+
+    typology_to_locs = {}
+    for typology_name in target_typologies:
+        typology_class = onto[timestamp][typology_name]
+        subclasses = list(typology_class.descendants()) 
+        matching_locs = []
+        for loc in onto[timestamp].LocationDescription.instances():
+            for quality in loc.hasQuality:
+                if quality.is_a and any(cls in subclasses for cls in quality.is_a):
+                    matching_locs.append(loc.name)
+                    break
+        if matching_locs:
+            typology_to_locs[typology_name] = matching_locs
+    
+    ############ for check ############
+    for typology, loc_names in typology_to_locs.items():
+        print(f"【{typology}】類別下的地點描述：")
+        for name in loc_names:
+            print(f"  - {name}")
+    ####################################
+
+    return typology_to_locs
+
+def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf'):
     """
     This function is used to generate a template for the location description.
     It takes the location description and context as input and returns a template depending on the context.
     """
-    if context == "Traffic":
-        full_text_dict = ToFullText(locd_result)
-        print(full_text_dict)
 
-        """
-        Ontology Mapping
-        """
-        # Load the ontology
-        onto = {}
-        timestamp = str(time.time()).replace(".", "_")
-        onto[timestamp] = get_ontology(ontology_path).load()
-        class_lookup = {cls.name: cls for cls in onto[timestamp].classes()}
+    """
+    Ontology Mapping
+    """
+    # convert triplet to text
+    full_text_dict = ToFullText(locd_result)
 
-        # Define the connection between the classes and Thing
-        with onto[timestamp]:
-            class BaseThing(Thing): pass
-            class Particular(BaseThing): pass
-            class PlaceName(BaseThing): pass
-            class Localiser(BaseThing): pass
-            class SpatialPreposition(BaseThing): pass
-            class SpatialObjectType(BaseThing): pass
+    # Load the ontology
+    onto = {}
+    timestamp = str(time.time()).replace(".", "_")
+    onto[timestamp] = get_ontology(ontology_path).load()
+    class_lookup = {cls.name: cls for cls in onto[timestamp].classes()}
 
-        # Assign classes and instances from full_text
-        print("===========映射位置描述文字結果============")
-        for typology, phrases in full_text_dict.items():
-            for phrase in phrases:
-                locad_indiv = onto[timestamp].LocationDescription(str(phrase))
-                typology_class = onto[timestamp][typology]
-                typology_instance = typology_class(str(phrase) + "_Typology" + str(typology))
-                typology_instance.qualityValue.append(str(typology))
+    # Define the connection between the classes and Thing
+    with onto[timestamp]:
+        class BaseThing(Thing): pass
+        class Particular(BaseThing): pass
+        class PlaceName(BaseThing): pass
+        class Localiser(BaseThing): pass
+        class SpatialPreposition(BaseThing): pass
+        class SpatialObjectType(BaseThing): pass
 
-                locad_indiv.hasQuality.append(typology_instance)
+    # Assign classes and instances from full_text
+    print("===========映射位置描述文字結果============")
+    for typology, phrases in full_text_dict.items():
+        for phrase in phrases:
+            locad_indiv = onto[timestamp].LocationDescription(str(phrase))
+            typology_class = onto[timestamp][typology]
+            typology_instance = typology_class(str(phrase) + "_Typology" + str(typology))
+            typology_instance.qualityValue.append(str(typology))
 
-        # Assign quality
-        print("===========給定Quality============")
-        onto[timestamp] = assignQuality(onto[timestamp], "LocationDescription")
+            locad_indiv.hasQuality.append(typology_instance)
 
-        # 檢查映射結果
-        print("===========映射結果輸出============")
-        for gf in onto[timestamp].LocationDescription.instances():
-            for q in gf.hasQuality:
-                print(f"[LocationDescription] {gf.name}")
-                print(f"  ↳ hasQuality → [{q}] {q.name}")
-                if hasattr(q, "qualityValue"):
-                    print(f"    ↳ qualityValue: {list(q.qualityValue)}")
+    # Assign quality
+    print("===========給定Quality============")
+    onto[timestamp] = assignQuality(onto[timestamp], "LocationDescription")
 
+    # 檢查映射結果
+    print("===========映射結果輸出============")
+    for gf in onto[timestamp].LocationDescription.instances():
+        for q in gf.hasQuality:
+            print(f"[LocationDescription] {gf.name}")
+            print(f"  ↳ hasQuality → [{q}] {q.name}")
+            if hasattr(q, "qualityValue"):
+                print(f"    ↳ qualityValue: {list(q.qualityValue)}")
 
-
-        """
-        Retrival
-        """
-        target_typologies = ['Road', 'RoadMileage', 'Landmark', 'CountiesBoundary', 'TownshipsCititesDistrictsBoundary']
-
-        print("===========根據 typology 類別搜尋 LocationDescription ===========")
-        typology_to_locs = {}
-
-        for typology_name in target_typologies:
-            typology_class = onto[timestamp][typology_name]
-            subclasses = list(typology_class.descendants()) 
-            print(f"【{typology_name}】類別的子類別：", subclasses)
-            matching_locs = []
-            for loc in onto[timestamp].LocationDescription.instances():
-                for quality in loc.hasQuality:
-                    print(f"[DEBUG] {quality.name} 的 is_a：{quality.is_a}")
-                    if quality.is_a and any(cls in subclasses for cls in quality.is_a):
-                        matching_locs.append(loc.name)
-                        break
-            if matching_locs:
-                typology_to_locs[typology_name] = matching_locs
-
-        for typology, loc_names in typology_to_locs.items():
-            print(f"【{typology}】類別下的地點描述：")
-            for name in loc_names:
-                print(f"  - {name}")
+    """
+    Context Template
+    """
+    if context == "Traffic":        
+        typology_to_locs = retrieve_typology_locations(onto, timestamp, context)
         
         # 組合 (Admin) + Road + RoadMileage + (Landmark)
         county_locs = typology_to_locs.get("CountiesBoundary", [])
@@ -305,5 +321,114 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         onto[timestamp].destroy(update_relation = True, update_is_a = True)
 
         return top_descriptions
-    elif context == "Disaster":
+    elif context == "ReservoirDis":
+        typology_to_locs = retrieve_typology_locations(onto, timestamp, context)
+
+        descriptions = []
+        rivers = typology_to_locs.get("River", [])
+        counties = typology_to_locs.get("CountiesBoundary", [""])
+        townships = typology_to_locs.get("TownshipsCititesDistrictsBoundary", [""])
+        villages = typology_to_locs.get("VillagesBoundary", [""])
+
+        for river in rivers:
+            for county in counties:
+                for township in townships:
+                    for village in villages:
+                        elements = [county, township, village, river]
+                        count_za = sum(1 for e in elements[1:] if "在" in e)
+                        if count_za >= 1:
+                            continue
+                        sentence = f"{county}{township}{village}{river}"
+                        descriptions.append(sentence)
+        
+        top_descriptions = descriptions[:5]
+        print("Top descriptions:", top_descriptions)
+
+        # Clear the ontology
+        onto[timestamp].destroy(update_relation = True, update_is_a = True)
+
+        return top_descriptions
+    elif context == "Thunderstorm":
+        typology_to_locs = retrieve_typology_locations(onto, timestamp, context)
+
+        descriptions = []
+        counties = typology_to_locs.get("CountiesBoundary", [])
+        townships = typology_to_locs.get("TownshipsCititesDistrictsBoundary", [])
+        villages = typology_to_locs.get("VillagesBoundary", [])
+
+        for county in counties:
+            for township in townships:
+                for village in villages:
+                    elements = [county, township, village]
+                    count_za = sum(1 for e in elements[1:] if "在" in e)
+                    if count_za >= 1:
+                        continue
+                    sentence = f"{county}{township}{village}"
+                    descriptions.append(sentence)
+
+        top_descriptions = descriptions[:5]
+        print("Top descriptions:", top_descriptions)
+
+        # Clear the ontology
+        onto[timestamp].destroy(update_relation = True, update_is_a = True)
+
+        return top_descriptions
+    elif context == "Tsunami":
         pass
+    elif context == "EarthquakeEW":
+        typology_to_locs = retrieve_typology_locations(onto, timestamp, context)
+
+        descriptions = []
+        coastlines = typology_to_locs.get("CoastLine", [])
+        counties = typology_to_locs.get("CountiesBoundary", [])
+        townships = typology_to_locs.get("TownshipsCititesDistrictsBoundary", [])
+        villages = typology_to_locs.get("VillagesBoundary", [])
+
+        # Hierarchical logic: check for each typology and combine accordingly
+        if coastlines:
+            for c in coastlines:
+                descriptions.append(c)
+        elif counties:
+            for c in counties:
+                descriptions.append(c)
+        elif townships:
+            for t in townships:
+                for c in counties or [""]:
+                    descriptions.append(f"{c}{t}")
+        elif villages:
+            for v in villages:
+                for t in townships or [""]:
+                    for c in counties or [""]:
+                        descriptions.append(f"{c}{t}{v}")
+
+        top_descriptions = descriptions[:5]
+        print("Top descriptions:", top_descriptions)
+
+        # Clear the ontology
+        onto[timestamp].destroy(update_relation = True, update_is_a = True)
+
+        return top_descriptions
+    else:
+        typology_to_locs = retrieve_typology_locations(onto, timestamp, context)
+
+        counties = typology_to_locs.get("CountiesBoundary", [""])
+        townships = typology_to_locs.get("TownshipsCititesDistrictsBoundary", [""])
+        villages = typology_to_locs.get("VillagesBoundary", [""])
+
+        for county in counties:
+            for township in townships:
+                for village in villages:
+                    elements = [county, township, village]
+                    count_za = sum(1 for e in elements[1:] if "在" in e)
+                    if count_za >= 1:
+                        continue
+                    sentence = f"{county}{township}{village}"
+                    descriptions.append(sentence)
+
+        top_descriptions = descriptions[:5]
+        print("Top descriptions:", top_descriptions)
+
+        # Clear the ontology
+        onto[timestamp].destroy(update_relation = True, update_is_a = True)
+
+        return top_descriptions

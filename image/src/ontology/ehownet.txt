@@ -46,4 +46,5 @@ South(?rel), East(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), S
 Near(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), NearLocaliser(?word) -> hasLocaliser(?locad, ?word)
 LeaveFor(?rel), South(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeaveForSouthLocaliser(?word) -> hasLocaliser(?locad, ?word)
 LeaveFor(?rel), North(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeaveForNorthLocaliser(?word) -> hasLocaliser(?locad, ?word)
+External(?rel1), OnSite(?rel2), GroundFeature(?ref1), GroundFeature(?ref2), hasGroundFeature(?rel1, ?ref1), hasGroundFeature(?rel2, ?ref2), hasQuality(?ref1, ?type1), hasQuality(?ref2, ?type2), CoastLine(?ref1), Sea(?ref2), LocationDescription(?locad), symbolize(?rel1, ?locad), OpenSeaLocaliser(?word) -> hasLocaliser(?locad, ?word)
 SpatialRelationship(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFeature(?rel, ?ground), GroundFeature(?ground), hasQuality(?ground, ?name), Toponym(?name) -> hasPlaceName(?locad, ?name)

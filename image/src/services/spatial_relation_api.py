@@ -21,7 +21,8 @@ def call_spatial_api(lon, lat, refer_geom_dict):
         "intersects", "within", "crosses", "overlaps", "azimuth"
     ]
     api_prefix = "https://getroadmile.sgis.tw/spatial-operation/"
-    
+    # api_prefix = "http://localhost:4000/spatial-operation/"
+
     results = []
 
     for table_name, refer_geom in refer_geom_dict.items():   
@@ -34,6 +35,7 @@ def call_spatial_api(lon, lat, refer_geom_dict):
             result = {}
 
             try:
+                print("spatial relations api: ", url)
                 response = requests.post(url, json=data)
                 response.raise_for_status()
                 result = response.json()
