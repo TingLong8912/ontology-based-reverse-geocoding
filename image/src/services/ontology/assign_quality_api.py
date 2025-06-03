@@ -2,30 +2,45 @@ import json
 
 def assignQuality(onto_with_semantic, who_has_quality, data_path="./ontology/traffic.json"):
     """
-    Assign Quality to GroundFeature instances based on the external data.
+    Assign Quality to SpatialPreposition or Localiser instances associated with LocationDescription,
+    based on external data.
     """
-    
     with open(data_path, encoding="utf-8") as f:
-        traffic_data = json.load(f)
+        dict_data = json.load(f)
 
-    for type_quality, quality_dict in traffic_data.items():
-        for quality_class_name, quality_value in quality_dict.items():
-            quality_class = onto_with_semantic[quality_class_name]
-            if quality_class not in onto_with_semantic.classes():
-                print(f"❌ 本體中找不到類別：{quality_class_name}")
-                continue
+    for locdesc in onto_with_semantic.LocationDescription.instances():
+        if who_has_quality == "SpatialPreposition":
+            targets = locdesc.hasSpatialPreposition
+        elif who_has_quality == "Localiser":
+            targets = locdesc.hasLocaliser
+        elif who_has_quality == "PlaceName":
+            targets = locdesc.hasPlaceName
+        else:
+            continue
 
-            for gf in onto_with_semantic[who_has_quality].instances():
-                for existing_quality in gf.hasQuality:
-                    target_class = onto_with_semantic[type_quality]
-                    if isinstance(existing_quality, target_class):
-                        quality_instance = quality_class(gf.name + "_" + quality_class_name)
-                        gf.hasQuality.append(quality_instance)
-                        print(f"  ↳ hasQuality → [{quality_class_name}] {quality_instance.name}")
-                        for val in quality_value:
-                            if val and (not hasattr(quality_instance, 'qualityValue') or val not in quality_instance.qualityValue):
-                                quality_instance.qualityValue.append(val)
-                    else:
-                        continue
-
+        for target in targets:
+            for class_name, class_content in dict_data.items():
+                if who_has_quality == "SpatialPreposition" or who_has_quality == "Localiser":
+                    all_classes = [cls.name for parent in target.is_a for cls in [parent] + list(parent.ancestors())]
+                    if class_name in all_classes:
+                        for quality_name, quality_value in class_content.items():
+                            quality_class = onto_with_semantic[quality_name]
+                            quality_instance = quality_class(target.name + "_" + quality_name)
+                            for val in quality_value:
+                                if val and (not hasattr(quality_instance, 'qualityValue') or val not in quality_instance.qualityValue):
+                                    quality_instance.qualityValue.append(val)
+                            target.hasQuality.append(quality_instance)
+                elif who_has_quality == "PlaceName":
+                    for place in locdesc.hasPlaceName:
+                        quality_list = place.hasQuality
+                        for quality in quality_list:
+                            all_classes = [cls.name for parent in quality.is_a for cls in [parent] + list(parent.ancestors())]
+                            if class_name in all_classes:
+                                for quality_name, quality_value in class_content.items():
+                                    quality_class = onto_with_semantic[quality_name]
+                                    quality_instance = quality_class(place.name + "_" + quality_name)
+                                    for val in quality_value:
+                                        if val and (not hasattr(quality_instance, 'qualityValue') or val not in quality_instance.qualityValue):
+                                            quality_instance.qualityValue.append(val)
+                                    place.hasQuality.append(quality_instance)
     return onto_with_semantic

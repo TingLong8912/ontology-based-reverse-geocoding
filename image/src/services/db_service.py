@@ -15,7 +15,7 @@ DB_CONFIG = {
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
 
-def fetch_data_from_db(lon, lat, buffer_distance, target_typologies):
+def fetch_data_from_db(geojson, buffer_distance, target_typologies):
     print("get db data...")
 
     schema_name = "LocaDescriber"
@@ -67,18 +67,19 @@ def fetch_data_from_db(lon, lat, buffer_distance, target_typologies):
                     WHERE ST_Intersects(
                         geom,
                         ST_Buffer(
-                            ST_Transform(ST_SetSRID(ST_MakePoint(%s, %s), 4326), 3826),
+                            ST_Transform(ST_SetSRID(ST_GeomFromGeoJSON(%s), 4326), 3826),
                             %s
                         )
                     );
                 """
-                cur.execute(query, (lon, lat, buffer_distance))
+                cur.execute(query, (json.dumps(geojson["features"][0]["geometry"]), buffer_distance))
                 rows = cur.fetchall()
                 col_names = [desc[0] for desc in cur.description] 
 
                 geojson_features = []
                 for row in rows:
                     row_dict = dict(zip(col_names, row))  
+                    row_dict.pop("geom", None)  # 移除 geom 欄位
                     geojson_feature = {
                         "type": "Feature",
                         "geometry": json.loads(row_dict.pop("geojson")),  # 這裡的 geojson 現在是 EPSG:4326
@@ -87,10 +88,7 @@ def fetch_data_from_db(lon, lat, buffer_distance, target_typologies):
                     geojson_features.append(geojson_feature)
 
                 if geojson_features:
-                    table_data[table] = {
-                        "type": "FeatureCollection",
-                        "features": geojson_features
-                    }
+                    table_data[table] = geojson_features
             except psycopg2.Error as e:
                 pass
                 # print(f"Skipping table {table} due to error: {e}")

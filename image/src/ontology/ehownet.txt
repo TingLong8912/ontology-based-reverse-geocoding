@@ -1,4 +1,5 @@
 OnSite(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), AtSpatialPreposition(?word) -> hasSpatialPreposition(?locad, ?word)
+Toward(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), TowardSpatialPreposition(?word) -> hasSpatialPreposition(?locad, ?word)
 External(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), OutsideLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Internal(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), InsideLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Upper(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), UpperLocaliser(?word) -> hasLocaliser(?locad, ?word)
@@ -46,5 +47,6 @@ South(?rel), East(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), S
 Near(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), NearLocaliser(?word) -> hasLocaliser(?locad, ?word)
 LeaveFor(?rel), South(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeaveForSouthLocaliser(?word) -> hasLocaliser(?locad, ?word)
 LeaveFor(?rel), North(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeaveForNorthLocaliser(?word) -> hasLocaliser(?locad, ?word)
-External(?rel1), OnSite(?rel2), GroundFeature(?ref1), GroundFeature(?ref2), hasGroundFeature(?rel1, ?ref1), hasGroundFeature(?rel2, ?ref2), hasQuality(?ref1, ?type1), hasQuality(?ref2, ?type2), CoastLine(?ref1), Sea(?ref2), LocationDescription(?locad), symbolize(?rel1, ?locad), OpenSeaLocaliser(?word) -> hasLocaliser(?locad, ?word)
+BeAcross(?rel1), BeAcross(?rel2),  GroundFeature(?ref1), GroundFeature(?ref2), hasGroundFeature(?rel1, ?ref1), hasGroundFeature(?rel2, ?ref2), hasQuality(?ref1, ?type1), hasQuality(?ref2, ?type2), Road(?type1), Road(?type2), LocationDescription(?locad), symbolize(?rel1, ?locad), symbolize(?rel2, ?locad), AcrossRoadLocaliser(?word) -> hasLocaliser(?locad, ?word)
+External(?rel1), OnSite(?rel2), GroundFeature(?ref1), GroundFeature(?ref2), hasGroundFeature(?rel1, ?ref1), hasGroundFeature(?rel2, ?ref2), hasQuality(?ref1, ?type1), hasQuality(?ref2, ?type2), CoastLine(?type1), Sea(?type2), LocationDescription(?locad), symbolize(?rel1, ?locad), OpenSeaLocaliser(?word) -> hasLocaliser(?locad, ?word)
 SpatialRelationship(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFeature(?rel, ?ground), GroundFeature(?ground), hasQuality(?ground, ?name), Toponym(?name) -> hasPlaceName(?locad, ?name)

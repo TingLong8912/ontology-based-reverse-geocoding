@@ -10,7 +10,7 @@ def safe_name(x):
 def normalize_name(name):
     return str(name).replace("+", "_").replace(" ", "_")
 
-def RunSemanticReasoning(sr_object, context, ontology_path='./ontology/LocationDescription.rdf'):
+def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology/LocationDescription.rdf'):
     """
     Initialize the ontology and map the spatial relations to the ontology.
     """
@@ -33,6 +33,10 @@ def RunSemanticReasoning(sr_object, context, ontology_path='./ontology/LocationD
     # Assign classes and instances from spatial opeartions
     figure_feature_class = onto[timestamp]['FigureFeature']
     figure_feature_instance = figure_feature_class('targetFeature')
+    specific_geometry_class = onto[timestamp][geometry]
+    geometry_instance = specific_geometry_class(f"targetFeature_Geometry")
+    geometry_instance.qualityValue.append(str(geometry))
+    figure_feature_instance.hasQuality.append(geometry_instance)
 
     context_class = onto[timestamp][context]
     context_instance = context_class('context'+str(context))
@@ -112,7 +116,7 @@ def RunSemanticReasoning(sr_object, context, ontology_path='./ontology/LocationD
         # Add RoadDirection to Quality
         action_class = onto[timestamp].Action
         if geojson_data:
-            feature = geojson_data.get("features")[0]
+            feature = geojson_data.get("features")
             if feature:
                 feature_property = feature.get("properties", {})
                 road_direction = feature_property.get("Direction", None)
@@ -160,18 +164,27 @@ def RunSemanticReasoning(sr_object, context, ontology_path='./ontology/LocationD
             if place_names:
                 place_name = safe_name(place_names[0])
             spatial_prepositions = getattr(loc_desc, 'hasSpatialPreposition', [])
+            spatial_preposition_class = None
             if spatial_prepositions:
-                spatial_preposition = safe_name(spatial_prepositions[0])
+                spatial_preposition_instance = spatial_prepositions[0]
+                spatial_preposition = safe_name(spatial_preposition_instance)
+                if spatial_preposition_instance.is_a:
+                    spatial_preposition_class = spatial_preposition_instance.is_a[0].name
             localisers = getattr(loc_desc, 'hasLocaliser', [])
+            localiser_class = None
             if localisers:
-                localiser = [safe_name(loc) for loc in localisers]
-            
+                localiser_instances = localisers
+                localiser = [safe_name(loc) for loc in localiser_instances]
+                if localiser_instances[0].is_a:
+                    localiser_class = localiser_instances[0].is_a[0].name
 
         result_data.append({
             "Subject": subject_name,
             "PlaceName": place_name,
             "SpatialPreposition": spatial_preposition,
+            "SpatialPrepositionClass": spatial_preposition_class,
             "Localiser": localiser if localiser else None,
+            "LocaliserClass": localiser_class,
             "Qualities": qualities if qualities else None
         })
 

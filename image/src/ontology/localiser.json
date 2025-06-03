@@ -1,0 +1,23 @@
+{
+  "AtSpatialPreposition": {
+    "Scale": ["20"]
+  },
+  "TowardSpatialPreposition": {
+    "Scale": ["20"]
+  },
+  "DistanceLocaliser": {
+    "Scale": ["8"]
+  },
+  "AlterLocaliser": {
+    "Scale": ["14"]
+  },
+  "SideLocaliser": {
+    "Scale": ["16"]
+  },
+  "EdgeLocaliser": {
+    "Scale": ["18"]
+  },
+  "PartLocaliser": {
+    "Scale": ["11"]
+  }
+}

@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, Response
+from flask import Blueprint, jsonify, request
 import json
 from services.db_service import fetch_data_from_db
 from services.spatial_relation_api import call_spatial_api
@@ -14,7 +14,22 @@ def map_location():
     try:
         lon = float(request.args.get('lon'))
         lat = float(request.args.get('lat'))
+        
         context = str(request.args.get('context'))
+        print(f"[DEBUG] Received: lon={lon}, lat={lat}, context={context}")
+        geojson = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [lon, lat]
+                    },
+                    "properties": {}
+                }
+            ]
+        }
     except (TypeError, ValueError):
         return jsonify({"error": "Invalid coordinates"}), 400
 
@@ -30,7 +45,6 @@ def map_location():
         ['CountiesBoundary', 'TownshipsCititesDistrictsBoundary', 'VillagesBoundary']
     )
 
-    # Query DB data
     if context == "Traffic":
         buffer_distance = 200
     elif context == "ReservoirDis" or context == "Thunderstorm":
@@ -40,8 +54,8 @@ def map_location():
     else:
         buffer_distance = 500
 
-    db_results = fetch_data_from_db(lon, lat, buffer_distance, target_typologies)
-    sr_results = call_spatial_api(lon, lat, db_results)
+    db_results = fetch_data_from_db(geojson, buffer_distance, target_typologies)
+    sr_results = call_spatial_api(geojson, db_results)
     for sr in sr_results:
         if sr.get('relation') == 'AbsoluteDirection':
             print(f"[DEBUG] AbsoluteDirection → bearing: {sr.get('bearing')}")
@@ -62,13 +76,18 @@ def map_location():
 
 
 # New POST route for reverse geocoding using drawn geometry
-@location_bp.route("/api/map_location_geometry", methods=["POST"])
-def map_location_geometry():
+@location_bp.route("/api/get_locd", methods=["POST"])
+def get_locd():
     try:
         data = request.get_json()
-        geometry = data.get("geometry")
+        geojson = data.get("geojson")
         context = str(data.get("context"))
-        if not geometry or not context:
+        features = geojson.get("features", [])
+        if features:
+            geometry = features[0].get("geometry").get("type")
+        else:
+            return jsonify({"error": "No features found in geojson"}), 400
+        if not geojson or not context:
             return jsonify({"error": "Missing geometry or context"}), 400
     except Exception as e:
         return jsonify({"error": f"Invalid request: {e}"}), 400
@@ -91,9 +110,9 @@ def map_location_geometry():
     else:
         buffer_distance = 500
 
-    db_results = fetch_data_from_db(geometry, buffer_distance, target_typologies, is_geojson=True)
-    sr_results = call_spatial_api(geometry, None, db_results, is_geojson=True)
-    locad_result = RunSemanticReasoning(sr_results, context)
+    db_results = fetch_data_from_db(geojson, buffer_distance, target_typologies)
+    sr_results = call_spatial_api(geojson, db_results)
+    locad_result = RunSemanticReasoning(sr_results, geometry, context)
     if hasattr(locad_result, "get_json"):
         locad_result = locad_result.get_json()
 
