@@ -53,6 +53,9 @@
   "ElevatedUrbanRoad": {
     "StyleandForm": ["高架"]
   },
+  "ElevatedUrbanExpressway": {
+    "StyleandForm": ["高架"]
+  },
   "UndergroundNationalExpressway": {
     "StyleandForm": ["地下"]
   },

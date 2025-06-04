@@ -3,6 +3,7 @@ from flask import jsonify
 from owlready2 import Thing, get_ontology
 import pandas as pd
 from services.ontology.reasoning_api import run_reasoning 
+from services.ontology.assign_quality_api import assignQuality
 
 def safe_name(x):
     return getattr(x, 'name', str(x))
@@ -101,7 +102,6 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
                     geometry_type = "MultiPolygon"
 
         if geometry_type:
-            print(f"Geometry type: {geometry_type} - {refer_object_name}")
             geometry_class = onto[timestamp].Geometry
             specific_geometry_class = onto[timestamp][geometry_type]
             if specific_geometry_class and issubclass(specific_geometry_class, geometry_class):
@@ -131,6 +131,13 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
     """
     Reasoning
     """
+
+    # Assign Quality to PlaceName
+    onto[timestamp] = assignQuality(onto[timestamp], "GroundFeature", data_path="./ontology/traffic.json")
+    print("===========映射結果輸出============")
+    
+
+    # Run reasoning on the ontology
     onto_reasoned = {}
     onto_reasoned[timestamp] = run_reasoning(onto, timestamp)  # 執行推理
 

@@ -56,8 +56,7 @@ def run_reasoning(onto, timestamp):
         locad_indiv = onto_with_semantic[timestamp].LocationDescription(f"locad_{idx}")
         indiv.symbolize.append(locad_indiv)
 
-    print("===========給定Quality============")    
-    onto_with_semantic[timestamp] = assignQuality(onto_with_semantic[timestamp], "GroundFeature")
+    onto_with_semantic[timestamp] = assignQuality(onto_with_semantic[timestamp], "GroundFeature", data_path="./ontology/traffic.json")
 
     # 檢查映射結果
     # print("===========映射結果輸出============")

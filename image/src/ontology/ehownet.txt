@@ -13,6 +13,8 @@ West(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), WestLocaliser(
 East(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), EastLocaliser(?word) -> hasLocaliser(?locad, ?word)
 South(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), SouthLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Surface(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), SurfaceLocaliser(?word) -> hasLocaliser(?locad, ?word)
+TopSurface(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), TopSurfaceLocaliser(?word) -> hasLocaliser(?locad, ?word)
+BottomSurface(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BottomSurfaceLocaliser(?word) -> hasLocaliser(?locad, ?word)
 Edge(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BoundaryLocaliser(?word) -> hasLocaliser(?locad, ?word)
 TopPart(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), UpperPartLocaliser(?word) -> hasLocaliser(?locad, ?word)
 BasePart(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), BottomLocaliser(?word) -> hasLocaliser(?locad, ?word)

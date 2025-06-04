@@ -72,4 +72,12 @@ def ToFullText(locd_result):
                 }
                 converted_full_text.append(full_text_item)
 
-    return converted_full_text
+    seen = set()
+    unique_items = []
+    for item in converted_full_text:
+        key = f"{item['SpatialPreposition']}_{item['PlaceName']}_{item['Localiser']}"
+        if key not in seen:
+            seen.add(key)
+            unique_items.append(item)
+
+    return unique_items
