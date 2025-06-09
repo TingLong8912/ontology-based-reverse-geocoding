@@ -54,6 +54,40 @@ def retrieve_typology_locations(onto, context):
 
     return typology_to_locs
 
+def retrieve_location_info(onto):
+    """
+    Retrieves combined typology and spatial preposition information for each LocationDescription.
+    """
+    print("===========根據 typology + spatialPreposition 統一檢索 ===========")
+    loc_to_info = {}
+
+    for loc in onto.LocationDescription.instances():
+        loc_name = loc.name
+        loc_to_info.setdefault(loc_name, {
+            "typologies": [],
+            "spatialPrepositions": []
+        })
+
+        # typology: from hasPlaceName → hasQuality → class
+        for placename in getattr(loc, "hasPlaceName", []):
+            for quality in getattr(placename, "hasQuality", []):
+                if getattr(quality, "is_a", None):
+                    for cls in quality.is_a:
+                        loc_to_info[loc_name]["typologies"].append(cls.name)
+                        for super_cls in cls.ancestors():
+                            if super_cls.name != "Thing":
+                                loc_to_info[loc_name]["typologies"].append(super_cls.name)
+
+        # spatial preposition: from hasSpatialPreposition → class and its ancestors
+        for sp in getattr(loc, "hasSpatialPreposition", []):
+            sp_class = sp.__class__
+            loc_to_info[loc_name]["spatialPrepositions"].append(sp_class.name)
+            for super_cls in sp_class.ancestors():
+                if super_cls.name != "Thing":
+                    loc_to_info[loc_name]["spatialPrepositions"].append(super_cls.name)
+
+    return loc_to_info
+
 def template(locd_result, context, ontology_path='./ontology/LocationDescription.rdf'):
     """
     This function is used to generate a template for the location description.
@@ -154,12 +188,14 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
     Context Template
     """
     if context == "Traffic":        
-        typology_to_locs = retrieve_typology_locations(onto[timestamp], context)
+        loc_to_info = retrieve_location_info(onto[timestamp])
 
-        # 組合 (Admin) + Road + RoadMileage + (Landmark)
-        county_locs = list(set(typology_to_locs.get("CountiesBoundary", [])))
-        township_locs = list(set(typology_to_locs.get("TownshipsCititesDistrictsBoundary", [])))
-        road_locs = list(set(typology_to_locs.get("Road", [])))
+        county_locs = [loc for loc, info in loc_to_info.items() if "CountiesBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
+        village_locs = [loc for loc, info in loc_to_info.items() if "VillagesBoundary" in info["typologies"]  and "AtSpatialPreposition" in info["spatialPrepositions"]]
+        township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
+        road_within_locs = [loc for loc, info in loc_to_info.items() if "Road" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
+        road_near_locs = [loc for loc, info in loc_to_info.items() if "Road"]
+        landmark_locs = [loc for loc, info in loc_to_info.items() if "Landmark" in info["typologies"]]
 
         # Step 1: 檢查哪些 road_locs 是 NationalExpressway 或 ProvincialHighway
         special_road_classes = [
@@ -173,7 +209,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
         road_locs_without_admin = []
         road_locs_with_admin = []
     
-        for loc_name in road_locs:
+        for loc_name in road_within_locs:
             loc_indiv = onto[timestamp].LocationDescription(loc_name)
             is_special_road = False
             for q in loc_indiv.hasQuality:
@@ -187,7 +223,7 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
 
         # 建立mileage為key的道路類別紀錄
         mileage_by_road = {}
-        mileage_locs = typology_to_locs.get("RoadMileage", [])
+        mileage_locs = [loc for loc, info in loc_to_info.items() if "Mileage" in info["typologies"]]
         for mileage_name in mileage_locs:
             if mileage_name == "":
                 continue
@@ -197,15 +233,12 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     for cls in q.is_a:
                         road_type = cls.name.replace("Mileage", "")
                         mileage_by_road.setdefault(road_type, []).append(mileage_name)
-        
 
-        landmark_locs = list(set(typology_to_locs.get("Landmark", [])))
-        
         combinations = {
             'combination': [],
             'avg_quality': []
         }
-        if road_locs or landmark_locs:
+        if len(road_within_locs):
             landmark_locs = landmark_locs or [""]
             print("===========組合道路、里程與地標描述============")
             # 不需要加上 Admin（特殊道路）
@@ -241,7 +274,6 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
             township_locs = township_locs or [""]
             for r in road_locs_with_admin:
                 loc_indiv = onto[timestamp].LocationDescription(r)
-                road_classes = [cls for q in loc_indiv.hasQuality for cls in (q.is_a or []) if cls not in special_road_descendants]
                 for a, t, l in product(county_locs, township_locs, landmark_locs):
                     elements = [a, t, r, l]
                     qualities_to_check = ["Scale", "Prominence"]
@@ -252,8 +284,25 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     else:
                         combinations["combination"].append(f"{a}{t}{r}（{l}）")
         else:
-            print("No road or landmark locations found.")
-            # 需要處理
+            qualities_to_check = ["Scale", "Prominence"]
+            for r in road_near_locs:
+                avg_qualities = average_quality(onto[timestamp], [r], qualities_to_check)
+                combinations["combination"].append(r)
+                combinations["avg_quality"].append(avg_qualities)
+
+            for l in landmark_locs:
+                avg_qualities = average_quality(onto[timestamp], [l], qualities_to_check)
+                combinations["combination"].append(l)
+                combinations["avg_quality"].append(avg_qualities)
+
+            # 也請在這邊加上預設的行政區描述
+            default_admin_locs = [county_locs[0] if county_locs else "", township_locs[0] if township_locs else "", village_locs[0] if village_locs else ""]
+            print("default_admin_locs:", default_admin_locs)
+            qualities_to_check = ["Scale", "Prominence"]
+            avg_qualities = average_quality(onto[timestamp], default_admin_locs, qualities_to_check)
+            sentence = "".join(default_admin_locs)
+            combinations["combination"].append(sentence)
+            combinations["avg_quality"].append(avg_qualities)
             
         # 取得 top_n 的描述（依照平均 quality 值排序）
         top_n = 5  
@@ -370,6 +419,13 @@ def template(locd_result, context, ontology_path='./ontology/LocationDescription
                     elements = [county, township, village]
                     sentence = f"{county}{township}{village}"
                     descriptions.append(sentence)
+
+        default_admin_locs = [counties[0] if counties else "", townships[0] if townships else "", villages[0] if villages else ""]
+        print("default_admin_locs:", default_admin_locs)
+        qualities_to_check = ["Scale", "Prominence"]
+        avg_qualities = average_quality(onto[timestamp], default_admin_locs, qualities_to_check)
+        sentence = "".join(default_admin_locs)
+        descriptions.append(sentence)
 
         top_descriptions = descriptions[:5]
         top_descriptions = [clean_za_prefix(desc) for desc in top_descriptions]
