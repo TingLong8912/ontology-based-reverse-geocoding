@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, Response, stream_with_context
 import json
 from services.db_service import fetch_data_from_db
 from services.spatial_relation_api import call_spatial_api
@@ -89,63 +89,60 @@ def map_location():
     })
 
 
-# New POST route for reverse geocoding using drawn geometry
-@location_bp.route("/api/get_locd", methods=["POST"])
-def get_locd():
-    """
-    Get location description based on drawn geometry and context.
-    This endpoint expects a JSON body with 'geojson' and 'context'.
-    """
+@location_bp.route("/api/stream_locd", methods=["GET", "POST"])
+def stream_locd():
+    def generate():
+        try:
+            raw_data = request.get_data(as_text=True)
+            data = json.loads(raw_data)
+            geojson = data.get("geojson")
+            context = str(data.get("context"))
+            yield f"data: {json.dumps({'stage': 'Request received', 'status': 'done'})}\n\n"
 
-    # Get the geojson and context from the request body
-    try:
-        data = request.get_json()
-        geojson = data.get("geojson")
-        context = str(data.get("context"))
-        features = geojson.get("features", [])
-        if features:
+            features = geojson.get("features", [])
+            if not features:
+                yield f"data: {json.dumps({'stage': 'Validating geojson', 'status': 'error', 'message': 'No features found'})}\n\n"
+                return
             geometry = features[0].get("geometry").get("type")
-        else:
-            return jsonify({"error": "No features found in geojson"}), 400
-        if not geojson or not context:
-            return jsonify({"error": "Missing geometry or context"}), 400
-    except Exception as e:
-        return jsonify({"error": f"Invalid request: {e}"}), 400
 
-    # Validate the context
-    data_path = "./ontology/context_to_typology.json"
-    with open(data_path, encoding="utf-8") as f:
-        CONTEXT_TO_TYPOLOGIES = json.load(f)
+            data_path = "./ontology/context_to_typology.json"
+            with open(data_path, encoding="utf-8") as f:
+                CONTEXT_TO_TYPOLOGIES = json.load(f)
+            target_typologies = CONTEXT_TO_TYPOLOGIES.get(context, ['CountiesBoundary', 'TownshipsCititesDistrictsBoundary', 'VillagesBoundary'])
+            yield f"data: {json.dumps({'stage': 'Typology loaded', 'status': 'done'})}\n\n"
 
-    target_typologies = CONTEXT_TO_TYPOLOGIES.get(
-        context,
-        ['CountiesBoundary', 'TownshipsCititesDistrictsBoundary', 'VillagesBoundary']
-    )
+            if context == "Traffic":
+                buffer_distance = 200
+            elif context in ["ReservoirDis", "Thunderstorm"]:
+                buffer_distance = 1000
+            elif context in ["Tsunami", "EarthquakeEW"]:
+                buffer_distance = 50000
+            else:
+                buffer_distance = 500
+            yield f"data: {json.dumps({'stage': 'Buffer determined', 'status': 'done'})}\n\n"
 
-    if context == "Traffic":
-        buffer_distance = 200
-    elif context == "ReservoirDis" or context == "Thunderstorm":
-        buffer_distance = 1000
-    elif context == "Tsunami" or context == "EarthquakeEW":
-        buffer_distance = 50000
-    else:
-        buffer_distance = 500
+            db_results = fetch_data_from_db(geojson, buffer_distance, target_typologies)
+            yield f"data: {json.dumps({'stage': 'Database query', 'status': 'done'})}\n\n"
 
-    # Fetch data from the database
-    db_results = fetch_data_from_db(geojson, buffer_distance, target_typologies)
+            sr_results = call_spatial_api(geojson, db_results)
+            yield f"data: {json.dumps({'stage': 'Spatial relation reasoning', 'status': 'done', 'result': sr_results })}\n\n"
 
-    # Call the spatial API to get spatial relations
-    sr_results = call_spatial_api(geojson, db_results)
-    locad_result = RunSemanticReasoning(sr_results, geometry, context)
-    if hasattr(locad_result, "get_json"):
-        locad_result = locad_result.get_json()
+            locad_result = RunSemanticReasoning(sr_results, geometry, context)
+            if hasattr(locad_result, "get_json"):
+                locad_result = locad_result.get_json()
+            yield f"data: {json.dumps({'stage': 'Semantic reasoning', 'status': 'done', 'result': locad_result })}\n\n"
 
-    # Use the template function to generate multiLocad results
-    multiLocad_results = template(locad_result, context)
+            multiLocad_results = template(locad_result, context)
+            yield f"data: {json.dumps({'stage': 'Template generation', 'status': 'done', 'result': multiLocad_results })}\n\n"
 
-    # Return the results as JSON
-    return jsonify({
-        "spatial_relations": sr_results,
-        "location_description": locad_result,
-        "multiLocad_results": multiLocad_results
-    })
+            result = {
+                "spatial_relations": sr_results,
+                "location_description": locad_result,
+                "multiLocad_results": multiLocad_results
+            }
+            yield f"data: {json.dumps({'stage': 'Complete', 'status': 'done', 'result': result})}\n\n"
+
+        except Exception as e:
+            yield f"data: {json.dumps({'stage': 'Error', 'status': 'error', 'message': str(e)})}\n\n"
+
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
