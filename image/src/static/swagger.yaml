@@ -1,0 +1,125 @@
+openapi: 3.0.3
+info:
+  title: LocaDescriber API
+  version: 1.0.0
+  description: Spatial reasoning API for semantic location descriptions
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+  /api/get_locd:
+    post:
+      summary: 根據幾何與語意上下文取得位置描述
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                geojson:
+                  type: object
+                  description: GeoJSON FeatureCollection
+                context:
+                  type: string
+                  description: 語意推理上下文
+                  enum: [Traffic, EarthquakeEW, ReservoirDis, Thunderstorm, Tsunami]
+                w_one:
+                  type: number
+                  description: 空間推理權重
+                  default: 0.6
+                w_two:
+                  type: number
+                  description: 語意推理權重
+                  default: 0.4
+            example:
+              geojson:
+                type: FeatureCollection
+                features:
+                  - type: Feature
+                    geometry:
+                      type: Point
+                      coordinates: [121.5, 25.0]
+              context: Traffic
+              w_one: 0.6
+              w_two: 0.4
+      responses:
+        '200':
+          description: 成功回傳推理結果
+          content:
+            application/json:
+              example:
+                data: {}
+        '400':
+          description: 請求格式錯誤
+
+  /api/stream_locd:
+    post:
+      summary: 以 SSE 形式串流回傳推理階段結果
+      description: |
+        ⚠️ 此 API 為 Server-Sent Events（SSE）串流介面。
+        Swagger UI 無法正確展示串流結果，請使用 curl 或自製前端測試。
+
+        👉 範例 curl 指令：
+
+            curl -N -H "Content-Type: application/json" -X POST http://localhost:8000/api/stream_locd \
+              -d '{
+                "geojson": {
+                  "type": "FeatureCollection",
+                  "features": [
+                    {
+                      "type": "Feature",
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [121.5, 25.0]
+                      }
+                    }
+                  ]
+                },
+                "context": "Traffic",
+                "w_one": 0.6,
+                "w_two": 0.4
+              }'
+      deprecated: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                geojson:
+                  type: object
+                  description: GeoJSON FeatureCollection
+                context:
+                  type: string
+                  description: 語意推理上下文
+                w_one:
+                  type: number
+                  description: 空間推理權重
+                  default: 0.6
+                w_two:
+                  type: number
+                  description: 語意推理權重
+                  default: 0.4
+            example:
+              geojson:
+                type: FeatureCollection
+                features:
+                  - type: Feature
+                    geometry:
+                      type: Point
+                      coordinates: [121.5, 25.0]
+              context: Traffic
+              w_one: 0.6
+              w_two: 0.4
+      responses:
+        '200':
+          description: 成功串流推理結果
+          content:
+            text/event-stream:
+              schema:
+                type: string
+        '400':
+          description: 請求格式錯誤

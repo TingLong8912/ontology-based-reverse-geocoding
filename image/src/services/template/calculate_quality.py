@@ -44,35 +44,31 @@ def get_quality_values(onto, locad_indiv_name, target_quality: list):
             result[locad_indiv_name][comp][q] = list(result[locad_indiv_name][comp][q])
     return result
 
-def average_quality(onto, loc_names: list, qualities: list):
+def average_quality(onto, loc_names: list, qualities: list, w1 = 0.6, w2 = 0.4):
     """
     This function calculates the average quality values for a list of location names.
     """
-    # Add scoring logic
-    w1 = 0.6
-    w2 = 0.4
-
     values = {q: [] for q in qualities}
 
     default_values = {
         "PlaceName": {
-            "Scale": 20.0,         
+            "Scale": 1,         
             "Prominence": 0.0      
         }, 
         "SpatialPreposition": {
-            "Scale": 5.0,         
+            "Scale": 0.25,         
             "Prominence": 0.0      
         }, 
         "Localiser": {
-            "Scale": 5.0,         
+            "Scale": 0.25,         
             "Prominence": 0.0      
         }, 
     }
 
     # Insert scale_direction logic before score calculation
     scale_direction = {
-        "PlaceName": "inverse", 
-        "SpatialPreposition": "directional", 
+        "PlaceName": "inverse", # 物件越明確(scale越小)越好
+        "SpatialPreposition": "directional", # 越細緻(scale越大)越好
         "Localiser": "directional"
     }
 
@@ -85,6 +81,8 @@ def average_quality(onto, loc_names: list, qualities: list):
                     val = float(default_values[component][q])
                     if q == "Scale" and scale_direction.get(component, "inverse") == "inverse":
                         val = 1 / val if val != 0 else 1
+                    if q == "Scale":
+                        val = val/20
                     values[q].append(val)
                     continue
                 for v in values_list:
@@ -92,10 +90,12 @@ def average_quality(onto, loc_names: list, qualities: list):
                         val = float(v)
                         if q == "Scale" and scale_direction.get(component, "inverse") == "inverse":
                             val = 1 / val if val != 0 else 1
+                        if q == "Scale":
+                            val = val/20
                         values[q].append(val)
                     except ValueError:
                         continue
-    # 計算平均值（若為空則給預設值）
+    
     scale_values = values.get("Scale", [])
     prominence_values = values.get("Prominence", [])
     

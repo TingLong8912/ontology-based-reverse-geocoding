@@ -1,23 +1,67 @@
 {
   "AtSpatialPreposition": {
-    "Scale": ["20"]
+    "Scale": [
+      "20"
+    ]
   },
   "TowardSpatialPreposition": {
-    "Scale": ["20"]
+    "Scale": [
+      "20"
+    ]
   },
   "DistanceLocaliser": {
-    "Scale": ["8"]
+    "Scale": [
+      "8"
+    ]
   },
   "AlterLocaliser": {
-    "Scale": ["14"]
+    "Scale": [
+      "14"
+    ]
   },
   "SideLocaliser": {
-    "Scale": ["16"]
+    "Scale": [
+      "11"
+    ]
   },
   "EdgeLocaliser": {
-    "Scale": ["18"]
+    "Scale": [
+      "18"
+    ]
   },
   "PartLocaliser": {
-    "Scale": ["11"]
+    "Scale": [
+      "16"
+    ]
+  },
+  "EightCardinalPartLocaliser": {
+    "Prominence": [
+      "2"
+    ]
+  },
+  "FourCardinalPartLocaliser": {
+    "Prominence": [
+      "1"
+    ]
+  },
+  "EightCardinalLocaliser": {
+    "Prominence": [
+      "2"
+    ]
+  },
+  "FourCardinalLocaliser": {
+    "Prominence": [
+      "1"
+    ]
+  },
+  "PlaceLocaliser": {
+    "Prominence": [
+      "3"
+    ]
+  },
+  "OffshoreLocaliser": {
+    "Prominence": [
+      "2"
+    ]
   }
 }

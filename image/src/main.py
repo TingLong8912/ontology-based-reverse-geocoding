@@ -4,10 +4,27 @@ from flask_cors import CORS
 import time
 from controllers.location_controller import location_bp
 from owlready2 import Thing, get_ontology, sync_reasoner, Imp
-# from config import DevelopmentConfig, ProductionConfig
-# import os
+from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
+
+SWAGGER_URL = '/apidocs'  # 想要訪問的 URL
+API_URL = '/static/swagger.yaml'  # swagger.yaml 靜態檔案 URL 路徑
+
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "Your Flask API"
+    }
+)
+
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+
+@app.route('/static/<path:path>')
+def send_static(path):
+    return send_from_directory('static', path)
+
 CORS(app)
 
 # if os.getenv('FLASK_ENV') == 'production':

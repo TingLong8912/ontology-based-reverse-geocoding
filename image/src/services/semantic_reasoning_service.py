@@ -71,7 +71,7 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
         
         # Add Other Info (e.g. distance, direction) to Quality
         if other_info:
-            print(f"Other info: {other_info} - {refer_object_name}")
+            # print(f"Other info: {other_info} - {refer_object_name}")
             if spatial_relation == "AbsoluteDirection":
                 if isinstance(other_info, list):
                     for direction in other_info:
@@ -182,18 +182,35 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
             if localisers:
                 localiser_instances = localisers
                 localiser = [safe_name(loc) for loc in localiser_instances]
-                if localiser_instances[0].is_a:
-                    localiser_class = localiser_instances[0].is_a[0].name
+                localiser_class = []
+                for loc in localiser_instances:
+                    if loc.is_a:
+                        localiser_class.append(loc.is_a[0].name)
+                    else:
+                        localiser_class.append(None)
+                # print("localiser_class: ", localiser_class)
 
-        result_data.append({
-            "Subject": subject_name,
-            "PlaceName": place_name,
-            "SpatialPreposition": spatial_preposition,
-            "SpatialPrepositionClass": spatial_preposition_class,
-            "Localiser": localiser if localiser else None,
-            "LocaliserClass": localiser_class,
-            "Qualities": qualities if qualities else None
-        })
+        if isinstance(localiser, list) and isinstance(localiser_class, list) and len(localiser) == len(localiser_class):
+            for loc, loc_class in zip(localiser, localiser_class):
+                result_data.append({
+                    "Subject": subject_name,
+                    "PlaceName": place_name,
+                    "SpatialPreposition": spatial_preposition,
+                    "SpatialPrepositionClass": spatial_preposition_class,
+                    "Localiser": loc,
+                    "LocaliserClass": loc_class,
+                    "Qualities": qualities if qualities else None
+                })
+        else:
+            result_data.append({
+                "Subject": subject_name,
+                "PlaceName": place_name,
+                "SpatialPreposition": spatial_preposition,
+                "SpatialPrepositionClass": spatial_preposition_class,
+                "Localiser": localiser if localiser else None,
+                "LocaliserClass": localiser_class,
+                "Qualities": qualities if qualities else None
+            })
 
     # Clear the ontology
     onto[timestamp].destroy(update_relation = True, update_is_a = True)

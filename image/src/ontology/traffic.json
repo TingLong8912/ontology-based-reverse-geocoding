@@ -1,105 +1,274 @@
 {
   "NationalExpressway": {
-    "Scale": ["6"],
-    "Purpose": ["聯絡兩省(市)以上及重要交通設施或政經中心"],
-    "Prominence": ["0.000152"],
-    "PartsandStructure": ["隧道", "橋樑", "匝道", "服務區"]
+    "Scale": [
+      "6"
+    ],
+    "Purpose": [
+      "聯絡兩省(市)以上及重要交通設施或政經中心"
+    ],
+    "Prominence": [
+      "0.638655"
+    ],
+    "PartsandStructure": [
+      "隧道",
+      "橋樑",
+      "匝道",
+      "服務區"
+    ]
   },
   "ProvincialHighway": {
-    "Scale": ["7"],
-    "Purpose": ["聯絡兩縣(市)以上、省際交通及政經中心"],
-    "Prominence": ["0.000238"],
-    "PartsandStructure": ["隧道", "橋樑", "匝道"]
+    "Scale": [
+      "7"
+    ],
+    "Purpose": [
+      "聯絡兩縣(市)以上、省際交通及政經中心"
+    ],
+    "Prominence": [
+      "1"
+    ],
+    "PartsandStructure": [
+      "隧道",
+      "橋樑",
+      "匝道"
+    ]
   },
   "CountyHighway": {
-    "Scale": ["9"],
-    "Purpose": ["聯絡縣(市)及縣(市)與重要鄉(鎮、市)間"],
-    "Prominence": ["0.000137"],
-    "PartsandStructure": ["隧道", "橋樑", "匝道"]
+    "Scale": [
+      "9"
+    ],
+    "Purpose": [
+      "聯絡縣(市)及縣(市)與重要鄉(鎮、市)間"
+    ],
+    "Prominence": [
+      "0.575630"
+    ],
+    "PartsandStructure": [
+      "隧道",
+      "橋樑",
+      "匝道"
+    ]
   },
   "UrbanRoad": {
-    "Scale": ["14"],
-    "Purpose": ["聯絡都市計畫區內所有道路、直轄市及市行政區"],
-    "Prominence": ["0.000106"],
-    "PartsandStructure": ["隧道", "橋樑", "匝道"]
+    "Scale": [
+      "14"
+    ],
+    "Purpose": [
+      "聯絡都市計畫區內所有道路、直轄市及市行政區"
+    ],
+    "Prominence": [
+      "0.445378"
+    ],
+    "PartsandStructure": [
+      "隧道",
+      "橋樑",
+      "匝道"
+    ]
   },
   "Lane": {
-    "Scale": ["15"],
-    "Prominence": ["0"]
+    "Scale": [
+      "15"
+    ],
+    "Prominence": [
+      "0"
+    ]
   },
   "OtherRoads": {
-    "Scale": ["17"],
-    "Prominence": ["0.000042"],
-    "PartsandStructure": ["隧道", "橋樑"]
+    "Scale": [
+      "17"
+    ],
+    "Prominence": [
+      "0.176470"
+    ],
+    "PartsandStructure": [
+      "隧道",
+      "橋樑"
+    ]
   },
   "ElevatedNationalExpressway": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedNationalFreeway": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedCountyHighway": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedProvincialExpressway": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedProvincialHighway": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedRuralRoad": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedUrbanRoad": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "ElevatedUrbanExpressway": {
-    "StyleandForm": ["高架"]
+    "StyleandForm": [
+      "高架"
+    ]
   },
   "UndergroundNationalExpressway": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "UndergroundNationalFreeway": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "UndergroundCountyHighway": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "UndergroundProvincialExpressway": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "UndergroundProvincialHighway": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "UndergroundRuralRoad": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "UndergroundUrbanRoad": {
-    "StyleandForm": ["地下"]
+    "StyleandForm": [
+      "地下"
+    ]
   },
   "OvergroundNationalExpressway": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
   },
   "OvergroundNationalFreeway": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
   },
   "OvergroundCountyHighway": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
   },
   "OvergroundProvincialExpressway": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
   },
   "OvergroundProvincialHighway": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
   },
   "OvergroundRuralRoad": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
   },
   "OvergroundUrbanRoad": {
-    "StyleandForm": ["平面"]
+    "StyleandForm": [
+      "平面"
+    ]
+  },
+  "Landmark": {
+    "Scale": [
+      "18"
+    ]
+  },
+  "RoadBuildFacilities": {
+    "Prominence": [
+      "1"
+    ]
+  },
+  "AffiliatedFacilitiesofRoad": {
+    "Prominence": [
+      "1"
+    ]
   },
   "Station": {
-    "Scale": ["11"],
-    "Prominence": ["0.01"]
+    "Prominence": [
+      "1"
+    ]
+  },
+  "GovernmentAgenciesandOffices": {
+    "Prominence": [
+      "1"
+    ]
+  },
+  "Stream": {
+    "Scale": [
+      "6"
+    ],
+    "Prominence": [
+      "0.5"
+    ]
+  },
+  "RiverMouth": {
+    "Scale": [
+      "6"
+    ],
+    "Prominence": [
+      "1"
+    ]
+  },
+  "RiverSource": {
+    "Scale": [
+      "6"
+    ],
+    "Prominence": [
+      "1"
+    ]
+  },
+  "Trench": {
+    "Scale": [
+      "17"
+    ]
+  },
+  "SpotElevation": {
+    "Scale": [
+      "14"
+    ],
+    "Prominence": [
+      "1"
+    ]
+  },
+  "CoastLine": {
+    "Scale": [
+      "5"
+    ]
+  },
+  "Nearshore": {
+    "Scale": [
+      "10"
+    ]
+  },
+  "Sea": {
+    "Scale": [
+      "4"
+    ]
   }
 }

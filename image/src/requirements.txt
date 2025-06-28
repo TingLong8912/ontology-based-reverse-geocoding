@@ -8,3 +8,4 @@ owlready2
 pandas
 psycopg2-binary
 requests
+flask_swagger_ui

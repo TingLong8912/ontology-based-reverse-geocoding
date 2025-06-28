@@ -229,6 +229,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#intersectArea -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#intersectArea">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Intersects"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#isPrefix -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#isPrefix">
@@ -988,7 +997,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#EastLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EastLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalLocaliser"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser"/>
     </owl:Class>
     
@@ -1005,7 +1014,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#EastPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EastPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -1030,6 +1039,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EdgeLocaliser">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EightCardinalLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EightCardinalLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
     </owl:Class>
     
 
@@ -1358,6 +1383,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Fountain">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicFacilitiesandPlaces"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FourCardinalLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FourCardinalLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
     </owl:Class>
     
 
@@ -1907,7 +1948,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#LowerRiverLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#LowerRiverLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartPlaceLocaliser"/>
     </owl:Class>
     
 
@@ -1947,7 +1988,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#MidLandLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidLandLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -1955,7 +1996,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#MiddleLowerRiverLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MiddleLowerRiverLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartPlaceLocaliser"/>
     </owl:Class>
     
 
@@ -1963,7 +2004,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#MiddleRiverLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MiddleRiverLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartPlaceLocaliser"/>
     </owl:Class>
     
 
@@ -1971,7 +2012,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#MidnorthLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidnorthLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -1979,7 +2020,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#MidsouthLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidsouthLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -1987,7 +2028,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#MidwestLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#MidwestLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -2179,7 +2220,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NorthEastEndPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthEastEndPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EndPartLocaliser"/>
     </owl:Class>
     
 
@@ -2187,7 +2228,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalLocaliser"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#NorthwestLocaliser"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser"/>
@@ -2217,7 +2258,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NortheastLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalLocaliser"/>
     </owl:Class>
     
 
@@ -2225,7 +2266,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NortheastPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NortheastPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -2241,7 +2282,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthernPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -2249,7 +2290,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NorthwestLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthwestLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalLocaliser"/>
     </owl:Class>
     
 
@@ -2257,7 +2298,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#NorthwestPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NorthwestPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -2266,6 +2307,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#NuclearPowerPlant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PowerPlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#OffshoreLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OffshoreLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#DistanceLocaliser"/>
     </owl:Class>
     
 
@@ -2289,7 +2338,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#OpenSeaLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#OpenSeaLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SidePlaceLocaliser"/>
     </owl:Class>
     
 
@@ -2446,6 +2495,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PartPlaceLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PartPlaceLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PlaceLocaliser"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#Particular -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Particular"/>
@@ -2521,6 +2579,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PlaceDescription">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#VerbalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#PlaceLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#PlaceLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
     </owl:Class>
     
 
@@ -2891,6 +2957,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#RiverSideLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RiverSideLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SidePlaceLocaliser"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#RiverSource -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#RiverSource">
@@ -3051,6 +3125,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#ShoreLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ShoreLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SidePlaceLocaliser"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#ShoreProperties -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#ShoreProperties">
@@ -3059,10 +3141,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Side -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Side">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PositionalFunction"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#SideLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Localiser"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#SidePlaceLocaliser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SidePlaceLocaliser">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PlaceLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
     </owl:Class>
     
 
@@ -3118,7 +3217,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalLocaliser"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser"/>
     </owl:Class>
@@ -3144,7 +3243,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#SoutheastLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SoutheastLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EndPartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalLocaliser"/>
     </owl:Class>
     
 
@@ -3152,7 +3251,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#SoutheastPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SoutheastPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -3160,7 +3259,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#SouthernPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthernPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -3168,7 +3267,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthwestLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalLocaliser"/>
     </owl:Class>
     
 
@@ -3176,7 +3275,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#SouthwestPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SouthwestPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#EightCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -3318,6 +3417,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#SteleTowerStatue">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PublicMemorialSite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Stream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Stream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#River"/>
     </owl:Class>
     
 
@@ -3578,6 +3685,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#Trench -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Trench">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#River"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#Triplet -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#Triplet">
@@ -3750,7 +3865,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#UpperRiverLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#UpperRiverLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartPlaceLocaliser"/>
     </owl:Class>
     
 
@@ -3910,7 +4025,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#WestLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WestLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#SideLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalLocaliser"/>
     </owl:Class>
     
 
@@ -3926,7 +4041,7 @@
     <!-- http://www.semanticweb.org/win/ontologies/locD#WesternPartLocaliser -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/win/ontologies/locD#WesternPartLocaliser">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#PartLocaliser"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/win/ontologies/locD#FourCardinalPartLocaliser"/>
     </owl:Class>
     
 
@@ -4403,6 +4518,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/win/ontologies/locD#河畔 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#河畔">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#RiverSideLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#沿岸 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#沿岸">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#ShoreLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/win/ontologies/locD#裡 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#裡"/>
@@ -4475,6 +4606,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#路口">
         <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#AcrossRoadLocaliser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/win/ontologies/locD#近海 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/win/ontologies/locD#近海">
+        <rdf:type rdf:resource="http://www.semanticweb.org/win/ontologies/locD#OffshoreLocaliser"/>
     </owl:NamedIndividual>
     
 

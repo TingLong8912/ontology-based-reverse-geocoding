@@ -1,4 +1,15 @@
 import requests
+import decimal
+
+def convert_decimal(obj):
+    if isinstance(obj, list):
+        return [convert_decimal(i) for i in obj]
+    elif isinstance(obj, dict):
+        return {k: convert_decimal(v) for k, v in obj.items()}
+    elif isinstance(obj, decimal.Decimal):
+        return float(obj)
+    else:
+        return obj
 
 def call_spatial_api(geojson, refer_geom_dict):
     """
@@ -14,11 +25,10 @@ def call_spatial_api(geojson, refer_geom_dict):
         "intersects", "within", "crosses", "overlaps", "azimuth"
     ]
     api_prefix = "https://getroadmile.sgis.tw/spatial-operation/"
-    # api_prefix = "http://localhost:4000/spatial-operation/"
-
     results = []
 
     for table_name, refer_geoms in refer_geom_dict.items():   
+        # print("table_name: ", table_name)
         for feature in refer_geoms:
             for relation in spatial_relations:
                 url = api_prefix + relation
@@ -29,7 +39,7 @@ def call_spatial_api(geojson, refer_geom_dict):
                 result = {}
 
                 try:
-                    response = requests.post(url, json=data)
+                    response = requests.post(url, json=convert_decimal(data))
                     response.raise_for_status()
                     result = response.json()
 
@@ -39,6 +49,7 @@ def call_spatial_api(geojson, refer_geom_dict):
                         result['result'] = result['geojson']['properties'].get('NAME', "undefined")
 
                     result["ontology_class"] = table_name
+                    # print("result: ", result)
                     results.append(result)
                 except requests.RequestException as e:
                     print(f"Error in {relation} for {table_name}: {e}") 

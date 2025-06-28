@@ -50,7 +50,6 @@ def fetch_data_from_db(geojson, buffer_distance, target_typologies):
         # subclasses
         subclasses = []
         for typology_name in target_typologies:
-            print(typology_name)
             typology_class = onto[timestamp][typology_name]
             subclasses += [cls.name for cls in typology_class.descendants()]
         subclasses = list(set(subclasses))

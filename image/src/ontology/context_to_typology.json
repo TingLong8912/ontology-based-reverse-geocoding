@@ -2,43 +2,28 @@
   "Traffic": [
     "Road",
     "RoadMileage",
-    "Landmark",
-    "CountiesBoundary",
-    "TownshipsCititesDistrictsBoundary"
+    "Landmark"
   ],
   "ReservoirDis": [
     "River",
     "RiverSource",
-    "RiverMouth",
-    "CountiesBoundary",
-    "TownshipsCititesDistrictsBoundary",
-    "VillagesBoundary"
+    "RiverMouth"
   ],
   "Thunderstorm": [
-    "CountiesBoundary",
-    "TownshipsCititesDistrictsBoundary",
-    "VillagesBoundary",
     "River",
     "RiverSource",
-    "RiverMouth"
+    "RiverMouth",
+    "Landform"
   ],
   "Tsunami": [
     "CoastLine",
-    "CountiesBoundary",
-    "TownshipsCititesDistrictsBoundary",
-    "VillagesBoundary"
-  ],
-  "EarthquakeEW": [
-    "CoastLine",
-    "CountiesBoundary",
-    "TownshipsCititesDistrictsBoundary",
-    "VillagesBoundary",
     "Nearshore",
     "Sea"
   ],
-  "Default": [
-    "CountiesBoundary",
-    "TownshipsCititesDistrictsBoundary",
-    "VillagesBoundary"
-  ]
+  "EarthquakeEW": [
+    "CoastLine",
+    "Nearshore",
+    "Sea"
+  ],
+  "Default": []
 }
