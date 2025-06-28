@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: LocaDescriber API
+  title: LocaDescriber Reverse Geocoding API
   version: 1.0.0
   description: Spatial reasoning API for semantic location descriptions
 
