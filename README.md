@@ -11,12 +11,14 @@ The LocaDescriber Ontology API provides semantic location descriptions based on 
 - Three-stage reasoning: ground feature depend on context, spatial-to-semantic mapping, and NL description generation.  
 - Outputs structured natural language location descriptions.
 
-## 🔧 API Overview
+## API Overview
+
 
 **Endpoint**  
 ```
-POST https://geospatialdescription.sgis.tw/api
+POST https://geospatialdescription.sgis.tw/api/get_locd
 ```
+**Swagger UI:** [https://geospatialdescription.sgis.tw/apidocs/](https://geospatialdescription.sgis.tw/apidocs/)
 
 **Content-Type:** `application/json`
 
@@ -58,6 +60,6 @@ The API returns an object with a `data` field that contains the location reasoni
 }
 ```
 
-## 📘 License
+## License
 
 This project is part of a research initiative and is intended for academic and prototype use only.
