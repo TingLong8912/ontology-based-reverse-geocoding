@@ -17,8 +17,8 @@ def stream_locd():
             data = json.loads(raw_data)
             geojson = data.get("geojson")
             context = str(data.get("context"))
-            w1 = float(data.get('w_one'))
-            w2 = float(data.get('w_two'))
+            w1 = 0.6
+            w2 = 0.4
             yield f"data: {json.dumps({'stage': 'Request received', 'status': 'done'})}\n\n"
 
             features = geojson.get("features", [])
