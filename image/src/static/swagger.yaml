@@ -5,7 +5,7 @@ info:
   description: Spatial reasoning API for semantic location descriptions
 
 servers:
-  - url: https://geospatialdescription.sgis.tw/api
+  - url: https://geospatialdescription.sgis.tw/
 
 paths:
   /api/get_locd:
