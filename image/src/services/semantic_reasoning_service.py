@@ -71,13 +71,27 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
         
         # Add Other Info (e.g. distance, direction) to Quality
         if other_info:
-            # print(f"Other info: {other_info} - {refer_object_name}")
             if spatial_relation == "AbsoluteDirection":
                 if isinstance(other_info, list):
                     for direction in other_info:
                         spatial_relation_instance.directionValue.append(str(direction))
                 else:
                     spatial_relation_instance.directionValue.append(str(other_info))
+            elif spatial_relation == "Intersects":
+                if isinstance(other_info, list):
+                    for area in other_info:
+                        spatial_relation_instance.intersectArea.append(str(area))
+                        typology_class = onto[timestamp]['Prominence']
+                        typology_class_instance = typology_class(f"intersectArea_{clean_name}")  
+                        typology_class_instance.qualityValue.append(str(area))
+
+                        spatial_relation_instance.hasQuality.append(typology_class_instance)
+                else:
+                    spatial_relation_instance.intersectArea.append(str(other_info))
+                    typology_class = onto[timestamp]['Prominence']
+                    typology_class_instance = typology_class(f"intersectArea_{clean_name}")  
+                    typology_class_instance.qualityValue.append(str(other_info))
+                    spatial_relation_instance.hasQuality.append(typology_class_instance)
 
         # Add Geometry type to Quality
         geometry_type = None
@@ -161,6 +175,14 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
                 quality_value = quality_value_list[0] if quality_value_list else None
                 qualities[safe_name(quality)] = quality_value
 
+
+        spatial_relation_qualities = getattr(spatial_instance, 'hasQuality', [])
+        qualities_sr = {}
+        for q in spatial_relation_qualities:
+            quality_value_list_sr = getattr(q, 'qualityValue', [])
+            quality_value_sr = quality_value_list_sr[0] if quality_value_list_sr else None
+            qualities_sr[safe_name(q)] = quality_value_sr
+
         # SpatialRelationship -symbolize-> LocationDescription -> hasPlaceName/SpatialPreposition/Localiser
         location_descriptions = getattr(spatial_instance, 'symbolize', [])
         place_name = None
@@ -188,7 +210,6 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
                         localiser_class.append(loc.is_a[0].name)
                     else:
                         localiser_class.append(None)
-                # print("localiser_class: ", localiser_class)
 
         if isinstance(localiser, list) and isinstance(localiser_class, list) and len(localiser) == len(localiser_class):
             for loc, loc_class in zip(localiser, localiser_class):
@@ -199,7 +220,19 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
                     "SpatialPrepositionClass": spatial_preposition_class,
                     "Localiser": loc,
                     "LocaliserClass": loc_class,
-                    "Qualities": qualities if qualities else None
+                    "Qualities": qualities if qualities else None,
+                    "QualitiesSR": qualities_sr if qualities_sr else None
+                })
+
+                print({
+                    "Subject": subject_name,
+                    "PlaceName": place_name,
+                    "SpatialPreposition": spatial_preposition,
+                    "SpatialPrepositionClass": spatial_preposition_class,
+                    "Localiser": loc,
+                    "LocaliserClass": loc_class,
+                    "Qualities": qualities if qualities else None,
+                    "QualitiesSR": qualities_sr if qualities_sr else None
                 })
         else:
             result_data.append({
@@ -209,7 +242,19 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
                 "SpatialPrepositionClass": spatial_preposition_class,
                 "Localiser": localiser if localiser else None,
                 "LocaliserClass": localiser_class,
-                "Qualities": qualities if qualities else None
+                "Qualities": qualities if qualities else None,
+                "QualitiesSR": qualities_sr if qualities_sr else None
+            })
+
+            print({
+                "Subject": subject_name,
+                "PlaceName": place_name,
+                "SpatialPreposition": spatial_preposition,
+                "SpatialPrepositionClass": spatial_preposition_class,
+                "Localiser": localiser if localiser else None,
+                "LocaliserClass": localiser_class,
+                "Qualities": qualities if qualities else None,
+                "QualitiesSR": qualities_sr if qualities_sr else None
             })
 
     # Clear the ontology

@@ -233,7 +233,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/win/ontologies/locD#intersectArea">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/win/ontologies/locD#Intersects"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 

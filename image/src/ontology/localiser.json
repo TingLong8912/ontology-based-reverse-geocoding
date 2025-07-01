@@ -21,7 +21,7 @@
   },
   "SideLocaliser": {
     "Scale": [
-      "11"
+      "8"
     ]
   },
   "EdgeLocaliser": {
@@ -35,33 +35,33 @@
     ]
   },
   "EightCardinalPartLocaliser": {
-    "Prominence": [
-      "2"
+    "Scale": [
+      "17"
     ]
   },
   "FourCardinalPartLocaliser": {
-    "Prominence": [
-      "1"
+    "Scale": [
+      "16"
     ]
   },
   "EightCardinalLocaliser": {
-    "Prominence": [
-      "2"
+    "Scale": [
+      "9"
     ]
   },
   "FourCardinalLocaliser": {
-    "Prominence": [
-      "1"
+    "Scale": [
+      "8"
     ]
   },
   "PlaceLocaliser": {
     "Prominence": [
-      "3"
+      "1"
     ]
   },
   "OffshoreLocaliser": {
     "Prominence": [
-      "2"
+      "0.7"
     ]
   }
 }

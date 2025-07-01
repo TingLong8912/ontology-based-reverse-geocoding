@@ -37,6 +37,7 @@ TopPart(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFe
 CentrePart(?rel), EndPart(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFeature(?rel, ?ground), GroundFeature(?ground), hasQuality(?ground, ?type), River(?type), MiddleLowerRiverLocaliser(?word) -> hasLocaliser(?locad, ?word)
 CentrePart(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFeature(?rel, ?ground), GroundFeature(?ground), hasQuality(?ground, ?type), River(?type), MiddleRiverLocaliser(?word) -> hasLocaliser(?locad, ?word)
 EndPart(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), hasGroundFeature(?rel, ?ground), GroundFeature(?ground), hasQuality(?ground, ?type), River(?type), LowerRiverLocaliser(?word) -> hasLocaliser(?locad, ?word)
+OnSite(?rel1), OnSite(?rel2), symbolize(?rel1, ?locad), hasGroundFeature(?rel1, ?ground1), GroundFeature(?ground1), hasQuality(?ground1, ?type1), Reservoir(?type1), hasGroundFeature(?rel2, ?ground2), GroundFeature(?ground2), hasQuality(?ground2, ?type2), Stream(?type), LowerRiverLocaliser(?word) -> hasLocaliser(?locad, ?word)
 EndPart(?rel), Left(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), LeftEndPartLocaliser(?word) -> hasLocaliser(?locad, ?word)
 EndPart(?rel), Right(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), RightEndPartLocaliser(?word) -> hasLocaliser(?locad, ?word)
 EndPart(?rel), North(?rel), LocationDescription(?locad), symbolize(?rel, ?locad), NorthernEndPartLocaliser(?word) -> hasLocaliser(?locad, ?word)

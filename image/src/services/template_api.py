@@ -121,7 +121,9 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         localiser_class_text = full_text.get("LocaliserClass", None)
         localiser = full_text.get("Localiser", None)
         phrase = full_text["text"]
+        qualitiesSR = full_text.get("QualitiesSR", None)
 
+        print("qualitiesSR: ", qualitiesSR)
         locad_indiv = onto[timestamp].LocationDescription(str(phrase))
         typology_class = onto[timestamp][typology]
         typology_instance = typology_class(str(phrase) + "_Typology" + str(typology))
@@ -137,6 +139,14 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         # Only create spatial_preposition_instance if spatial_preposition_class_text is not None or not empty
         if spatial_preposition_class_text:
             spatial_preposition_instance = spatial_preposition_class(str(phrase) + "_SpatialPreposition" + str(spatial_preposition))
+            if qualitiesSR != None:
+                for k, v in qualitiesSR.items():
+                    qualitiesSR_class = onto[timestamp]["Prominence"] if qualitiesSR else None
+                    qualitiesSR_class_instance = qualitiesSR_class(k)
+                    qualitiesSR_class_instance.qualityValue.append(str(v))
+                    spatial_preposition_instance.hasQuality.append(qualitiesSR_class_instance)
+                    print("spatial_preposition_instance: ", spatial_preposition_instance)
+                    print(f"Spatial Preposition Quality: {k} = {v}")  # Debugging line
             locad_indiv.hasSpatialPreposition.append(spatial_preposition_instance)
 
         localiser_class = onto[timestamp][localiser_class_text] if localiser_class_text else onto[timestamp].Localiser
@@ -152,34 +162,6 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
     onto[timestamp] = assignQuality(onto[timestamp], "SpatialPreposition", data_path="./ontology/localiser.json")
     onto[timestamp] = assignQuality(onto[timestamp], "Localiser", data_path="./ontology/localiser.json")
 
-    # 檢查映射結果
-    print("===========映射結果輸出============")
-    # for gf in onto[timestamp].LocationDescription.instances():
-    #     print(f"[LocationDescription] {gf.name}")
-    #     for q in gf.hasPlaceName:
-    #         print(f"  ↳ hasPlaceName → [{q}] {q.name}")
-    
-    # for gf in onto[timestamp].PlaceName.instances():
-    #     for q in gf.hasQuality:
-    #         print(f"[PlaceName] {gf.name}")
-    #         print(f"  ↳ hasQuality → [{q}] {q.name}")
-    #         if hasattr(q, "qualityValue"):
-    #             print(f"    ↳ qualityValue: {list(q.qualityValue)}")
-
-    # for gf in onto[timestamp].Localiser.instances():
-    #     for q in gf.hasQuality:
-    #         print(f"[Localiser] {gf.name}")
-    #         print(f"  ↳ hasQuality → [{q}] {q.name}")
-    #         if hasattr(q, "qualityValue"):
-    #             print(f"    ↳ qualityValue: {list(q.qualityValue)}")
-
-    # for gf in onto[timestamp].SpatialPreposition.instances():
-    #     for q in gf.hasQuality:
-    #         print(f"[SpatialPreposition] {gf.name}")
-    #         print(f"  ↳ hasQuality → [{q}] {q.name}")
-    #         if hasattr(q, "qualityValue"):
-    #             print(f"    ↳ qualityValue: {list(q.qualityValue)}")
-
     """
     Context Template
     """
@@ -191,76 +173,35 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
     if context == "Traffic":        
         loc_to_info = retrieve_location_info(onto[timestamp])
 
-        print("loc_to_info: ", loc_to_info)
-        county_locs = [loc for loc, info in loc_to_info.items() if "CountiesBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
-        village_locs = [loc for loc, info in loc_to_info.items() if "VillagesBoundary" in info["typologies"]  and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
         township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
-        road_within_locs = [loc for loc, info in loc_to_info.items() if "Road" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
-        road_near_locs = [loc for loc, info in loc_to_info.items() if "Road"]
+        road_locs_without_admin = {loc: info['typologies'] for loc, info in loc_to_info.items() if ("NationalExpressway" in info["typologies"]) and "AtSpatialPreposition" in info["spatialPrepositions"] }
+        road_locs_with_admin = [loc for loc, info in loc_to_info.items() if ("Road" in info["typologies"] and "NationalExpressway" not in info["typologies"]) and "AtSpatialPreposition" in info["spatialPrepositions"] and info['localisers']]
+        road_near_locs = [loc for loc, info in loc_to_info.items() if "Road" in info['typologies']]
         landmark_locs = [loc for loc, info in loc_to_info.items() if "Landmark" in info["typologies"]]
+        mileage_locs = {loc: info['typologies'] for loc, info in loc_to_info.items() if "RoadMileage" in info["typologies"]}
+        
+        landmark_locs = landmark_locs or [""]
+        township_locs = township_locs or [""]
 
-        # Step 1: 檢查哪些 road_locs 是 NationalExpressway 或 ProvincialHighway
-        special_road_classes = [
-            onto[timestamp].NationalExpressway,
-            onto[timestamp].ProvincialHighway
-        ]
-        special_road_descendants = []
-        for cls in special_road_classes:
-            special_road_descendants += list(cls.descendants()) + [cls]
+        print("mileage_locs: ", mileage_locs)
+        print("road_locs_without_admin: ", road_locs_without_admin)
+        print("road_locs_with_admin: ", road_locs_with_admin)
 
-        road_locs_without_admin = []
-        road_locs_with_admin = []
-    
-        for loc_name in road_within_locs:
-            loc_indiv = onto[timestamp].LocationDescription(loc_name)
-            is_special_road = False
-            for q in loc_indiv.hasQuality:
-                if q.is_a and any(cls in special_road_descendants for cls in q.is_a):
-                    is_special_road = True
-                    break
-            if is_special_road:
-                road_locs_without_admin.append(loc_name)
-            else:
-                road_locs_with_admin.append(loc_name)
-
-        # 建立mileage為key的道路類別紀錄
-        mileage_by_road = {}
-        mileage_locs = [loc for loc, info in loc_to_info.items() if "Mileage" in info["typologies"]]
-        for mileage_name in mileage_locs:
-            if mileage_name == "":
-                continue
-            mileage_indiv = onto[timestamp].LocationDescription(mileage_name)
-            for q in mileage_indiv.hasQuality:
-                if q.is_a:
-                    for cls in q.is_a:
-                        road_type = cls.name.replace("Mileage", "")
-                        mileage_by_road.setdefault(road_type, []).append(mileage_name)
-
+        # 開始組合
         combinations = {
             'combination': [],
             'avg_quality': []
         }
-        if len(road_within_locs):
-            landmark_locs = landmark_locs or [""]
-            print("===========組合道路、里程與地標描述============")
-            # 不需要加上 Admin（特殊道路）
-            for r in road_locs_without_admin:
-                # Mileage <-> Road
-                loc_indiv = onto[timestamp].LocationDescription(r)
-                
-                print("=============Mileage <-> Road=============")
-                matched_mileages = []
-                for quality in loc_indiv.hasQuality:
-                    cls = quality.is_a[0]
-                    super_classes = [ super_cls.name for super_cls in list(cls.ancestors())]
-                    for key, item in mileage_by_road.items():
-                        if key in super_classes:
-                            matched_mileages+=item
-                            break
-                    break
-             
-                matched_mileages = matched_mileages or [""]
 
+        if road_locs_without_admin:
+            matched_mileages = []
+            for r, r_classes in road_locs_without_admin.items():
+                for m, m_classes in mileage_locs.items():
+                    for m_class in m_classes:
+                        m_class.replace("Mileage", "")
+                        if m_class in r_classes:
+                            matched_mileages.append(m)
+                            break
                 for m, l in product(matched_mileages, landmark_locs):
                     elements = [r, m, l]
                     qualities_to_check = ["Scale", "Prominence"]
@@ -270,21 +211,17 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
                         combinations["combination"].append(f"{r}{m}")
                     else:
                         combinations["combination"].append(f"{r}{m}（{l}）")
-            print("===========組合道路、里程與地標描述（有 Admin）============")
-            # 需要加上 Admin（一般道路）
-            county_locs = county_locs or [""]
-            township_locs = township_locs or [""]
+        elif len(road_locs_with_admin):
             for r in road_locs_with_admin:
-                loc_indiv = onto[timestamp].LocationDescription(r)
-                for a, t, l in product(county_locs, township_locs, landmark_locs):
-                    elements = [a, t, r, l]
+                for t, l in product(township_locs, landmark_locs):
+                    elements = [t, r, l]
                     qualities_to_check = ["Scale", "Prominence"]
                     avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
                     combinations["avg_quality"].append(avg_qualities)
                     if l == "":
-                        combinations["combination"].append(f"{a}{t}{r}")
+                        combinations["combination"].append(f"{t}{r}")
                     else:
-                        combinations["combination"].append(f"{a}{t}{r}（{l}）")
+                        combinations["combination"].append(f"{t}{r}（{l}）")
         else:
             qualities_to_check = ["Scale", "Prominence"]
             for r in road_near_locs:
@@ -298,7 +235,7 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
                 combinations["avg_quality"].append(avg_qualities)
 
             # 也請在這邊加上預設的行政區描述
-            default_admin_locs = [county_locs[0] if county_locs else "", township_locs[0] if township_locs else "", village_locs[0] if village_locs else ""]
+            default_admin_locs = [township_locs[0] if township_locs else ""]
             qualities_to_check = ["Scale", "Prominence"]
             avg_qualities = average_quality(onto[timestamp], default_admin_locs, qualities_to_check)
             sentence = "".join(default_admin_locs)
@@ -333,17 +270,29 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         rivers_locs = [loc for loc, info in loc_to_info.items() if "Stream" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
         rivers_locs += [loc for loc, info in loc_to_info.items() if "RiverSource" in info["typologies"] ]
         rivers_locs += [loc for loc, info in loc_to_info.items() if "RiverMouth" in info["typologies"] ]
+        reservoir_locs = [loc for loc, info in loc_to_info.items() if "Reservoir" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
         township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
 
         townships_sentence = format_locations(township_locs, level='township')
-        for river in rivers_locs:
-            elements = township_locs + [river]
-            qualities_to_check = ["Scale", "Prominence"]
-            avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
-            sentence = f"{townships_sentence}{river}"
-            print("sentence: ", sentence)
-            combinations["avg_quality"].append(avg_qualities)
-            combinations["combination"].append(sentence)
+        if len(reservoir_locs) == 0:
+            for river in rivers_locs:        
+                elements = township_locs + [river]
+                qualities_to_check = ["Scale", "Prominence"]
+                avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
+                sentence = f"{townships_sentence}{river}"
+                print("sentence: ", sentence)
+                combinations["avg_quality"].append(avg_qualities)
+                combinations["combination"].append(sentence)
+        else:
+            for river in rivers_locs:
+                for reservoir in reservoir_locs:
+                    elements = township_locs + [river, reservoir]
+                    qualities_to_check = ["Scale", "Prominence"]
+                    avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
+                    sentence = f"{townships_sentence}{river}({reservoir})"
+                    print("sentence: ", sentence)
+                    combinations["avg_quality"].append(avg_qualities)
+                    combinations["combination"].append(sentence)
         
         top_n = 5  
         combined_with_quality = list(zip(combinations['combination'], combinations['avg_quality']))
@@ -371,18 +320,20 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         rivers_locs = [loc for loc, info in loc_to_info.items() if "Stream" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
         rivers_locs += [loc for loc, info in loc_to_info.items() if "RiverSource" in info["typologies"] ]
         rivers_locs += [loc for loc, info in loc_to_info.items() if "RiverMouth" in info["typologies"] ]
+        rivers_landmark_locs = [loc for loc, info in loc_to_info.items() if "Stream" in info["typologies"] and "NearLocaliser" in info["localisers"]]
         township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
-        elevation_locs = [loc for loc, info in loc_to_info.items() if "SpotElevation" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
+        elevation_locs = [loc for loc, info in loc_to_info.items() if "SpotElevation" in info["typologies"]]
 
+        print("elevation_locs: ", elevation_locs)
+        rivers_landmark_locs = rivers_landmark_locs or [""]
         # Townships
-        print("town")
-        elements = township_locs
-        qualities_to_check = ["Scale", "Prominence"]
-        print(elements)
-        avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
-        sentence = format_locations(township_locs, level='township')
-        combinations["avg_quality"].append(avg_qualities)
-        combinations["combination"].append(sentence)
+        for l in rivers_landmark_locs:
+            elements = township_locs + [l]
+            qualities_to_check = ["Scale", "Prominence"]
+            avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
+            sentence = format_locations(township_locs, level='township') + f"({l})"
+            combinations["avg_quality"].append(avg_qualities)
+            combinations["combination"].append(sentence)
         
         # if elevatios
         if len(elevation_locs) > 0:
@@ -392,6 +343,7 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
                 sentence = format_locations(township_locs, level='township') + f"({elevation})"
                 combinations["avg_quality"].append(avg_qualities)
                 combinations["combination"].append(sentence)
+
         if len(rivers_locs) > 0:
             print("river", rivers_locs)
             for river in rivers_locs:
@@ -441,6 +393,8 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
             if "CoastLine" in info.get("typologies", [])
             and any(l in part_localisers for l in info.get("localisers", []))
         ]
+        print("coastlines_out_locs: ", coastlines_out_locs)
+        print("coastlines_part_locs: ", coastlines_part_locs)
         nearshores_locs = [loc for loc, info in loc_to_info.items() if "Nearshore" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
         sea_locs = [loc for loc, info in loc_to_info.items() if "Sea" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
         counties_locs = [loc for loc, info in loc_to_info.items() if "CountiesBoundary" in info["typologies"] and not info["spatialPrepositions"] ]
@@ -458,7 +412,6 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
                 combinations["avg_quality"].append(avg_qualities)
                 combinations["combination"].append(sea)
         if len(coastlines_out_locs) > 0 or len(coastlines_part_locs) > 0:
-            print("coastlines_locs: ", coastlines_out_locs)
             for coastline in coastlines_out_locs:
                 for part_coastline in coastlines_part_locs:
                     elements = [coastline, part_coastline]

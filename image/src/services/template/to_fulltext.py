@@ -2,40 +2,40 @@ def ToFullText(locd_result):
     """
     This function takes the location description json result and converts it into a full text format.
     """
+    # full_text = {}
 
-    full_text = {}
+    # for entry in locd_result:
+    #     qualities = entry.get("Qualities")
+    #     if qualities is None or not isinstance(qualities, dict):
+    #         print(f"Warning: entry has no valid 'Qualities': {entry}")
+    #         continue
 
-    for entry in locd_result:
-        qualities = entry.get("Qualities")
-        if qualities is None or not isinstance(qualities, dict):
-            print(f"Warning: entry has no valid 'Qualities': {entry}")
-            continue
+    #     typology_keys = [k for k in qualities.keys() if "Typology" in k]
+    #     if not typology_keys:
+    #         print(f"Warning: no Typology key found in qualities: {qualities}")
+    #         continue
 
-        typology_keys = [k for k in qualities.keys() if "Typology" in k]
-        if not typology_keys:
-            print(f"Warning: no Typology key found in qualities: {qualities}")
-            continue
+    #     typology = typology_keys[0].split("_")[-1]
 
-        typology = typology_keys[0].split("_")[-1]
+    #     if typology not in full_text:
+    #         full_text[typology] = []
 
-        if typology not in full_text:
-            full_text[typology] = []
+    #     spatial_preposition = entry.get('SpatialPreposition', '')
+    #     place_name = entry.get('PlaceName', '')
+    #     localiser = entry.get('Localiser', '')
+    #     spatial_preposition_class = entry.get('SpatialPrepositionClass', None)
+    #     localiser_class = entry.get('LocaliserClass', None)
 
-        spatial_preposition = entry.get('SpatialPreposition', '')
-        place_name = entry.get('PlaceName', '')
-        localiser = entry.get('Localiser', '')
-        spatial_preposition_class = entry.get('SpatialPrepositionClass', None)
-        localiser_class = entry.get('LocaliserClass', None)
+    #     full_text[typology].append(f"{spatial_preposition}{place_name}{localiser}")
 
-        full_text[typology].append(f"{spatial_preposition}{place_name}{localiser}")
-
-    for typology in full_text:
-        full_text[typology] = list(set(full_text[typology]))
+    # for typology in full_text:
+    #     full_text[typology] = list(set(full_text[typology]))
 
     # New logic: build converted_full_text with SpatialPrepositionClass and LocaliserClass
     converted_full_text = []
     for entry in locd_result:
         qualities = entry.get("Qualities", {})
+        qualitiesSR = entry.get("QualitiesSR", {})
         typology = [k for k in qualities.keys() if "Typology" in k][0].split("_")[-1]
         spatial_preposition = entry.get("SpatialPreposition") or ""
         place_name = entry.get("PlaceName") or ""
@@ -52,6 +52,7 @@ def ToFullText(locd_result):
                 "SpatialPreposition": spatial_preposition,
                 "LocaliserClass": None,
                 "Localiser": "",
+                "QualitiesSR": qualitiesSR if qualitiesSR else None
             }
             converted_full_text.append(full_text_item)
         else:
@@ -62,11 +63,11 @@ def ToFullText(locd_result):
                 "SpatialPrepositionClass": spatial_preposition_class,
                 "SpatialPreposition": spatial_preposition,
                 "LocaliserClass": localiser_class,
-                "Localiser": localiser
+                "Localiser": localiser,
+                "QualitiesSR": qualitiesSR if qualitiesSR else None
             }
-            print(full_text_item)
             converted_full_text.append(full_text_item)
-
+        print(full_text_item)
     seen = set()
     unique_items = []
     for item in converted_full_text:
