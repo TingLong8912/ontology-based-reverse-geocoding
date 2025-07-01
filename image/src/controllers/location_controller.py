@@ -140,7 +140,6 @@ def get_locd_test():
         "multiLocad_results": multiLocad_results
     })
 
-
 @location_bp.route("/api/get_locd", methods=["POST"])
 def get_locd():
     # Get the geojson and context from the request body
