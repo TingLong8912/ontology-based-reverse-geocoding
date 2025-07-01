@@ -104,10 +104,6 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         landmark_locs = landmark_locs or [""]
         township_locs = township_locs or [""]
 
-        print("mileage_locs: ", mileage_locs)
-        print("road_locs_without_admin: ", road_locs_without_admin)
-        print("road_locs_with_admin: ", road_locs_with_admin)
-
         # 開始組合
         combinations = {
             'combination': [],
@@ -132,7 +128,7 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
                         combinations["combination"].append(f"{r}{m}")
                     else:
                         combinations["combination"].append(f"{r}{m}（{l}）")
-        elif len(road_locs_with_admin):
+        elif len(road_locs_with_admin)>0:
             for r in road_locs_with_admin:
                 for t, l in product(township_locs, landmark_locs):
                     elements = [t, r, l]
