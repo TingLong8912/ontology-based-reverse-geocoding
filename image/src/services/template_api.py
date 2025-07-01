@@ -45,7 +45,6 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         phrase = full_text["text"]
         qualitiesSR = full_text.get("QualitiesSR", None)
 
-        print("qualitiesSR: ", qualitiesSR)
         locad_indiv = onto[timestamp].LocationDescription(str(phrase))
         typology_class = onto[timestamp][typology]
         typology_instance = typology_class(str(phrase) + "_Typology" + str(typology))

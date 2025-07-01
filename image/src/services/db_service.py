@@ -14,7 +14,7 @@ DB_CONFIG = {
     "user": os.getenv("DB_USER"),
     "password": os.getenv("DB_PASSWORD"),
 }
-f
+
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
 
@@ -35,7 +35,7 @@ def fetch_data_from_db(geojson, buffer_distance, target_typologies):
             ORDER BY table_name;
         """, (schema_name,))
         
-        table_names = [row[0] for row in cur.fetchall()]  # 提取表名
+        table_names = [row[0] for row in cur.fetchall()]  
 
         # Load the ontology
         onto = {}
