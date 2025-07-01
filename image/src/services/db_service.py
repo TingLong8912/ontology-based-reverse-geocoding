@@ -4,14 +4,6 @@ import json
 from owlready2 import Thing, get_ontology
 import time
 
-DB_CONFIG = {
-    "dbname": "gistl",
-    "user": "TingLong",
-    "password": "Acfg27354195",
-    "host": "pdb.sgis.tw",
-    "port": "5432"
-}
-
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
 

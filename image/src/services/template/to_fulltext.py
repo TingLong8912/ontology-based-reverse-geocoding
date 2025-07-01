@@ -2,36 +2,6 @@ def ToFullText(locd_result):
     """
     This function takes the location description json result and converts it into a full text format.
     """
-    # full_text = {}
-
-    # for entry in locd_result:
-    #     qualities = entry.get("Qualities")
-    #     if qualities is None or not isinstance(qualities, dict):
-    #         print(f"Warning: entry has no valid 'Qualities': {entry}")
-    #         continue
-
-    #     typology_keys = [k for k in qualities.keys() if "Typology" in k]
-    #     if not typology_keys:
-    #         print(f"Warning: no Typology key found in qualities: {qualities}")
-    #         continue
-
-    #     typology = typology_keys[0].split("_")[-1]
-
-    #     if typology not in full_text:
-    #         full_text[typology] = []
-
-    #     spatial_preposition = entry.get('SpatialPreposition', '')
-    #     place_name = entry.get('PlaceName', '')
-    #     localiser = entry.get('Localiser', '')
-    #     spatial_preposition_class = entry.get('SpatialPrepositionClass', None)
-    #     localiser_class = entry.get('LocaliserClass', None)
-
-    #     full_text[typology].append(f"{spatial_preposition}{place_name}{localiser}")
-
-    # for typology in full_text:
-    #     full_text[typology] = list(set(full_text[typology]))
-
-    # New logic: build converted_full_text with SpatialPrepositionClass and LocaliserClass
     converted_full_text = []
     for entry in locd_result:
         qualities = entry.get("Qualities", {})

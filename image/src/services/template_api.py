@@ -1,89 +1,11 @@
 from owlready2 import Thing, get_ontology
 import time
-import json
 from itertools import product
 from services.ontology.assign_quality_api import assignQuality
 from services.template.to_fulltext import ToFullText
-from services.template.calculate_quality import get_quality_values, average_quality
-import re
-
-def format_locations(locations, level="township"):
-    if not locations:
-        return ""
-
-    locations = [loc.replace("在", "") for loc in locations]
-
-    if level == "township":
-        prefix = locations[0][:3]
-        main = locations[0]
-        shortened = [loc.replace(prefix, "") if loc.startswith(prefix) else loc for loc in locations[1:]]
-    elif level == "village":
-        import re
-        prefix_match = re.match(r"^.{3}.{2,3}區", locations[0])
-        prefix = prefix_match.group() if prefix_match else ""
-        main = locations[0]
-        shortened = [loc.replace(prefix, "") if loc.startswith(prefix) else loc for loc in locations[1:]]
-    else:
-        return "不支援的層級"
-
-    if not shortened:
-        return "在" + main
-    elif len(shortened) == 1:
-        return "在" + main + "和" + shortened[0]
-    else:
-        return "在" + main + "、" + "、".join(shortened[:-1]) + "和" + shortened[-1]
-
-def clean_za_prefix(sentence):
-    if sentence.startswith("在"):
-        parts = sentence[1:].split("在")
-        return "在" + "".join(parts)
-    return sentence
-
-def remove_repeated_place_name(text):
-    return re.sub(r'(台灣|基隆市|新北市|臺北市)([^ ]*?)\1', r'\1\2', text)
-
-def retrieve_location_info(onto):
-    """
-    Retrieves combined typology and spatial preposition information for each LocationDescription.
-    """
-    print("===========根據 typology + spatialPreposition 統一檢索 ===========")
-    loc_to_info = {}
-
-    for loc in onto.LocationDescription.instances():
-        loc_name = loc.name
-        loc_to_info.setdefault(loc_name, {
-            "typologies": [],
-            "spatialPrepositions": [],
-            "localisers": []
-        })
-
-        # typology: from hasPlaceName → hasQuality → class
-        for placename in getattr(loc, "hasPlaceName", []):
-            for quality in getattr(placename, "hasQuality", []):
-                if getattr(quality, "is_a", None):
-                    for cls in quality.is_a:
-                        loc_to_info[loc_name]["typologies"].append(cls.name)
-                        for super_cls in cls.ancestors():
-                            if super_cls.name != "Thing":
-                                loc_to_info[loc_name]["typologies"].append(super_cls.name)
-
-        # spatial preposition: from hasSpatialPreposition → class and its ancestors
-        for sp in getattr(loc, "hasSpatialPreposition", []):
-            sp_class = sp.__class__
-            loc_to_info[loc_name]["spatialPrepositions"].append(sp_class.name)
-            for super_cls in sp_class.ancestors():
-                if super_cls.name != "Thing":
-                    loc_to_info[loc_name]["spatialPrepositions"].append(super_cls.name)
-        
-        # localisers: from hasLocaliser → class and its ancestors
-        for sp in getattr(loc, "hasLocaliser", []):
-            sp_class = sp.__class__
-            loc_to_info[loc_name]["localisers"].append(sp_class.name)
-            for super_cls in sp_class.ancestors():
-                if super_cls.name != "Thing":
-                    loc_to_info[loc_name]["localisers"].append(super_cls.name)
-
-    return loc_to_info
+from services.template.formatLocation import format_locations, clean_za_prefix, remove_repeated_place_name
+from services.template.calculate_quality import average_quality
+from services.template.retrieveLocationInfo import retrieve_location_info
 
 def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDescription.rdf'):
     """
@@ -92,7 +14,7 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
     """
 
     """
-    Ontology Mapping
+    1. Ontology Mapping
     """
     # convert triplet to text
     full_text_list = ToFullText(locd_result)
@@ -163,7 +85,7 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
     onto[timestamp] = assignQuality(onto[timestamp], "Localiser", data_path="./ontology/localiser.json")
 
     """
-    Context Template
+    2. Context Template
     """
     ###########################
     #
