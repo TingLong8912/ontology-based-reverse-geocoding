@@ -96,7 +96,7 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
 
         township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
         road_locs_without_admin = {loc: info['typologies'] for loc, info in loc_to_info.items() if ("NationalExpressway" in info["typologies"]) and "AtSpatialPreposition" in info["spatialPrepositions"] }
-        road_locs_with_admin = [loc for loc, info in loc_to_info.items() if ("Road" in info["typologies"] and "NationalExpressway" not in info["typologies"]) and "AtSpatialPreposition" in info["spatialPrepositions"] and info['localisers']]
+        road_locs_with_admin = [loc for loc, info in loc_to_info.items() if ("Road" in info["typologies"] and "NationalExpressway" not in info["typologies"]) and "AtSpatialPreposition" in info["spatialPrepositions"] ]
         road_near_locs = [loc for loc, info in loc_to_info.items() if "Road" in info['typologies']]
         landmark_locs = [loc for loc, info in loc_to_info.items() if "Landmark" in info["typologies"]]
         mileage_locs = {loc: info['typologies'] for loc, info in loc_to_info.items() if "RoadMileage" in info["typologies"]}
