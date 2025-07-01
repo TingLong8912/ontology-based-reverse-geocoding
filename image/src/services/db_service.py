@@ -3,6 +3,17 @@ import os
 import json
 from owlready2 import Thing, get_ontology
 import time
+from dotenv import load_dotenv
+
+load_dotenv() 
+
+DB_CONFIG = {
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT")),
+    "dbname": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+}
 
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)

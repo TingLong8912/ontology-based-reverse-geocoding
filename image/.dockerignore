@@ -2,3 +2,4 @@
 dockerfile
 Dockerfile
 __pycache__
+*/.env
