@@ -183,13 +183,11 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
 
         # SpatialRelationship -symbolize-> LocationDescription -> hasPlaceName/SpatialPreposition/Localiser
         location_descriptions = getattr(spatial_instance, 'symbolize', [])
-        place_name = None
         spatial_preposition = None
         localiser = []
         for loc_desc in location_descriptions:
-            place_names = getattr(loc_desc, 'hasPlaceName', [])
-            if place_names:
-                place_name = safe_name(place_names[0])
+            place_name_list = getattr(loc_desc, 'hasPlaceName', [])
+            place_names = [safe_name(pn) for pn in place_name_list]
             spatial_prepositions = getattr(loc_desc, 'hasSpatialPreposition', [])
             spatial_preposition_class = None
             if spatial_prepositions:
@@ -213,18 +211,7 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
             for loc, loc_class in zip(localiser, localiser_class):
                 result_data.append({
                     "Subject": subject_name,
-                    "PlaceName": place_name,
-                    "SpatialPreposition": spatial_preposition,
-                    "SpatialPrepositionClass": spatial_preposition_class,
-                    "Localiser": loc,
-                    "LocaliserClass": loc_class,
-                    "Qualities": qualities if qualities else None,
-                    "QualitiesSR": qualities_sr if qualities_sr else None
-                })
-
-                print({
-                    "Subject": subject_name,
-                    "PlaceName": place_name,
+                    "PlaceName": place_names,
                     "SpatialPreposition": spatial_preposition,
                     "SpatialPrepositionClass": spatial_preposition_class,
                     "Localiser": loc,
@@ -235,18 +222,7 @@ def RunSemanticReasoning(sr_object, geometry, context, ontology_path='./ontology
         else:
             result_data.append({
                 "Subject": subject_name,
-                "PlaceName": place_name,
-                "SpatialPreposition": spatial_preposition,
-                "SpatialPrepositionClass": spatial_preposition_class,
-                "Localiser": localiser if localiser else None,
-                "LocaliserClass": localiser_class,
-                "Qualities": qualities if qualities else None,
-                "QualitiesSR": qualities_sr if qualities_sr else None
-            })
-
-            print({
-                "Subject": subject_name,
-                "PlaceName": place_name,
+                "PlaceName": place_names,
                 "SpatialPreposition": spatial_preposition,
                 "SpatialPrepositionClass": spatial_preposition_class,
                 "Localiser": localiser if localiser else None,

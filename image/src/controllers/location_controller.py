@@ -148,8 +148,8 @@ def get_locd():
         geojson = data.get("geojson")
         context = str(data.get("context"))
         features = geojson.get("features", [])
-        w1 = float(data.get('w_one'))
-        w2 = float(data.get('w_two'))
+        w1 = float(data.get('w_one', 0.5))
+        w2 = float(data.get('w_two', 0.5))
 
         if features:
             geometry = features[0].get("geometry").get("type")

@@ -1,3 +1,5 @@
+from services.template.formatLocation import format_place_name
+
 def ToFullText(locd_result):
     """
     This function takes the location description json result and converts it into a full text format.
@@ -8,7 +10,8 @@ def ToFullText(locd_result):
         qualitiesSR = entry.get("QualitiesSR", {})
         typology = [k for k in qualities.keys() if "Typology" in k][0].split("_")[-1]
         spatial_preposition = entry.get("SpatialPreposition") or ""
-        place_name = entry.get("PlaceName") or ""
+        place_name = format_place_name(entry.get("PlaceName") or "")
+        print(f"place_name: {place_name}")
         localiser = entry.get("Localiser") or ""
         spatial_preposition_class = entry.get("SpatialPrepositionClass", None)
         localiser_class = entry.get("LocaliserClass", None)

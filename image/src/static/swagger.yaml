@@ -6,6 +6,7 @@ info:
 
 servers:
   - url: https://geospatialdescription.sgis.tw/
+  # - url: http://localhost:8000/
 
 paths:
   /api/get_locd:
@@ -28,11 +29,11 @@ paths:
                 w_one:
                   type: number
                   description: 空間推理權重
-                  default: 0.6
+                  default: 0.5
                 w_two:
                   type: number
                   description: 語意推理權重
-                  default: 0.4
+                  default: 0.5
             example:
               geojson:
                 type: FeatureCollection
@@ -40,10 +41,8 @@ paths:
                   - type: Feature
                     geometry:
                       type: Point
-                      coordinates: [121.5, 25.0]
+                      coordinates: [121.64036788930203, 25.071748917423093] 
               context: Traffic
-              w_one: 0.6
-              w_two: 0.4
       responses:
         '200':
           description: 成功回傳推理結果

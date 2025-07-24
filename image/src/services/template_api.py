@@ -3,7 +3,7 @@ import time
 from itertools import product
 from services.ontology.assign_quality_api import assignQuality
 from services.template.to_fulltext import ToFullText
-from services.template.formatLocation import format_locations, clean_za_prefix, remove_repeated_place_name
+from services.template.formatLocation import format_locations, clean_za_prefix, remove_repeated_place_name, keep_suffix_only_on_last
 from services.template.calculate_quality import average_quality
 from services.template.retrieveLocationInfo import retrieve_location_info
 
@@ -188,28 +188,37 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         rivers_locs += [loc for loc, info in loc_to_info.items() if "RiverSource" in info["typologies"] ]
         rivers_locs += [loc for loc, info in loc_to_info.items() if "RiverMouth" in info["typologies"] ]
         reservoir_locs = [loc for loc, info in loc_to_info.items() if "Reservoir" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"]]
+        reservoir_near_locs = [loc for loc, info in loc_to_info.items() if "Reservoir" in info["typologies"] and "AtSpatialPreposition" not in info["spatialPrepositions"] and "NearLocaliser" in info["localisers"]]
         township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
 
         townships_sentence = format_locations(township_locs, level='township')
-        if len(reservoir_locs) == 0:
+        if len(reservoir_locs) > 0:
+           for river in rivers_locs:
+                reservoir_locs_combinations =  "、".join(reservoir_locs)
+                elements = township_locs + [river, reservoir_locs_combinations]
+                qualities_to_check = ["Scale", "Prominence"]
+                avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
+                reservoirs = keep_suffix_only_on_last(reservoir_locs_combinations, "下游")
+                sentence = f"{townships_sentence}{river}({reservoirs})"
+                combinations["avg_quality"].append(avg_qualities)
+                combinations["combination"].append(sentence)
+        elif len(reservoir_near_locs) > 0:
+            for reservoir in reservoir_near_locs:
+                for river in rivers_locs:
+                    elements = township_locs + [reservoir, river]
+                    qualities_to_check = ["Scale", "Prominence"]
+                    avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
+                    sentence = f"{townships_sentence}{river}({reservoir})"
+                    combinations["avg_quality"].append(avg_qualities)
+                    combinations["combination"].append(sentence)
+        else:
             for river in rivers_locs:        
                 elements = township_locs + [river]
                 qualities_to_check = ["Scale", "Prominence"]
                 avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
                 sentence = f"{townships_sentence}{river}"
-                print("sentence: ", sentence)
                 combinations["avg_quality"].append(avg_qualities)
                 combinations["combination"].append(sentence)
-        else:
-            for river in rivers_locs:
-                for reservoir in reservoir_locs:
-                    elements = township_locs + [river, reservoir]
-                    qualities_to_check = ["Scale", "Prominence"]
-                    avg_qualities = average_quality(onto[timestamp], elements, qualities_to_check, w1, w2)
-                    sentence = f"{townships_sentence}{river}({reservoir})"
-                    print("sentence: ", sentence)
-                    combinations["avg_quality"].append(avg_qualities)
-                    combinations["combination"].append(sentence)
         
         top_n = 5  
         combined_with_quality = list(zip(combinations['combination'], combinations['avg_quality']))
@@ -241,7 +250,6 @@ def template(locd_result, context,  w1, w2, ontology_path='./ontology/LocationDe
         township_locs = [loc for loc, info in loc_to_info.items() if "TownshipsCititesDistrictsBoundary" in info["typologies"] and "AtSpatialPreposition" in info["spatialPrepositions"] and not info['localisers']]
         elevation_locs = [loc for loc, info in loc_to_info.items() if "SpotElevation" in info["typologies"]]
 
-        print("elevation_locs: ", elevation_locs)
         rivers_landmark_locs = rivers_landmark_locs or [""]
         # Townships
         for l in rivers_landmark_locs:
