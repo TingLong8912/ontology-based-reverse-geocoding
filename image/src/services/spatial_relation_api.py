@@ -1,5 +1,6 @@
 import requests
 import decimal
+import logging
 
 def convert_decimal(obj):
     if isinstance(obj, list):
@@ -15,9 +16,6 @@ def call_spatial_api(geojson, refer_geom_dict):
     """
     Call the spatial relation API to get the spatial relations between the target geometry and reference geometries.
     """
-    
-    print("execute spatial relation...")
-
     target_geom = geojson["features"][0]
 
     spatial_relations = [
@@ -28,7 +26,6 @@ def call_spatial_api(geojson, refer_geom_dict):
     results = []
 
     for table_name, refer_geoms in refer_geom_dict.items():   
-        # print("table_name: ", table_name)
         for feature in refer_geoms:
             for relation in spatial_relations:
                 url = api_prefix + relation
@@ -49,9 +46,10 @@ def call_spatial_api(geojson, refer_geom_dict):
                         result['result'] = result['geojson']['properties'].get('NAME', "undefined")
 
                     result["ontology_class"] = table_name
-                    # print("result: ", result)
                     results.append(result)
                 except requests.RequestException as e:
-                    print(f"Error in {relation} for {table_name}: {e}") 
+                    logging.getLogger("urllib3").setLevel(logging.WARNING)
+                    # logging.warning(f"Error in {relation} for {table_name}: {e}")
+                    pass
 
     return results

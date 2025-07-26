@@ -11,7 +11,6 @@ def ToFullText(locd_result):
         typology = [k for k in qualities.keys() if "Typology" in k][0].split("_")[-1]
         spatial_preposition = entry.get("SpatialPreposition") or ""
         place_name = format_place_name(entry.get("PlaceName") or "")
-        print(f"place_name: {place_name}")
         localiser = entry.get("Localiser") or ""
         spatial_preposition_class = entry.get("SpatialPrepositionClass", None)
         localiser_class = entry.get("LocaliserClass", None)
@@ -40,7 +39,6 @@ def ToFullText(locd_result):
                 "QualitiesSR": qualitiesSR if qualitiesSR else None
             }
             converted_full_text.append(full_text_item)
-        print(full_text_item)
     seen = set()
     unique_items = []
     for item in converted_full_text:

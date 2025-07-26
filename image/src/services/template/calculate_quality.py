@@ -102,12 +102,6 @@ def average_quality(onto, loc_names: list, qualities: list, w1 = 0.6, w2 = 0.4):
     scale_value = sum(scale_values) / len(scale_values) if scale_values else default_values["Scale"]
     prominence_value = sum(prominence_values) / len(prominence_values) if prominence_values else default_values["Prominence"]
 
-    print(f"[DEBUG] scale values: {scale_values}")
-    print(f"[DEBUG] prominence values: {prominence_values}")
-    print(f"[DEBUG] average scale: {scale_value}")
-    print(f"[DEBUG] average prominence: {prominence_value}")
-
     score = w1 * scale_value + w2 * prominence_value
 
-    print("執行平均結果：", loc_names, score)
     return {q: score}

@@ -27,7 +27,6 @@ def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
 
 def fetch_data_from_db(geojson, buffer_distance, target_typologies):
-    print("get db data...")
     schema_name = "LocaDescriber"
     
     conn = psycopg2.connect(**DB_CONFIG)
