@@ -34,6 +34,10 @@ paths:
                   type: number
                   description: 語意推理權重
                   default: 0.5
+                isMulti:
+                  type: boolean
+                  description: 是否拆分成多重圖徵
+                  default: False
             example:
               geojson:
                 type: FeatureCollection

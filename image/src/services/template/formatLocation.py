@@ -1,33 +1,48 @@
 import re
+from collections import defaultdict
 
 def format_locations(locations, level="township"):
     """
-    Formats a list of county, town and village names into a readable string based on the specified level.
+    Formats a list of county, town and village names into a readable string grouped by county.
     """
     if not locations:
         return ""
 
     locations = [loc.replace("在", "") for loc in locations]
 
-    if level == "township":
-        prefix = locations[0][:3]
-        main = locations[0]
-        shortened = [loc.replace(prefix, "") if loc.startswith(prefix) else loc for loc in locations[1:]]
-    elif level == "village":
-        prefix_match = re.match(r"^.{3}.{2,3}區", locations[0])
-        prefix = prefix_match.group() if prefix_match else ""
-        main = locations[0]
-        shortened = [loc.replace(prefix, "") if loc.startswith(prefix) else loc for loc in locations[1:]]
-    else:
-        return "不支援的層級"
+    grouped = defaultdict(list)
+    for loc in locations:
+        match = re.match(r"^.{2,4}[市縣]", loc)
+        if match:
+            prefix = match.group()
+            suffix = loc.replace(prefix, "")
+            grouped[prefix].append(suffix)
+        else:
+            grouped[""].append(loc)
+            
+    segments = []
+    for prefix, suffixes in grouped.items():
+        if not suffixes:
+            segments.append(prefix)
+        elif len(suffixes) == 1:
+            segments.append(f"{prefix}{suffixes[0]}")
+        else:
+            display_suffixes = suffixes[:3]
+            if len(display_suffixes) == 2:
+                body = "和".join(display_suffixes)
+            else:
+                body = "、".join(display_suffixes[:-1]) + "和" + display_suffixes[-1]
+            if len(suffixes) > 3:
+                body += "等地"
+            segments.append(f"{prefix}{body}")
 
-    if not shortened:
-        return "在" + main
-    elif len(shortened) == 1:
-        return "在" + main + "和" + shortened[0]
+    if not segments:
+        return ""
+    elif len(segments) == 1:
+        return "在" + segments[0]
     else:
-        return "在" + main + "、" + "、".join(shortened[:-1]) + "和" + shortened[-1]
-
+        return "在" + "，以及".join(segments[:-1]) + "，以及" + segments[-1]
+    
 def format_place_name(place_names):
     if isinstance(place_names, list):
         if len(place_names) == 0:

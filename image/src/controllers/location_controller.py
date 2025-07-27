@@ -10,11 +10,12 @@ from utils.cleaner import clear_ontology
 location_bp = Blueprint("location", __name__)
 
 class LocdProcessor:
-    def __init__(self, geojson, context, w1=0.5, w2=0.5):
+    def __init__(self, geojson, context, w1=0.5, w2=0.5, isMulti=False):
         self.geojson = geojson
         self.context = context
         self.w1 = w1
         self.w2 = w2
+        self.isMulti = isMulti
         self.geometry = self._get_geometry()
         self.typologies = self._get_typologies()
         self.buffer_distance = self._get_buffer_distance()
@@ -45,17 +46,42 @@ class LocdProcessor:
         }.get(self.context, 500)
 
     def process(self):
-        db_results = fetch_data_from_db(self.geojson, self.buffer_distance, self.typologies)
-        sr_results = call_spatial_api(self.geojson, db_results)
-        locad_result = RunSemanticReasoning(sr_results, self.geometry, self.context)
-        if hasattr(locad_result, "get_json"):
-            locad_result = locad_result.get_json()
-        multi_results = template(locad_result, self.context, self.w1, self.w2)
-        return {
-            "spatial_relations": sr_results,
-            "location_description": locad_result,
-            "multiLocad_results": multi_results
-        }
+        if self.isMulti:
+            results = []
+            for feature in self.geojson.get("features", []):
+                single_geojson = {
+                    "type": "FeatureCollection",
+                    "features": [feature]
+                }
+                db_results = fetch_data_from_db(single_geojson, self.buffer_distance, self.typologies)
+                sr_results = call_spatial_api(single_geojson, db_results)
+                locad_result = RunSemanticReasoning(sr_results, self.geometry, self.context)
+                if hasattr(locad_result, "get_json"):
+                    locad_result = locad_result.get_json()
+                multi_results = template(locad_result, self.context, self.w1, self.w2)
+                results.append({
+                    "spatial_relations": sr_results,
+                    "location_description": locad_result,
+                    "multiLocad_results": multi_results
+                })
+            multi_results_summary = "與".join(r["multiLocad_results"][0] for r in results)
+            return {
+                "spatial_relations": [r["spatial_relations"] for r in results],
+                "location_description": [r["location_description"] for r in results],
+                "multiLocad_results": multi_results_summary
+            }
+        else:
+            db_results = fetch_data_from_db(self.geojson, self.buffer_distance, self.typologies)
+            sr_results = call_spatial_api(self.geojson, db_results)
+            locad_result = RunSemanticReasoning(sr_results, self.geometry, self.context)
+            if hasattr(locad_result, "get_json"):
+                locad_result = locad_result.get_json()
+            multi_results = template(locad_result, self.context, self.w1, self.w2)
+            return {
+                "spatial_relations": sr_results,
+                "location_description": locad_result,
+                "multiLocad_results": multi_results
+            }
 
 @location_bp.route("/api/stream_locd", methods=["POST"])
 def stream_locd():
@@ -137,9 +163,10 @@ def get_locd():
         context = str(data.get("context"))
         w1 = float(data.get("w_one", 0.5))
         w2 = float(data.get("w_two", 0.5))
+        isMulti = data.get("isMulti", False)
         if not geojson or not context:
             return jsonify({"error": "Missing geometry or context"}), 400
-        processor = LocdProcessor(geojson, context, w1, w2)
+        processor = LocdProcessor(geojson, context, w1, w2, isMulti)
         result = processor.process()
         return jsonify({"data": result["multiLocad_results"]})
     except Exception as e:
